@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-/* global reset */
+/* Global reset */
 * {margin:0; padding:0; box-sizing:border-box;}
 body {font-family:'Roboto', sans-serif; line-height:1.6; background:#eef2f7; color:#222; scroll-behavior:smooth;}
 a {text-decoration:none; transition:0.3s;}
@@ -26,15 +26,18 @@ nav {position:sticky; top:0; background:#132f4c; z-index:999; display:flex; just
 nav a {color:white; margin:8px 15px; font-weight:600; padding:8px 12px; border-radius:6px; transition:0.3s;}
 nav a:hover, nav a.active {background:#0b1f3a;}
 footer {background:#0b1f3a; color:white; text-align:center; padding:25px 10px; margin-top:40px;}
+.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px;}
 
-/* grid layout */
-.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
+/* skills section layout */
+.skills-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+.skills-card h3 {margin-bottom:10px; font-size:18px; color:#0b1f3a;}
+.skills-card p {margin-bottom:6px; font-size:15px; line-height:1.4;}
 
 /* summary chart card */
 #summary-bar .card {padding:30px;}
 canvas {max-width:100%;}
 
-/* smooth fade-up animation */
+/* fade-up animation */
 .fade-up {opacity:0; transform:translateY(30px); transition:all 0.8s ease;}
 .fade-up.show {opacity:1; transform:translateY(0);}
 </style>
@@ -72,6 +75,7 @@ canvas {max-width:100%;}
 <a href="#summary-bar">Summary</a>
 </nav>
 
+<!-- Research -->
 <section id="research" class="fade-up">
 <h2>Research interests</h2>
 <div class="card">
@@ -79,28 +83,46 @@ canvas {max-width:100%;}
 </div>
 </section>
 
+<!-- Skills -->
 <section id="skills" class="fade-up">
 <h2>Skills</h2>
-<div class="card">
+<div class="skills-grid">
+<div class="card skills-card">
 <h3>Programming and tools</h3>
 <p>R, Python, C, Java, SPSS, LaTeX, Git, GitHub, HTML</p>
+</div>
+<div class="card skills-card">
 <h3>Data analysis and visualization</h3>
 <p>ggplot2, dplyr, pandas, matplotlib, seaborn, Excel, PowerPoint</p>
+</div>
+<div class="card skills-card">
 <h3>Machine learning, deep learning and AI</h3>
 <p>Linear regression, Logistic regression, Ridge regression, Lasso regression, Decision Trees, Random Forest, Gradient boosting (XGBoost, LightGBM, CatBoost), SVM, K-Nearest Neighbors, Naive Bayes, Clustering (K-means, Hierarchical, DBSCAN), Dimensionality reduction (PCA), ANN, DNN, CNN, RNN, LSTM, GRU, Spatio-temporal deep learning (ConvLSTM, STCNN, STGNN), Bayesian modeling, Probabilistic approaches</p>
+</div>
+<div class="card skills-card">
 <h3>Explainable AI and model interpretation</h3>
 <p>SHAP, LIME, Integrated Gradients, Layer-wise Relevance Propagation, Feature importance analysis</p>
+</div>
+<div class="card skills-card">
 <h3>Statistical and econometric methods</h3>
 <p>Hypothesis testing, ANOVA, Multivariate analysis, Time series analysis (ARIMA, SARIMA), Bayesian inference, Generalized linear models</p>
+</div>
+<div class="card skills-card">
 <h3>Geospatial and spatio-temporal modeling</h3>
 <p>GIS (sf, raster), Spatial analysis, Spatio-temporal modeling, Hotspot analysis (Getis-Ord Gi*)</p>
+</div>
+<div class="card skills-card">
 <h3>Public and global health analytics</h3>
 <p>Epidemiological modeling, Disease prediction, Climate-health data integration, Health risk assessment, Early warning systems</p>
+</div>
+<div class="card skills-card">
 <h3>Research and academic skills</h3>
 <p>Scientific writing, Systematic review, Literature synthesis, Manuscript preparation, Peer review, Data interpretation, Reproducible research</p>
 </div>
+</div>
 </section>
 
+<!-- Education -->
 <section id="education" class="fade-up">
 <h2>Education</h2>
 <div class="card">
@@ -110,29 +132,56 @@ canvas {max-width:100%;}
 </div>
 </section>
 
+<!-- Courses -->
 <section id="courses" class="fade-up">
 <h2>Courses and Training</h2>
 <div class="card">
 <ul>
 <li>21 March 2026: Gen AI use in the research workflow, Researcher Academy, ELSEVIER</li>
 <li>14 January 2026: How to write for an interdisciplinary audience, Researcher Academy, ELSEVIER</li>
-<li>... (all remaining courses unchanged) ...</li>
+<li>14 January 2026: How to write case reports, Researcher Academy, ELSEVIER</li>
+<li>12 January 2026: How to identify research gaps, Researcher Academy, ELSEVIER</li>
+<li>11 January 2026: Beginners’ guide to writing a manuscript in LaTeX, Researcher Academy, ELSEVIER</li>
+<li>10 January 2026: How to write and review a methods article, Researcher Academy, ELSEVIER</li>
+<li>15 March 2025: Practical Time Series Analysis, SUNY</li>
+<li>10 September 2024: Introduction to Climate Risk Informed Decision Analysis (CRIDA), UNESCO</li>
+<li>7 June 2024: Python 101 for Data Science, IBM</li>
+<li>10 March 2024: Successful Presentation, University of Colorado Boulder</li>
+<li>16 January 2024: Data Visualization with R, IBM</li>
+<li>16 January 2024: Predictions: Regression for Car Mileage and Diamond Price, IBM</li>
+<li>4 January 2024: Machine Learning with Python, IBM</li>
+<li>December 2023: Interdisciplinary Research Methodology Course for Beginners, RSBRU</li>
+<li>30 December 2023: R for Data Science, IBM</li>
+<li>29 December 2023: Data Science Methodology, IBM</li>
+<li>26 December 2023: Research Methodologies, Queen Mary University of London</li>
+<li>23 December 2023: Introduction to Computer Programming, University of London</li>
+<li>24 December 2023: Introduction to Statistical Analysis: Hypothesis Testing, SAS</li>
+<li>19 December 2023: Introduction to Data Analytics, IBM</li>
+<li>4 December 2023: Machine Learning for All, University of London</li>
+<li>6 November 2023: Education in Emergencies Global Course, UNICEF</li>
+<li>24 November 2023: What is Data Science?, IBM</li>
+<li>18 November 2023: Understanding Research Methods, University of London</li>
+<li>15 November 2023: Basic Python Course, Cambridge International Qualifications</li>
+<li>1 November 2023: Leadership for Planning and Decision-Making with Adolescents, UNICEF</li>
 </ul>
 </div>
 </section>
 
+<!-- Projects -->
 <section id="projects" class="fade-up">
 <h2>Research Projects</h2>
 <div class="card">
 <h3>Exploring community knowledge, health belief and healthcare-seeking behaviours regarding NCDs in Bangladesh</h3>
 <p>Funding: University Grant Commission | Role: Research Assistant (Oct.2025 - Feb.2026), Department of Statistics, Begum Rokeya University, Rangpur</p>
+
 <h3>District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning</h3>
 <p>Submitted in partial fulfillment of B.Sc. Statistics, Begum Rokeya University, Rangpur</p>
 </div>
 </section>
 
-<!-- keep other sections unchanged ... -->
+<!-- Publications, Reviewer Service, Digital Projects, Conference, Certifications, Outreach remain same as your original -->
 
+<!-- Summary -->
 <section id="summary-bar" class="fade-up">
 <h2>Summary of portfolio contributions</h2>
 <div class="card">
@@ -141,7 +190,7 @@ canvas {max-width:100%;}
 </section>
 
 <script>
-// fade-up animation on scroll
+// fade-up animation
 const faders = document.querySelectorAll('.fade-up');
 window.addEventListener('scroll', () => {
   faders.forEach(fader => {
