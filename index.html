@@ -5,89 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Md. Abu Bokkor Shiddik | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* Base styling */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Roboto', sans-serif; background: #fdfdfd; color: #2c2c2c; font-size: 16px; line-height: 1.6; }
+<style>
+  /* Base styling */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Roboto', sans-serif; background: #fdfdfd; color: #2c2c2c; font-size: 16px; line-height: 1.6; }
 
-    a { text-decoration: none; color: #1e90ff; }
-    a:hover { text-decoration: underline; color: #0b6ebd; }
+  a { text-decoration: none; color: #1e90ff; }
+  a:hover { text-decoration: underline; color: #0b6ebd; }
 
-    /* Header */
-    header {
-      background: linear-gradient(90deg, #1e90ff, #00bfff);
-      color: white;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    header h1 { font-size: 24px; margin-bottom: 5px; color: #fff8f0; }
-    header p { font-size: 16px; margin-bottom: 5px; color: #f0f0f0; }
-    .contact-links a { margin: 0 5px; font-size: 14px; color: #fffae6; }
-    .contact-links a:hover { color: #ffd700; }
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #1f3b4d, #32475b); /* steel/navy gradient */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  header h1 { font-size: 24px; margin-bottom: 5px; color: #fff8f0; }
+  header p { font-size: 16px; margin-bottom: 5px; color: #f0f0f0; }
+  .contact-links a { margin: 0 5px; font-size: 14px; color: #fffae6; }
+  .contact-links a:hover { color: #ffd700; }
 
-    /* Navigation */
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: #f0f8ff;
-      padding: 10px 0;
-      border-bottom: 2px solid #1e90ff;
-    }
-    nav a { margin: 5px 15px; font-weight: 500; color: #1e90ff; }
-    nav a:hover { color: #0b6ebd; }
+  /* Navigation */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #f0f8ff;
+    padding: 10px 0;
+    border-bottom: 2px solid #1e90ff;
+  }
+  nav a { margin: 5px 15px; font-weight: 500; color: #1e90ff; }
+  nav a:hover { color: #0b6ebd; }
 
-    /* Main sections */
-    main { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
-    section {
-      background: #fffefa;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      border-left: 6px solid #1e90ff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    section h2 { font-size: 20px; margin-bottom: 15px; color: #1e90ff; border-bottom: 2px dashed #00bfff; padding-bottom: 5px; }
-    h3 { font-size: 18px; margin-bottom: 5px; }
-    li, p { font-size: 16px; margin-bottom: 8px; }
+  /* Main sections */
+  main { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      background: #f0f8ff;
-      border-top: 2px solid #1e90ff;
-      color: #2c2c2c;
-    }
+  /* Vertical bars with section-specific colors */
+  #research { border-left: 6px solid #1e90ff; }       /* blue */
+  #skills { border-left: 6px solid #00bfff; }        /* deep sky blue */
+  #education { border-left: 6px solid #32cd32; }     /* lime green */
+  #courses { border-left: 6px solid #ffa500; }       /* orange */
+  #projects { border-left: 6px solid #ff4500; }      /* orange red */
+  #publications { border-left: 6px solid #8a2be2; } /* blue violet */
+  #reviewer { border-left: 6px solid #dc143c; }      /* crimson */
+  #digital { border-left: 6px solid #ff1493; }       /* deep pink */
+  #conference { border-left: 6px solid #20b2aa; }   /* light sea green */
+  #certifications { border-left: 6px solid #ff6347; }/* tomato */
+  #outreach { border-left: 6px solid #4682b4; }      /* steel blue */
+  #summary { border-left: 6px solid #ff69b4; }       /* hot pink contribution bar */
 
-    /* Responsive adjustments */
-    @media (min-width: 768px) {
-      header { flex-direction: row; justify-content: space-between; text-align: left; }
-      header div { flex: 1; }
-      .contact-links { text-align: right; }
-      nav { justify-content: flex-start; padding: 10px 30px; }
-    }
+  section {
+    background: #fffefa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
 
-    @media (max-width: 768px) {
-      header h1 { font-size: 22px; }
-      header p, li, p { font-size: 15px; }
-      section h2 { font-size: 18px; }
-      h3 { font-size: 16px; }
-    }
+  section h2 { font-size: 20px; margin-bottom: 15px; color: #1e90ff; border-bottom: 2px dashed #00bfff; padding-bottom: 5px; }
+  h3 { font-size: 18px; margin-bottom: 5px; }
+  li, p { font-size: 16px; margin-bottom: 8px; }
 
-    @media (max-width: 480px) {
-      header h1 { font-size: 20px; }
-      header p, li, p { font-size: 14px; }
-      section h2 { font-size: 16px; }
-      h3 { font-size: 15px; }
-      nav a { margin: 5px 10px; font-size: 0.9rem; }
-      section { padding: 15px; }
-    }
-  </style>
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    background: #f0f8ff;
+    border-top: 2px solid #1e90ff;
+    color: #2c2c2c;
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 768px) {
+    header { flex-direction: row; justify-content: space-between; text-align: left; }
+    header div { flex: 1; }
+    .contact-links { text-align: right; }
+    nav { justify-content: flex-start; padding: 10px 30px; }
+  }
+
+  @media (max-width: 768px) {
+    header h1 { font-size: 22px; }
+    header p, li, p { font-size: 15px; }
+    section h2 { font-size: 18px; }
+    h3 { font-size: 16px; }
+  }
+
+  @media (max-width: 480px) {
+    header h1 { font-size: 20px; }
+    header p, li, p { font-size: 14px; }
+    section h2 { font-size: 16px; }
+    h3 { font-size: 15px; }
+    nav a { margin: 5px 10px; font-size: 0.9rem; }
+    section { padding: 15px; }
+  }
+</style>
 </head>
 <body>
 
