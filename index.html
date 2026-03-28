@@ -1,44 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF‑8">
+<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
 <title>Md. Abu Bokkor Shiddik | Academic Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth;}
-body{font-family:'Roboto',sans-serif;background:#fdfdfd;color:#2c2c2c;font-size:16px;line-height:1.6;}
-a{text-decoration:none;color:#1e90ff;transition:0.3s;} a:hover{text-decoration:underline;color:#0b6ebd;}
-header{background:linear-gradient(90deg,#1f3b4d,#32475b);color:white;padding:25px 20px;text-align:center;}
-header h1{font-size:30px;color:#fff8f0;}
-header p{font-size:16px;margin:3px 0;color:#f0f0f0;}
-.contact-links a{margin:0 5px;font-size:14px;color:#fffae6;} .contact-links a:hover{color:#ffd700;}
-nav{display:flex;flex-wrap:wrap;justify-content:center;background:#f0f8ff;padding:12px 0;border-bottom:2px solid #1e90ff;position:sticky;top:0;z-index:1000;}
-nav a{margin:5px 15px;font-weight:500;color:#1e90ff;} nav a:hover{color:#0b6ebd;}
-main{max-width:1300px;margin:20px auto;padding:0 20px;}
-section{background:#fffefa;padding:25px;margin-bottom:20px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
-section h2{font-size:24px;margin-bottom:15px;color:#1e90ff;border-bottom:2px dashed #00bfff;padding-bottom:5px;}
-h3{font-size:18px;margin-bottom:8px;color:#333;}
-ul, li, p{font-size:16px;margin-bottom:8px;color:#2c2c2c;}
-section a:hover{color:#ff4500;font-weight:bold;}
-footer{text-align:center;padding:15px;font-size:0.9rem;background:#f0f8ff;border-top:2px solid #1e90ff;color:#2c2c2c;}
-.contribution-bar{margin-bottom:20px;}
-.contribution-bar span{display:block;font-weight:500;margin-bottom:5px;font-size:16px;color:#333;}
-.bar-container{width:100%;background:#e0e0e0;border-radius:10px;overflow:hidden;height:22px;}
-.bar{height:100%;border-radius:10px;transition:width 2s ease-in-out;}
-.timeline{position:relative;margin-left:20px;}
-.timeline::before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:#1e90ff;}
-.timeline-item{position:relative;margin-bottom:20px;padding-left:15px;}
-.timeline-item::before{content:"";position:absolute;left:-8px;top:5px;width:16px;height:16px;background:#1e90ff;border-radius:50%;border:3px solid #fff;}
-.collapsible{background:#1e90ff;color:white;cursor:pointer;padding:10px;border:none;text-align:left;outline:none;font-size:16px;border-radius:5px;margin-bottom:5px;}
-.active, .collapsible:hover{background:#0b6ebd;}
-.content{padding:0 15px;display:none;overflow:hidden;background-color:#f9f9f9;border-left:3px solid #1e90ff;border-radius:0 5px 5px 0;margin-bottom:5px;}
-#scrollTopBtn{position:fixed;bottom:25px;right:25px;background:#1e90ff;color:#fff;padding:10px 15px;border-radius:50px;cursor:pointer;font-size:16px;display:none;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.3);transition:0.3s;}
-#scrollTopBtn:hover{background:#0b6ebd;}
-@media(max-width:768px){header h1{font-size:22px;} header p,li,p{font-size:15px;} section h2{font-size:20px;} h3{font-size:16px;}}
-@media(max-width:480px){header h1{font-size:20px;} header p,li,p{font-size:14px;} section h2{font-size:18px;} h3{font-size:15px;} nav a{margin:5px 10px;font-size:0.85rem;} section{padding:15px;}}
+/* Base Styling */
+* { box‑sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+body { font-family: 'Roboto', sans-serif; background: #fdfdfd; color: #2c2c2c; font-size: 16px; line-height: 1.6; }
+a { text-decoration: none; color: #1e90ff; transition: 0.3s; }
+a:hover { text-decoration: underline; color: #0b6ebd; }
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #1f3b4d, #32475b);
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+}
+header h1 { font-size: 30px; color: #fff8f0; margin-bottom: 5px; }
+header p { font-size: 16px; margin: 3px 0; color: #f0f0f0; }
+.contact-links a { margin: 0 5px; font-size: 14px; color: #fffae6; }
+.contact-links a:hover { color: #ffd700; }
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #f0f8ff;
+  padding: 12px 0;
+  border-bottom: 2px solid #1e90ff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav a { margin: 5px 15px; font-weight: 500; color: #1e90ff; }
+nav a:hover { color: #0b6ebd; }
+
+/* Main content */
+main { max-width: 1300px; margin: 20px auto; padding: 0 20px; }
+
+section {
+  background: #fffefa;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #1e90ff;
+  border-bottom: 2px dashed #00bfff;
+  padding-bottom: 5px;
+}
+h3 { font-size: 18px; margin-bottom: 8px; color: #333; }
+ul, li, p { font-size: 16px; margin-bottom: 8px; color: #2c2c2c; }
+
+/* Collapsible */
+.collapsible {
+  background: #1e90ff;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.collapsible:hover { background: #0b6ebd; }
+.content {
+  padding: 0 15px;
+  display: none;
+  overflow: hidden;
+  background: #f9f9f9;
+  border-left: 3px solid #1e90ff;
+  border-radius: 0 5px 5px 0;
+  margin-bottom: 10px;
+}
+
+/* Contribution Bars */
+.contribution-bar { margin-bottom: 25px; }
+.contribution-bar span { display: block; font-weight: 500; margin-bottom: 6px; font-size: 16px; }
+.bar-container { width: 100%; background: #e0e0e0; border-radius: 10px; overflow: hidden; height: 22px; }
+.bar { height: 100%; border-radius: 10px; transition: width 2s ease-in-out; }
+
+/* Footer */
+footer { text-align: center; padding: 15px; font-size: 0.9rem; background: #f0f8ff; border-top: 2px solid #1e90ff; color: #2c2c2c; }
+
+/* Scroll to top */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #1e90ff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: none;
+  font-size: 16px;
+  z-index: 100;
+}
+#scrollTopBtn:hover { background: #0b6ebd; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 { font-size: 24px; }
+  section h2 { font-size: 20px; }
+}
+@media (max-width: 480px) {
+  header h1 { font-size: 20px; }
+  nav a { margin: 5px 10px; font-size: 0.9rem; }
+  section { padding: 15px; }
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -58,193 +140,271 @@ footer{text-align:center;padding:15px;font-size:0.9rem;background:#f0f8ff;border
 </header>
 
 <nav>
-<a href="#research">Research</a><a href="#skills">Skills</a><a href="#education">Education</a>
-<a href="#courses">Courses</a><a href="#projects">Projects</a><a href="#publications">Publications</a>
-<a href="#reviewer">Reviewer</a><a href="#digital">Digital</a><a href="#conference">Conference</a>
-<a href="#certifications">Certifications</a><a href="#outreach">Outreach</a><a href="#summary">Summary</a>
+<a href="#research">Research</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#courses">Courses</a>
+<a href="#projects">Projects</a>
+<a href="#publications">Publications</a>
+<a href="#reviewer">Reviewer</a>
+<a href="#digital">Digital</a>
+<a href="#conference">Conference</a>
+<a href="#certifications">Certifications</a>
+<a href="#outreach">Outreach</a>
+<a href="#summary">Summary</a>
 </nav>
 
 <main>
+
+<!-- Research -->
 <section id="research">
 <h2>Research Interests</h2>
-<p>Applying data science, machine learning, and explainable AI to global health, focusing on disease modeling, climate-health interactions, and interpretable decision support systems.</p>
+<p>I am interested in applying data science, machine learning, and explainable AI to global health, with a focus on disease modeling, climate‑health interactions, and interpretable decision support systems.</p>
 </section>
 
+<!-- Skills -->
 <section id="skills">
-<h2>Skills & Expertise</h2>
+<h2>Skills</h2>
 <h3>Programming & Tools</h3>
 <p>R, Python, C, Java, SPSS, LaTeX, Git, GitHub, HTML</p>
 <h3>Data Analysis & Visualization</h3>
 <p>ggplot2, dplyr, pandas, matplotlib, seaborn, Excel, PowerPoint</p>
 <h3>Machine Learning & AI</h3>
-<p>Regression (Linear, Logistic, Ridge, Lasso), Decision Trees, Random Forest, Gradient Boosting (XGBoost, LightGBM, CatBoost), SVM, KNN, Naive Bayes, Clustering (K-means, Hierarchical, DBSCAN), PCA, ANN/DNN/CNN/RNN/LSTM/GRU, ConvLSTM, STCNN, STGNN, Bayesian models</p>
+<p>Regression (Linear, Logistic, Ridge, Lasso), Trees, Random Forest, Boosting (XGBoost, LightGBM, CatBoost), SVM, KNN, Naive Bayes, Clustering, PCA, ANN, CNN, RNN, LSTM, GRU, ConvLSTM, STCNN, STGNN, Bayesian models</p>
 <h3>Explainable AI</h3>
-<p>SHAP, LIME, Integrated Gradients, Layer-wise Relevance Propagation, Feature Importance Analysis</p>
-<h3>Statistical & Econometrics</h3>
-<p>Hypothesis testing, ANOVA, Multivariate analysis, Time series (ARIMA, SARIMA), Bayesian inference, GLM</p>
-<h3>Geospatial & Spatio-temporal Modeling</h3>
-<p>GIS (sf, raster), Spatial analysis, Hotspot analysis (Getis-Ord Gi*)</p>
-<h3>Public & Global Health Analytics</h3>
-<p>Epidemiological modeling, Disease prediction, Climate-health integration, Risk assessment, Early warning systems</p>
-<h3>Research & Academic Skills</h3>
-<p>Scientific writing, Systematic review, Literature synthesis, Manuscript preparation, Peer review, Data interpretation, Reproducible research</p>
+<p>SHAP, LIME, Integrated Gradients, Layer‑wise Relevance Propagation, Feature importance analysis</p>
+<h3>Statistical Methods</h3>
+<p>Hypothesis testing, ANOVA, Multivariate analysis, Time series (ARIMA, SARIMA), Bayesian inference, Generalized linear models</p>
+<h3>Geospatial Modeling</h3>
+<p>GIS (sf, raster), Spatial analysis, Spatio‑temporal modeling, Hotspot (Getis‑Ord Gi*)</p>
+<h3>Public & Global Health</h3>
+<p>Epidemiological modeling, Disease prediction, Climate‑health integration, Risk assessment, Early warning systems</p>
+<h3>Academic Skills</h3>
+<p>Scientific writing, Systematic review, Manuscript prep, Peer review, Data interpretation, Reproducible research</p>
 </section>
 
+<!-- Education -->
 <section id="education">
 <h2>Education</h2>
 <ul>
-<li>B.Sc. in Statistics, Begum Rokeya University, Rangpur (Mar 2022 – Feb 2026)</li>
-<li>HSC (Science), Police Lines School and College, Rangpur (2018–2019)</li>
-<li>Diploma in Computer Science, Bangladesh Computer Education (BCE), 6 months (2016)</li>
+<li><strong>March 2022 – February 2026</strong> — B.Sc. in Statistics, Begum Rokeya University, Rangpur, Bangladesh</li>
+<li><strong>January 2018 – December 2019</strong> — HSC (Science), Police Lines School and College, Rangpur, Bangladesh</li>
+<li><strong>July–Dec 2016</strong> — Diploma in Computer Science, Bangladesh Computer Education (BCE)</li>
 </ul>
 </section>
 
+<!-- Courses & Training -->
 <section id="courses">
 <h2>Courses & Training</h2>
-<div class="timeline">
-<div class="timeline-item"><strong>21 Mar 2026:</strong> Gen AI use in the research workflow, Researcher Academy, ELSEVIER</div>
-<div class="timeline-item"><strong>14 Jan 2026:</strong> How to write for an interdisciplinary audience, ELSEVIER</div>
-<div class="timeline-item"><strong>14 Jan 2026:</strong> How to write case reports, ELSEVIER</div>
-<div class="timeline-item"><strong>12 Jan 2026:</strong> How to identify research gaps, ELSEVIER</div>
-<div class="timeline-item"><strong>11 Jan 2026:</strong> Beginners’ guide to writing a manuscript in LaTeX, ELSEVIER</div>
-<div class="timeline-item"><strong>10 Jan 2026:</strong> How to write and review a methods article, ELSEVIER</div>
-<div class="timeline-item"><strong>15 Mar 2025:</strong> Practical Time Series Analysis, SUNY</div>
-<div class="timeline-item"><strong>10 Sep 2024:</strong> Introduction to Climate Risk Informed Decision Analysis (CRIDA), UNESCO</div>
-<div class="timeline-item"><strong>7 Jun 2024:</strong> Python 101 for Data Science, IBM</div>
-<div class="timeline-item"><strong>16 Jan 2024:</strong> Data Visualization with R, IBM</div>
-<div class="timeline-item"><strong>16 Jan 2024:</strong> Predictions: Regression for Car Mileage and Diamond Price, IBM</div>
-<div class="timeline-item"><strong>4 Jan 2024:</strong> Machine Learning with Python, IBM</div>
-<div class="timeline-item"><strong>Dec 2023:</strong> Interdisciplinary Research Methodology Course, RSBRU</div>
-<div class="timeline-item"><strong>30 Dec 2023:</strong> R for Data Science, IBM</div>
-<div class="timeline-item"><strong>29 Dec 2023:</strong> Data Science Methodology, IBM</div>
-<div class="timeline-item"><strong>26 Dec 2023:</strong> Research Methodologies, Queen Mary University of London</div>
-<div class="timeline-item"><strong>24 Dec 2023:</strong> Introduction to Computer Programming, University of London</div>
-<div class="timeline-item"><strong>24 Dec 2023:</strong> Introduction to Statistical Analysis: Hypothesis Testing, SAS</div>
-<div class="timeline-item"><strong>19 Dec 2023:</strong> Introduction to Data Analytics, IBM</div>
-<div class="timeline-item"><strong>4 Dec 2023:</strong> Machine Learning for All, University of London</div>
-<div class="timeline-item"><strong>6 Nov 2023:</strong> Education in Emergencies, UNICEF</div>
-<div class="timeline-item"><strong>15 Nov 2023:</strong> Basic Python Course, CIQ</div>
-<div class="timeline-item"><strong>1 Nov 2023:</strong> Leadership for Planning and Decision-Making with Adolescents, UNICEF</div>
-<div class="timeline-item"><strong>July–Dec 2016:</strong> Diploma in Computer Science, BCE</div>
-</div>
-</section>
 
- <section id="projects">
-<h2>Research Projects</h2>
 <ul>
-<li><strong>Exploring community knowledge, health belief and healthcare-seeking behaviours regarding Non-Communicable Diseases (NCD's) in Bangladesh</strong> – Role: Research Assistant, Department of Statistics, Begum Rokeya University, Rangpur (Oct 2025 – Feb 2026)</li>
-<li><strong>District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning</strong> – Submitted as B.Sc. project, Begum Rokeya University, Rangpur</li>
+<li><strong>21 Mar 2026</strong> — Gen AI use in the research workflow, Researcher Academy, ELSEVIER</li>
+<li><strong>14 Jan 2026</strong> — How to write for an interdisciplinary audience, ELSEVIER</li>
+<li><strong>14 Jan 2026</strong> — How to write case reports, ELSEVIER</li>
+<li><strong>12 Jan 2026</strong> — How to identify research gaps, ELSEVIER</li>
+<li><strong>11 Jan 2026</strong> — Beginners’ guide to writing a manuscript in LaTeX, ELSEVIER</li>
+<li><strong>10 Jan 2026</strong> — How to write and review a methods article, ELSEVIER</li>
+<li><strong>15 Mar 2025</strong> — Practical Time Series Analysis, The State University of New York</li>
+<li><strong>10 Sep 2024</strong> — Introduction to Climate Risk Informed Decision Analysis (CRIDA), UNESCO</li>
+<li><strong>7 Jun 2024</strong> — Python 101 for Data Science, IBM</li>
+<li><strong>16 Jan 2024</strong> — Data Visualization with R (DV0151EN), IBM</li>
+<li><strong>16 Jan 2024</strong> — Predictions: Regression for Car Mileage and Diamond Price (GPXX0AEIEN), IBM</li>
+<li><strong>4 Jan 2024</strong> — Machine Learning with Python (ML0101EN), IBM</li>
+<li><strong>Dec 2023</strong> — Interdisciplinary Research Methodology Course (RSBRU)</li>
+<li><strong>30 Dec 2023</strong> — R for Data Science (RP0101EN), IBM</li>
+<li><strong>29 Dec 2023</strong> — Data Science Methodology (DS0103EN), IBM</li>
+<li><strong>26 Dec 2023</strong> — Research Methodologies, Queen Mary University of London</li>
+<li><strong>24 Dec 2023</strong> — Intro to Computer Programming, University of London</li>
+<li><strong>24 Dec 2023</strong> — Intro to Statistical Analysis: Hypothesis Testing, SAS</li>
+<li><strong>19 Dec 2023</strong> — Intro to Data Analytics, IBM</li>
+<li><strong>4 Dec 2023</strong> — Machine Learning for All, University of London</li>
+<li><strong>6 Nov 2023</strong> — Education in Emergencies, UNICEF</li>
+<li><strong>24 Nov 2023</strong> — What is Data Science? IBM</li>
+<li><strong>18 Nov 2023</strong> — Understanding Research Methods, University of London</li>
+<li><strong>15 Nov 2023</strong> — Basic Python (CIQ)</li>
+<li><strong>1 Nov 2023</strong> — Leadership for Planning & Decision‑Making, UNICEF</li>
 </ul>
 </section>
 
-<section id="publications">
-<h2>Research & Publications (Summary)</h2>
-<button class="collapsible">2025–2026 Publications</button>
-<div class="content">
-<ol>
-<li>Rahman, M.S., Shiddik, A.B. (2025) – AI to predict and analyze factors driving tuberculosis globally. <a href="https://doi.org/10.1038/s41598-025-96973-w" target="_blank">Link</a></li>
-<li>Rahman, M.S., Amrin, M., Shiddik, M.A.B. (2025) – Dengue Early Warning System in Bangladesh. <a href="https://doi.org/10.1002/hsr2.70726" target="_blank">Link</a></li>
-<li>Rahman, M.S., Shiddik, M.A.B. (2025) – Explainable AI for predicting dengue outbreaks. Global Epidemiology</li>
-<li>Rahman, M.S., Shiddik, M.A.B. (2025) – Global malaria incidence and mortality using ML and AI. Scientific Reports</li>
-<li>Rahman, S., Shiddik, A.B. (2025) – Reflections on explainable AI for dengue prediction. Global Epidemiology</li>
-<li>Rahman, M.S., Shiddik, M.A.B. (2025) – Data-Driven Dengue Prevention Strategies using XAI and Causal Inference. Int. J. Stat. Sci.</li>
-<li>Rahman, M.S., Shiddik, M.A.B. (2025) – Leveraging XAI and spatial analysis for communicable diseases in Asia. Int. J. Health Geographics</li>
-<li>Rahman, S., Shiddik, A.B. (2026) – Bayesian spatiotemporal modeling of neonatal, infant, and under-5 mortality in 41 Asian countries. BMJ Open</li>
-<li>Shiddik, M.A.B., Toshi, F.Z., Yesmin, S., Rahman, M.S. (2026) – District-Level Dengue Early Warning Prediction System in Bangladesh. Trop. Med. Infect. Dis.</li>
-</ol>
-</div>
+<!-- Continue next message -->
+<!-- Projects -->
+<section id="projects">
+<h2>Research Projects</h2>
+<ul>
+<li><strong>Exploring community knowledge, health belief and healthcare-seeking behaviours regarding Non-Communicable Diseases (NCDs) in Bangladesh</strong><br>
+Role: Research Assistant | Dept. of Statistics, Begum Rokeya University, Rangpur | Funding: University Grant Commission | Oct 2025 – Feb 2026</li>
+
+<li><strong>District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning</strong><br>
+Project submitted in partial fulfillment of B.Sc. in Statistics requirements, Begum Rokeya University, Rangpur</li>
+</ul>
 </section>
 
+<!-- Publications -->
+<section id="publications">
+<h2>Research & Publications</h2>
+<ul>
+<li>Rahman, M.S., Shiddik, A.B. (2025). Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally. <em>Sci Rep 15, 13619</em>. <a href="https://doi.org/10.1038/s41598-025-96973-w" target="_blank">DOI</a></li>
+
+<li>Rahman, M. S., Amrin, M., & Bokkor Shiddik, M. A. (2025). Dengue Early Warning System and Outbreak Prediction Tool in Bangladesh Using Interpretable Tree-Based Machine Learning Model. <em>Health Science Reports, 8(5), e70726</em>. <a href="https://doi.org/10.1002/hsr2.70726" target="_blank">DOI</a></li>
+
+<li>Rahman, M. S., & Shiddik, M. A. B. (2025). Explainable artificial intelligence for predicting dengue outbreaks in Bangladesh using eco-climatic triggers. <em>Global Epidemiology, 100210</em>.</li>
+
+<li>Rahman, M. S., & Shiddik, M. A. B. (2025). Unraveling global malaria incidence and mortality using machine learning and AI–driven spatial analysis. <em>Scientific Reports, 15(1), 28334</em>.</li>
+
+<li>Rahman, S., & Shiddik, A. B. (2025). Reflections on explainable AI for predicting dengue outbreaks in Bangladesh. <em>Global Epidemiology, 100230</em>.</li>
+
+<li>Rahman, M. S., & Shiddik, M. A. B. (2025). Data-Driven Dengue Prevention Strategies in Bangladesh using Explainable AI and Causal Inference. <em>International Journal of Statistical Sciences, 25(2), 101-113</em>.</li>
+
+<li>Rahman, M. S., & Shiddik, M. A. B. (2025). Leveraging explainable AI and spatial analysis for communicable diseases in Asia (2000–2022) based on health, climate, and socioeconomic factors. <em>International Journal of Health Geographics, 24(1), 45</em>.</li>
+
+<li>Rahman, S. and Shiddik, A.B., 2026. Bayesian spatiotemporal modelling of neonatal, infant and under-5 mortality (2000–2022) in 41 Asian countries: a population-level observational study. <em>BMJ Open, 16(2), e108632</em>.</li>
+
+<li>Shiddik, M.A.B., Toshi, F.Z., Yesmin, S. and Rahman, M.S., 2026. District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning. <em>Tropical Medicine and Infectious Disease, 11(3), 73</em>.</li>
+</ul>
+</section>
+
+<!-- Reviewer Service -->
 <section id="reviewer">
 <h2>Reviewer Service</h2>
 <ul>
-<li>BMJ Global Health – 1 Article (2026)</li>
-<li>BMJ Public Health – 1 Article (2026)</li>
-<li>Health Science Reports – 1 Article (2026), 2 Articles (2025)</li>
-<li>Journal of Mathematics and Statistics – 1 Article (2025)</li>
-<li>PLOS Digital Health – 6 Articles (2026), 6 Articles (2025)</li>
+<li>BMJ Global Health (1 article in 2026)</li>
+<li>BMJ Public Health (1 article in 2026)</li>
+<li>Health Science Reports (1 article in 2026, 2 in 2025)</li>
+<li>Journal of Mathematics and Statistics (1 article in 2025)</li>
+<li>PLOS Digital Health (6 articles in 2026, 6 in 2025)</li>
 </ul>
 </section>
 
+<!-- Digital Projects & Tools -->
 <section id="digital">
 <h2>Digital Projects & Tools</h2>
 <ul>
-<li><strong>whatdis() – R Distribution Detector</strong>: Custom R package for checking and visualizing data distribution. <a href="https://github.com/abubokkorshiddik/R-distribution-detector" target="_blank">GitHub</a></li>
-<li><strong>Dengue Analytics Dashboard, Bangladesh</strong>: Interactive dashboard showing district-level dengue cases and early warning modeling. <a href="https://abubokkorshiddik.github.io/dengue-dashboard" target="_blank">Live Demo</a></li>
-<li><strong>Snake Game</strong>: Classic snake game built with JavaScript & CSS. <a href="https://abubokkorshiddik.github.io/snake-game" target="_blank">Live Demo</a></li>
-<li><strong>Systematic Review Dashboard</strong>: Interactive dashboard for searching, screening, visualizing trends, filtering by author/title/DOI/institution, showing abstracts, highlighting top authors, and exporting results. <a href="https://abubokkorshiddik.github.io/research-explorer" target="_blank">Live Demo</a></li>
+<li><strong>whatdis() — R Distribution Detector</strong><br>
+Custom R package to check and visualize data distribution. <a href="https://github.com/abubokkorshiddik/R-distribution-detector" target="_blank">GitHub</a></li>
+
+<li><strong>Dengue Analytics Dashboard, Bangladesh</strong><br>
+Interactive dashboard for district-level dengue cases and early warning modeling. <a href="https://abubokkorshiddik.github.io/dengue-dashboard" target="_blank">Live Demo</a></li>
+
+<li><strong>Snake Game</strong><br>
+Classic Snake game using JavaScript and CSS with scoring and controls. <a href="https://abubokkorshiddik.github.io/snake-game" target="_blank">Live Demo</a></li>
+
+<li><strong>Systematic Review Dashboard</strong><br>
+Dashboard for searching, screening, visualizing trends, filtering by author/title/DOI/institution, showing abstracts, highlighting top authors, exporting results. <a href="https://abubokkorshiddik.github.io/research-explorer" target="_blank">Live Demo</a></li>
 </ul>
 </section>
 
+<!-- Conferences & Workshops -->
 <section id="conference">
 <h2>Conferences & Workshops</h2>
 <ul>
-<li><strong>International Conference on Applied Statistics and Data Science-2025</strong>, University of Dhaka – Abstracts P-145 & P-105. Presented spatio-temporal modeling of global tuberculosis prediction.</li>
-<li><strong>Workshop on Promotion of Research in Higher Education</strong>, IQAC, Begum Rokeya University, Rangpur – 10 March 2025</li>
+<li><strong>International Conference on Applied Statistics and Data Science 2025</strong>, University of Dhaka — Abstract IDs: P-145 & P-105 | Presented spatio-temporal modeling of global tuberculosis prediction</li>
+<li><strong>Workshop on ‘Promotion of Research in Higher Education’</strong>, IQAC, Begum Rokeya University, Rangpur | 10 Mar 2025</li>
 </ul>
 </section>
 
+<!-- Certifications -->
 <section id="certifications">
-<h2>Certifications & Recognitions</h2>
+<h2>Certifications</h2>
 <ul>
-<li>Mar 2026 – Certificate of Publication for District-Level Dengue Early Warning Prediction System, Trop. Med. Infect. Dis.</li>
-<li>Mar 2026 – Certificate of Excellence; Research Design, Researcher Academy, ELSEVIER</li>
-<li>23 Mar 2026 – Certificate of Appreciation, Peer Reviewer, BMJ Global Health</li>
-<li>16 Feb 2026 – Certificate of Appreciation, Peer Reviewer, BMJ Public Health</li>
-<li>Jan 2026 – Certificate of Excellence; Technical Writing Skills, ELSEVIER</li>
-<li>Dec 2025 – Certificate of Appreciation, Poster Presentation, ICASDS, University of Dhaka</li>
-<li>Jun 2022 – Certificate of Appreciation for participating in Art Exhibition, FLAS, Begum Rokeya University</li>
+<li>Mar 2026 — Certificate of Publication for Dengue Early Warning Prediction System, Trop. Med. Infect. Dis.</li>
+<li>Mar 2026 — Certificate of Excellence: Research Design, Researcher Academy, ELSEVIER</li>
+<li>23 Mar 2026 — Certificate of Appreciation: Peer reviewer, BMJ Global Health</li>
+<li>16 Feb 2026 — Certificate of Appreciation: Peer reviewer, BMJ Public Health</li>
+<li>Jan 2026 — Certificate of Excellence: Technical Writing Skills, ELSEVIER</li>
+<li>Dec 2025 — Certificate of Appreciation: Poster session presentation, ICASDS, University of Dhaka</li>
+<li>Jun 2022 — Certificate of Appreciation: Participated in Art Exhibition, Film and Art Society, Begum Rokeya University</li>
 </ul>
 </section>
 
+<!-- Academic Outreach -->
 <section id="outreach">
 <h2>Academic Content & Outreach</h2>
 <ul>
-<li>Created educational video tutorials on Basic Statistics, R and Python for data analysis – <a href="https://www.youtube.com/@abubokkorshiddik.abs798" target="_blank">YouTube Channel</a></li>
+<li>Created educational video tutorials on Basic Statistics, R, and Python for data analysis — <a href="https://www.youtube.com/@abubokkorshiddik.abs798" target="_blank">YouTube</a></li>
 <li>Shared public health and data science resources to promote research skills among students and early-career researchers</li>
 </ul>
 </section>
 
+<!-- Contribution Summary Bars -->
 <section id="summary">
-<h2>Contribution Summary</h2>
+<h2>Contribution & Expertise Summary</h2>
+
 <div class="contribution-bar">
-<span>Peer Review Contributions</span>
-<div class="bar-container"><div class="bar" style="width:80%;background:#1e90ff;"></div></div>
-<span>Research Publications</span>
-<div class="bar-container"><div class="bar" style="width:90%;background:#ff4500;"></div></div>
-<span>Digital Projects & Tools</span>
-<div class="bar-container"><div class="bar" style="width:85%;background:#32cd32;"></div></div>
-<span>Conference & Workshops</span>
-<div class="bar-container"><div class="bar" style="width:70%;background:#ffa500;"></div></div>
-<span>Courses & Training</span>
-<div class="bar-container"><div class="bar" style="width:95%;background:#8a2be2;"></div></div>
+<span>Data Science & Programming</span>
+<div class="bar-container"><div class="bar" style="width: 95%; background: #1e90ff;"></div></div>
 </div>
+
+<div class="contribution-bar">
+<span>Machine Learning & AI</span>
+<div class="bar-container"><div class="bar" style="width: 90%; background: #00bfff;"></div></div>
+</div>
+
+<div class="contribution-bar">
+<span>Explainable AI</span>
+<div class="bar-container"><div class="bar" style="width: 85%; background: #1e90ff;"></div></div>
+</div>
+
+<div class="contribution-bar">
+<span>Statistical & Econometric Analysis</span>
+<div class="bar-container"><div class="bar" style="width: 92%; background: #00bfff;"></div></div>
+</div>
+
+<div class="contribution-bar">
+<span>Geospatial & Spatio-Temporal Modeling</span>
+<div class="bar-container"><div class="bar" style="width: 80%; background: #1e90ff;"></div></div>
+</div>
+
+<div class="contribution-bar">
+<span>Research Writing & Publications</span>
+<div class="bar-container"><div class="bar" style="width: 88%; background: #00bfff;"></div></div>
+</div>
+
 </section>
 
 </main>
 
+<!-- Footer -->
 <footer>
-<p>© 2026 Md. Abu Bokkor Shiddik | abubokkor.brur60@gmail.com</p>
+<p>© 2026 Md. Abu Bokkor Shiddik | Designed & Maintained by Myself | All Rights Reserved</p>
 </footer>
 
-<button id="scrollTopBtn" onclick="scrollToTop()">↑ Top</button>
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" onclick="topFunction()">↑</button>
 
 <script>
-// Collapsible sections
-const coll = document.getElementsByClassName("collapsible");
-for(let i=0;i<coll.length;i++){
-  coll[i].addEventListener("click",function(){
+// Collapsible Sections
+var coll = document.getElementsByClassName("collapsible");
+for (let i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    const content=this.nextElementSibling;
-    if(content.style.display==="block"){content.style.display="none";} else{content.style.display="block";}
+    var content = this.nextElementSibling;
+    content.style.display = (content.style.display === "block") ? "none" : "block";
   });
 }
 
-// Scroll to top button
-const scrollBtn=document.getElementById("scrollTopBtn");
-window.onscroll=function(){if(document.body.scrollTop>300 || document.documentElement.scrollTop>300){scrollBtn.style.display="block";}else{scrollBtn.style.display="none";}};
-function scrollToTop(){window.scrollTo({top:0,behavior:"smooth"});}
+// Scroll to Top
+var scrollBtn = document.getElementById("scrollTopBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  scrollBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// Animate Bars
+window.addEventListener("load", function() {
+  const bars = document.querySelectorAll(".bar");
+  bars.forEach(bar => {
+    let width = bar.style.width;
+    bar.style.width = "0%";
+    setTimeout(() => { bar.style.width = width; }, 500);
+  });
+});
 </script>
 
 </body>
 </html>
+
+ 
