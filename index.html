@@ -8,6 +8,12 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
 <style>
 
 /* Base */
@@ -30,7 +36,7 @@ header {
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 25px;
   max-width: 1100px;
   margin: auto;
@@ -39,14 +45,19 @@ header {
 
 /* Profile image */
 .profile-img {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   border: 3px solid #facc15;
   object-fit: cover;
 }
 
 /* Header text */
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
 .header-text h1 {
   margin: 0;
   font-size: 30px;
@@ -58,10 +69,10 @@ header {
   color: #cbd5e1;
 }
 
-/* Centered links */
+/* Links */
 .header-links {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 18px;
   padding-top: 10px;
   border-top: 1px solid rgba(255,255,255,0.2);
 }
@@ -71,6 +82,7 @@ header {
   font-weight: 500;
   margin: 0 6px;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .header-links a:hover {
@@ -93,6 +105,7 @@ nav a {
   padding: 12px 15px;
   font-weight: 500;
   color: #1e293b;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -148,15 +161,6 @@ li {
   border: 1px solid #e5e7eb;
 }
 
-/* Links */
-a {
-  color: #1e3a8a;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -172,6 +176,10 @@ footer {
   .header-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .header-text {
+    align-items: center;
   }
 
   header h1 {
@@ -198,35 +206,40 @@ footer {
 
   <img src="https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/ABS.jpeg" class="profile-img" alt="Profile">
 
+  <div class="header-text">
+    <h1>Md. Abu Bokkor Shiddik</h1>
+    <p>Researcher | Bachelor of Science in Statistics</p>
+    <p>📧 abubokkor.brur60@gmail.com | 📞 +8801874001360</p>
+    <p>📍 Park Mor, Tajhat, Rangpur - 5400, Bangladesh</p>
+  </div>
 
-<h1>Md. Abu Bokkor Shiddik</h1>
-<p>Researcher | Bachelor of Science in Statistics</p>
-<p>📧 abubokkor.brur60@gmail.com | 📞 +8801874001360</p>
-<p>📍 Park Mor, Tajhat, Rangpur - 5400, Bangladesh</p>
-<div class="contact-links">
-<a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik" target="_blank">Portfolio</a> |
-<a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798" target="_blank">LinkedIn</a> |
-<a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ&hl=en" target="_blank">Google Scholar</a> |
-<a href="https://orcid.org/0009-0002-0424-446X" target="_blank">ORCID</a> |
-<a href="https://github.com/abubokkorshiddik" target="_blank">GitHub</a> |
-<a href="#" target="_blank">Web of Science</a> |
-<a href="#" target="_blank">Scopus ID</a>
 </div>
+
+<div class="contact-links">
+  <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik" target="_blank">Portfolio</a> |
+  <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798" target="_blank">LinkedIn</a> |
+  <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ&hl=en" target="_blank">Google Scholar</a> |
+  <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">ORCID</a> |
+  <a href="https://github.com/abubokkorshiddik" target="_blank">GitHub</a> |
+  <a href="#" target="_blank">Web of Science</a> |
+  <a href="#" target="_blank">Scopus ID</a>
+</div>
+
 </header>
 
 <nav>
-<a href="#research">Research</a>
-<a href="#skills">Skills</a>
-<a href="#education">Education</a>
-<a href="#courses">Courses</a>
-<a href="#projects">Projects</a>
-<a href="#publications">Publications</a>
-<a href="#reviewer">Reviewer</a>
-<a href="#digital">Digital</a>
-<a href="#conference">Conference</a>
-<a href="#certifications">Certifications</a>
-<a href="#outreach">Outreach</a>
-<a href="#summary">Summary</a>
+  <a href="#research">Research</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#courses">Courses</a>
+  <a href="#projects">Projects</a>
+  <a href="#publications">Publications</a>
+  <a href="#reviewer">Reviewer</a>
+  <a href="#digital">Digital</a>
+  <a href="#conference">Conference</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#outreach">Outreach</a>
+  <a href="#summary">Summary</a>
 </nav>
 
 <main>
