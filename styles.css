@@ -1,117 +1,134 @@
-/* Base reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.7;
-    color: #1f2937;
-    background-color: #f5f7fb;
-    padding: 0 10px;
+    background: #f5f7fa;
+    color: #1f2933;
+    line-height: 1.6;
 }
 
 /* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header Card */
+header {
+    padding: 40px 20px;
+}
+
 .header-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 40px 20px;
-    gap: 20px;
-}
-
-/* Header */
-header {
+    align-items: center;
     background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    padding: 30px;
+    border: 1px solid #e4e7eb;
+    border-radius: 10px;
 }
 
-/* Header text */
+/* Header Text */
 .header-text h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #111827;
+    font-size: 30px;
+    margin-bottom: 6px;
+    color: #1f2933;
 }
 
 .header-text p {
-    margin-top: 6px;
-    color: #4b5563;
+    font-size: 14.5px;
+    color: #52606d;
+    margin: 5px 0;
 }
 
 /* Links */
+.header-links {
+    margin-top: 12px;
+}
+
 .header-links a {
-    color: #2563eb;
     text-decoration: none;
+    color: #1d4ed8;
+    margin-right: 10px;
     font-weight: 500;
+    font-size: 14px;
 }
 
 .header-links a:hover {
     text-decoration: underline;
 }
 
-/* Profile image */
-.header-image img {
+/* Profile Image */
+.header-image {
+    margin-left: 25px;
+}
+
+.profile-img {
     width: 150px;
-    height: 150px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #e5e7eb;
+    border-radius: 0;
+    border: 1px solid #e4e7eb;
 }
 
 /* Navigation */
 nav {
-    background: #1f2937;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 20px auto;
+    text-align: center;
     padding: 12px;
+    background: #ffffff;
+    border: 1px solid #e4e7eb;
+    border-radius: 10px;
 }
 
 nav a {
-    color: #ffffff;
+    margin: 0 12px;
     text-decoration: none;
-    margin: 8px 14px;
+    color: #1f2933;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 14px;
 }
 
 nav a:hover {
-    color: #60a5fa;
+    color: #1d4ed8;
 }
 
-/* Sections */
+/* Section Cards */
 section {
     max-width: 1100px;
-    margin: 40px auto;
-    padding: 30px;
+    margin: 20px auto;
     background: #ffffff;
+    padding: 25px;
+    border: 1px solid #e4e7eb;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-section h2 {
-    font-size: 1.6rem;
+/* Headings */
+h2 {
+    font-size: 22px;
     margin-bottom: 15px;
-    color: #111827;
-    border-left: 4px solid #2563eb;
-    padding-left: 10px;
+    color: #1f2933;
 }
 
-section h3 {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #374151;
-}
-
-/* Paragraphs */
-section p, section li {
+h3 {
+    font-size: 18px;
     margin-top: 10px;
-    color: #4b5563;
+    color: #1f2933;
+}
+
+/* Paragraph */
+p {
+    font-size: 14.5px;
+    color: #52606d;
+    margin-bottom: 10px;
 }
 
 /* Lists */
@@ -119,42 +136,55 @@ ul {
     padding-left: 20px;
 }
 
-/* Skills layout */
-#skills h3 {
-    margin-top: 20px;
+ul li {
+    margin-bottom: 8px;
+    font-size: 14.5px;
+    color: #52606d;
 }
 
-/* Project cards */
+/* Project Cards */
 .project-item {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e4e7eb;
     border-radius: 8px;
-    transition: 0.3s;
-}
-
-.project-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    background: #fafbfc;
 }
 
 .project-item a {
     display: inline-block;
-    margin-top: 10px;
-    color: #2563eb;
+    margin-top: 8px;
+    color: #1d4ed8;
+    text-decoration: none;
     font-weight: 500;
 }
 
-/* Certification cards */
-.certification-item {
-    margin-top: 20px;
-    padding: 15px;
-    border-left: 4px solid #2563eb;
-    background: #f9fafb;
-    border-radius: 6px;
+.project-item a:hover {
+    text-decoration: underline;
 }
 
-/* Chart */
+/* Certification Cards */
+.certification-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e4e7eb;
+    border-radius: 8px;
+    background: #fafbfc;
+}
+
+.certification-item a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.certification-item a:hover {
+    text-decoration: underline;
+}
+
+/* Chart Section */
 .chart-container {
     width: 100%;
     max-width: 600px;
@@ -165,47 +195,24 @@ ul {
 footer {
     text-align: center;
     padding: 20px;
-    background: #111827;
-    color: #ffffff;
-    margin-top: 40px;
+    margin-top: 20px;
+    color: #52606d;
+    font-size: 14px;
 }
 
-/* Responsive design */
-@media (max-width: 900px) {
+/* Responsive */
+@media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         text-align: center;
     }
 
-    .header-image img {
-        width: 120px;
-        height: 120px;
-    }
-
-    nav {
-        flex-direction: column;
+    .header-image {
+        margin: 15px 0 0 0;
     }
 
     nav a {
-        margin: 6px 0;
-    }
-
-    section {
-        padding: 20px;
-        margin: 20px 10px;
-    }
-}
-
-@media (max-width: 600px) {
-    .header-text h1 {
-        font-size: 1.6rem;
-    }
-
-    section h2 {
-        font-size: 1.3rem;
-    }
-
-    body {
-        font-size: 0.95rem;
+        display: inline-block;
+        margin: 6px 8px;
     }
 }
