@@ -14,34 +14,47 @@ body {
   color: #1f2937;
 }
 
+/* NAVBAR (STICKY) */
 .navbar {
   background: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: auto;
   padding: 12px 20px;
 }
 
-.navbar a {
+.nav-inner a {
   color: #cbd5e1;
   margin-right: 15px;
   text-decoration: none;
+  font-weight: 500;
 }
 
-.navbar a:hover {
+.nav-inner a:hover {
   color: #60a5fa;
 }
 
+/* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 40px 20px;
+  padding: 45px 20px;
   text-align: center;
 }
 
+/* CONTAINER */
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 40px 20px;
 }
 
+/* CARD STYLE */
 .card {
   background: white;
   padding: 18px;
@@ -49,6 +62,7 @@ body {
   border-left: 4px solid #1d4ed8;
   border-radius: 6px;
   line-height: 1.7;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
 .journal {
@@ -58,15 +72,28 @@ body {
 
 .count {
   color: #1d4ed8;
-  font-weight: bold;
+  font-weight: 600;
+  margin-top: 5px;
+  display: inline-block;
 }
 
+/* FOOTER */
 footer {
   background: #020617;
   color: #e2e8f0;
   text-align: center;
   padding: 25px;
   margin-top: 40px;
+}
+
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+footer a:hover {
+  color: white;
 }
 
 </style>
@@ -78,8 +105,7 @@ footer {
 <!-- NAV -->
 <div class="navbar">
   <div class="nav-inner">
-    <a href="index.html">Home</a>
-    <a href="home.html">Profile</a>
+    <a href="home.html">Home</a>
     <a href="publications.html">Publications</a>
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
@@ -129,7 +155,7 @@ footer {
   <p>
     <a href="home.html">Home</a> |
     <a href="publications.html">Publications</a> |
-    <a href="contact.html">Contact</a>
+    <a href="projects.html">Projects</a>
   </p>
 </footer>
 
