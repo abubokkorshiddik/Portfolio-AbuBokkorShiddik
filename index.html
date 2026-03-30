@@ -3,32 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md. Abu Bokkor Shiddik</title>
+<title>Profile | Md. Abu Bokkor Shiddik</title>
 
 <style>
-
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f8fafc;
   color: #1f2937;
-}
-
-/* TOP */
-.topbar {
-  background: #020617;
-  color: #e2e8f0;
-  font-size: 14px;
-}
-
-.topbar-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 20px;
 }
 
 /* NAV */
@@ -54,19 +37,28 @@ body {
   color: #60a5fa;
 }
 
-/* HERO */
-.hero {
+/* HEADER */
+.header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 50px 20px;
+  padding: 40px 20px;
 }
 
-.hero-inner {
+.header-inner {
   max-width: 1200px;
   margin: auto;
 }
 
-/* CONTENT */
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.header p {
+  margin: 6px 0;
+}
+
+/* SECTION */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -79,14 +71,32 @@ body {
   margin-top: 40px;
 }
 
-.card {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  padding: 14px;
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
   margin-top: 15px;
 }
 
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* HIGHLIGHT BOX */
+.highlight {
+  background: #e0f2fe;
+  padding: 16px;
+  border-left: 4px solid #0284c7;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
+/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 10px;
@@ -115,18 +125,6 @@ footer a {
 
 <body>
 
-<!-- TOP -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <span>Academic Portfolio</span>
-    <span>
-      <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" style="color:#93c5fd;" target="_blank">
-        Google Scholar
-      </a>
-    </span>
-  </div>
-</div>
-
 <!-- NAV -->
 <nav class="navbar">
   <div class="nav-inner">
@@ -139,61 +137,100 @@ footer a {
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
+<!-- HEADER -->
+<section class="header">
+  <div class="header-inner">
     <h1>Md. Abu Bokkor Shiddik</h1>
-    <p>Researcher | Machine Learning | Public Health Analytics</p>
-
-    <p>
-      📧 abubokkor.brur60@gmail.com <br>
-      📞 +8801874001360 <br>
-      📍 Rangpur, Bangladesh
-    </p>
+    <p><b>Researcher | Machine Learning | Public Health Analytics</b></p>
+    <p>📍 Rangpur, Bangladesh</p>
+    <p>📧 abubokkor.brur60@gmail.com | 📞 +8801874001360</p>
   </div>
 </section>
 
 <div class="container">
 
-<!-- ABOUT PREVIEW -->
+<!-- ABOUT -->
 <h2 class="section-title">About</h2>
 <div class="card">
-  Researcher focusing on machine learning, deep learning, explainable AI, and public health analytics. Work includes disease prediction, climate-health modeling, and advanced data analysis.
-  <br>
-  <a class="btn" href="home.html">View full profile</a>
+  I am a researcher in statistics focusing on machine learning, deep learning, and explainable AI applied to public health problems. My work mainly focuses on disease prediction, climate-health interactions, and data-driven modeling.
+</div>
+
+<div class="highlight">
+  Key areas include AI-based disease prediction, spatio-temporal modeling, and interpretable machine learning for public health decision support.
+</div>
+
+<!-- RESEARCH INTERESTS -->
+<h2 class="section-title">Research Interests</h2>
+<div class="grid">
+  <div class="card">Machine Learning & Deep Learning</div>
+  <div class="card">Explainable AI (SHAP, IG)</div>
+  <div class="card">Epidemiological Modeling</div>
+  <div class="card">Climate & Health</div>
+  <div class="card">Spatio-temporal Analysis</div>
+  <div class="card">Public Health Informatics</div>
 </div>
 
 <!-- PUBLICATIONS -->
-<h2 class="section-title">Publications</h2>
-<div class="card">
-  Selected peer-reviewed research in epidemiology, AI, and global health.
-  <br>
-  <a class="btn" href="publications.html">View publications</a>
+<h2 class="section-title">Selected Publications</h2>
+<div class="grid">
+
+  <div class="card">
+    <b>Dengue prediction using explainable AI</b><br>
+    Global Epidemiology, 2025
+  </div>
+
+  <div class="card">
+    <b>Tuberculosis modeling using ML</b><br>
+    Scientific Reports, 2025
+  </div>
+
+  <div class="card">
+    <b>Malaria risk prediction using AI</b><br>
+    Scientific Reports, 2025
+  </div>
+
 </div>
+
+<a class="btn" href="publications.html">View full publications →</a>
 
 <!-- PROJECTS -->
-<h2 class="section-title">Projects</h2>
-<div class="card">
-  Includes Dengue Dashboard, Systematic Review Dashboard, and R package whatdis().
-  <br>
-  <a class="btn" href="projects.html">View projects</a>
+<h2 class="section-title">Key Projects</h2>
+<div class="grid">
+
+  <div class="card">
+    <b>Dengue Dashboard</b><br>
+    Interactive early warning system for Bangladesh with AI-based insights.
+  </div>
+
+  <div class="card">
+    <b>Systematic Review Dashboard</b><br>
+    Tool for literature search, screening, and visualization.
+  </div>
+
+  <div class="card">
+    <b>R Package: whatdis()</b><br>
+    Distribution detection and visualization tool.
+  </div>
+
 </div>
 
+<a class="btn" href="projects.html">Explore projects →</a>
+
 <!-- COURSES -->
-<h2 class="section-title">Courses</h2>
+<h2 class="section-title">Courses & Training</h2>
 <div class="card">
-  Training in machine learning, data science, statistical modeling, and research methods from global institutions.
-  <br>
-  <a class="btn" href="courses.html">View courses</a>
+  Completed multiple professional courses from Elsevier Researcher Academy, IBM, UNESCO, University of London, SUNY, and others covering machine learning, research methods, and data science.
 </div>
+
+<a class="btn" href="courses.html">View courses →</a>
 
 <!-- SERVICE -->
 <h2 class="section-title">Academic Service</h2>
 <div class="card">
-  Reviewer for BMJ Global Health, PLOS Digital Health, Health Science Reports and more.
-  <br>
-  <a class="btn" href="service.html">View service</a>
+  Reviewer for BMJ Global Health, BMJ Public Health, PLOS Digital Health, and Health Science Reports with multiple peer review contributions.
 </div>
+
+<a class="btn" href="service.html">View service →</a>
 
 </div>
 
@@ -201,11 +238,9 @@ footer a {
 <footer>
   <p>Md. Abu Bokkor Shiddik</p>
   <p>
-    <a href="home.html">Profile</a> |
-    <a href="projects.html">Projects</a> |
+    <a href="index.html">Home</a> |
     <a href="publications.html">Publications</a> |
-    <a href="courses.html">Courses</a> |
-    <a href="service.html">Service</a>
+    <a href="projects.html">Projects</a>
   </p>
 </footer>
 
