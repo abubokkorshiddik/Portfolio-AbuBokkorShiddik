@@ -83,27 +83,12 @@ body {
 }
 
 /* CARD */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-top: 15px;
-}
-
 .card {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   padding: 14px;
-}
-
-.card strong {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.card small {
-  color: #64748b;
+  margin-top: 15px;
 }
 
 /* BUTTON */
@@ -135,25 +120,26 @@ footer a {
 
 <body>
 
-<!-- TOP BAR -->
+<!-- TOP -->
 <div class="topbar">
   <div class="topbar-inner">
     <span>Academic Portfolio</span>
     <span>
-      <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" style="color:#93c5fd;">Google Scholar</a>
+      <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" style="color:#93c5fd;" target="_blank">Google Scholar</a>
     </span>
   </div>
 </div>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav class="navbar">
   <div class="nav-inner">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#projects">Projects</a>
-    <a href="#courses">Courses</a>
-    <a href="#service">Service</a>
+    <a href="index.html">Home</a>
+    <a href="home.html">About</a>
+    <a href="home.html#research">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="courses.html">Courses</a>
+    <a href="service.html">Service</a>
   </div>
 </nav>
 
@@ -173,79 +159,52 @@ footer a {
 
 <div class="container">
 
-<!-- ABOUT -->
-<h2 class="section-title" id="about">About</h2>
-<p>
-Researcher in statistics with focus on machine learning, deep learning, explainable AI, and public health data analysis. Work includes disease prediction, climate-health modeling, and spatio-temporal data analysis using modern AI methods.
-</p>
-
-<!-- RESEARCH -->
-<h2 class="section-title" id="research">Research Areas</h2>
-<p>
-Machine learning, deep learning, explainable AI, epidemiology, climate-health modeling, spatio-temporal analysis, and public health informatics.
-</p>
-
-<!-- PUBLICATIONS -->
-<h2 class="section-title" id="publications">Publications (Selected)</h2>
-
-<div class="card-grid">
-
-  <div class="card">
-    <strong>Dengue prediction using explainable AI</strong>
-    Global Epidemiology, 2025
-  </div>
-
-  <div class="card">
-    <strong>Tuberculosis modeling using ML</strong>
-    Scientific Reports, 2025
-  </div>
-
-  <div class="card">
-    <strong>Malaria risk prediction using AI</strong>
-    Scientific Reports, 2025
-  </div>
-
+<!-- ABOUT PREVIEW -->
+<h2 class="section-title">About</h2>
+<div class="card">
+  Researcher in statistics working on machine learning, explainable AI, and public health modeling. Focus on disease prediction, climate-health interaction, and data-driven policy insights.
+  <br>
+  <a class="btn" href="home.html">Read full profile</a>
 </div>
 
-<a class="btn" href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">View Google Scholar</a>
+<!-- RESEARCH PREVIEW -->
+<h2 class="section-title">Research</h2>
+<div class="card">
+  Work includes deep learning, spatio-temporal modeling, epidemiology, and explainable AI methods applied to dengue, malaria, TB, and global health data.
+  <br>
+  <a class="btn" href="home.html">Explore research</a>
+</div>
+
+<!-- PUBLICATIONS -->
+<h2 class="section-title">Publications (Selected)</h2>
+<div class="card">
+  Selected peer-reviewed works in epidemiology, AI, and public health analytics.
+  <br>
+  <a class="btn" href="publications.html">View all publications</a>
+</div>
 
 <!-- PROJECTS -->
-<h2 class="section-title" id="projects">Projects</h2>
-
-<div class="card-grid">
-
-  <div class="card">
-    <strong>Dengue Dashboard</strong>
-    AI-based early warning system with visualization<br>
-    <small>Live interactive system</small>
-  </div>
-
-  <div class="card">
-    <strong>Systematic Review Dashboard</strong>
-    Literature search, screening, PRISMA workflow<br>
-    <small>Research automation tool</small>
-  </div>
-
-  <div class="card">
-    <strong>R Package: whatdis()</strong>
-    Data distribution detection and visualization<br>
-    <small>Open-source tool</small>
-  </div>
-
+<h2 class="section-title">Projects</h2>
+<div class="card">
+  Includes Dengue Dashboard, Systematic Review Dashboard, and R package whatdis() for distribution detection.
+  <br>
+  <a class="btn" href="projects.html">View projects</a>
 </div>
 
 <!-- COURSES -->
-<h2 class="section-title" id="courses">Courses & Training</h2>
-
+<h2 class="section-title">Courses & Training</h2>
 <div class="card">
-Completed multiple professional and academic courses from IBM, UNESCO, Elsevier Researcher Academy, University of London, SUNY, and UNICEF, covering machine learning, research methodology, scientific writing, data science, and statistical analysis.
+  Professional training in machine learning, data science, statistical modeling, and research methods from leading global institutions.
+  <br>
+  <a class="btn" href="courses.html">View courses</a>
 </div>
 
 <!-- SERVICE -->
-<h2 class="section-title" id="service">Academic Service</h2>
-
+<h2 class="section-title">Academic Service</h2>
 <div class="card">
-Reviewer for BMJ Global Health, BMJ Public Health, Health Science Reports, Journal of Mathematics and Statistics, and PLOS Digital Health with multiple review contributions across 2025–2026.
+  Reviewer for leading journals including BMJ Global Health, PLOS Digital Health, and Health Science Reports.
+  <br>
+  <a class="btn" href="service.html">View service details</a>
 </div>
 
 </div>
@@ -254,9 +213,11 @@ Reviewer for BMJ Global Health, BMJ Public Health, Health Science Reports, Journ
 <footer>
   <p>Md. Abu Bokkor Shiddik</p>
   <p>
-    <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">Google Scholar</a> |
-    <a href="#projects">Projects</a> |
-    <a href="#publications">Publications</a>
+    <a href="home.html">About</a> |
+    <a href="projects.html">Projects</a> |
+    <a href="publications.html">Publications</a> |
+    <a href="courses.html">Courses</a> |
+    <a href="service.html">Service</a>
   </p>
 </footer>
 
