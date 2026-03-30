@@ -14,41 +14,55 @@ body {
   color: #1f2937;
 }
 
+/* NAVIGATION */
 .navbar {
   background: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
   padding: 12px 20px;
 }
 
-.navbar a {
+.nav-inner a {
   color: #cbd5e1;
   margin-right: 15px;
   text-decoration: none;
+  font-weight: 500;
 }
 
-.navbar a:hover {
+.nav-inner a:hover {
   color: #60a5fa;
 }
 
+/* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 40px 20px;
+  padding: 45px 20px;
   text-align: center;
 }
 
+/* CONTAINER */
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 40px 20px;
 }
 
+/* CARD */
 .course {
   background: white;
   padding: 16px;
   margin-bottom: 15px;
   border-left: 4px solid #1d4ed8;
   border-radius: 6px;
-  line-height: 1.6;
+  line-height: 1.7;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
 .date {
@@ -61,6 +75,7 @@ body {
   font-size: 14px;
 }
 
+/* FOOTER */
 footer {
   background: #020617;
   color: #e2e8f0;
@@ -69,17 +84,25 @@ footer {
   margin-top: 40px;
 }
 
-</style>
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+  margin: 0 6px;
+}
 
+footer a:hover {
+  color: white;
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR (FIXED + CLEAN) -->
 <div class="navbar">
   <div class="nav-inner">
-    <a href="index.html">Home</a>
-    <a href="home.html">Profile</a>
+    <a href="home.html">Home</a>
     <a href="publications.html">Publications</a>
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
@@ -90,7 +113,7 @@ footer {
 <!-- HEADER -->
 <div class="header">
   <h1>Courses and Training</h1>
-  <p>Professional development and certified learning in research, data science, and machine learning</p>
+  <p>Professional development and certified learning in research, machine learning, and data science</p>
 </div>
 
 <!-- CONTENT -->
@@ -146,7 +169,7 @@ Practical Time Series Analysis<br>
 
 <div class="course">
 <span class="date">10 September, 2024</span><br>
-Introduction to Climate Risk Informed Decision Analysis (CRIDA)<br>
+Climate Risk Informed Decision Analysis (CRIDA)<br>
 <span class="provider">UNESCO</span>
 </div>
 
@@ -157,27 +180,15 @@ Python 101 for Data Science<br>
 </div>
 
 <div class="course">
-<span class="date">10 March, 2024</span><br>
-Successful Presentation<br>
-<span class="provider">University of Colorado Boulder</span>
-</div>
-
-<div class="course">
-<span class="date">16 January, 2024</span><br>
-Data Visualization with R<br>
-<span class="provider">IBM</span>
-</div>
-
-<div class="course">
 <span class="date">4 January, 2024</span><br>
 Machine Learning with Python<br>
 <span class="provider">IBM</span>
 </div>
 
 <div class="course">
-<span class="date">December, 2023</span><br>
-Interdisciplinary Research Methodology Course for Beginners<br>
-<span class="provider">Begum Rokeya University Research Society</span>
+<span class="date">16 January, 2024</span><br>
+Data Visualization with R<br>
+<span class="provider">IBM</span>
 </div>
 
 <div class="course">
@@ -236,7 +247,7 @@ Diploma in Computer Science<br>
   <p>
     <a href="home.html">Home</a> |
     <a href="publications.html">Publications</a> |
-    <a href="contact.html">Contact</a>
+    <a href="projects.html">Projects</a>
   </p>
 </footer>
 
