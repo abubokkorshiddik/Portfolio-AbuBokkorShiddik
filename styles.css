@@ -66,10 +66,12 @@ header {
 
 .profile-img {
     width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 6px;
+    height: auto;
+    max-height: 160px;
+    object-fit: contain;
+    border-radius: 0;
     border: 1px solid #ddd;
+    background: #fff;
 }
 
 /* Navigation (clean journal style) */
