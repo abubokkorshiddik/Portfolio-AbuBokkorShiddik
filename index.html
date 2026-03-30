@@ -3,13 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md. Abu Bokkor Shiddik</title>
+<title>Research Profile</title>
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -17,181 +13,101 @@ body {
   color: #1f2937;
 }
 
-/* TOP BAR */
-.topbar {
-  background: #0b1f3a;
-  color: white;
-  font-size: 14px;
+/* HEADER */
+.hero {
+  background: linear-gradient(135deg, #050f1f, #0a2a4a);
+  color: #fff;
+  padding: 50px 20px;
 }
 
-.topbar-inner {
+.hero-inner {
   max-width: 1100px;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  padding: 8px 20px;
-}
-
-.top-links a {
-  color: #93c5fd;
-  margin-left: 12px;
-  text-decoration: none;
-}
-
-/* NAVBAR */
-.navbar {
-  background: #0f172a;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-inner {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  padding: 10px 20px;
-}
-
-.nav-inner a {
-  color: #e2e8f0;
-  margin-right: 18px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.nav-inner a:hover {
-  color: #60a5fa;
-}
-
-/* HEADER */
-.hero {
-  background: linear-gradient(135deg, #050f1f, #0a2a4a);
-  color: #ffffff;
-  padding: 55px 20px;
-}
-
-.hero-grid {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
   align-items: center;
 }
 
-.hero-info h1 {
-  font-size: 38px;
+.hero-text h1 {
   margin: 0;
+  font-size: 36px;
 }
 
-.title {
+.hero-text p {
   color: #cbd5e1;
 }
 
-.contact {
-  margin-top: 12px;
-  line-height: 1.6;
-  color: #e2e8f0;
-}
-
-/* BUTTONS */
-.actions {
-  margin-top: 18px;
-}
-
-.btn {
-  background: #1e40af;
-  color: white;
-  padding: 10px 16px;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.btn-outline {
-  border: 1px solid #60a5fa;
-  color: #60a5fa;
-  padding: 10px 16px;
-  text-decoration: none;
-}
-
 /* PHOTO */
-.hero-photo {
-  display: flex;
-  justify-content: center;
-}
-
-.photo-frame {
-  width: 220px;
-  height: 220px;
+.photo {
+  width: 200px;
+  height: 200px;
   border-radius: 6px;
   overflow: hidden;
   border: 3px solid #1e3a8a;
 }
 
-.photo-frame img {
+.photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* MAIN */
-.container {
+/* METRICS */
+.metrics {
   max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-h2 {
-  border-left: 4px solid #1d4ed8;
-  padding-left: 10px;
-  margin-top: 40px;
-}
-
-/* GRID */
-.grid-2 {
+.metrics-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.box {
+.metric-box {
+  background: #f8fafc;
   border: 1px solid #e5e7eb;
-  padding: 15px;
-  background: #f9fafb;
+  padding: 20px;
+  text-align: center;
   transition: 0.3s;
 }
 
-.box:hover {
+.metric-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* PUBLICATIONS */
-.pub-list {
-  padding-left: 20px;
+.metric-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1d4ed8;
 }
 
-.pub-list li {
-  margin-bottom: 12px;
+.metric-label {
+  margin-top: 8px;
+  color: #475569;
 }
 
-/* FOOTER */
-footer {
-  background: #0b1f3a;
+/* BUTTON */
+.link-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #1e40af;
   color: white;
-  text-align: center;
-  padding: 20px;
+  padding: 10px 16px;
+  text-decoration: none;
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 800px) {
+  .hero-inner {
+    flex-direction: column;
     text-align: center;
   }
 
-  .grid-2 {
-    grid-template-columns: 1fr;
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 </style>
@@ -200,154 +116,84 @@ footer {
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <span>Research Profile</span>
-    <div class="top-links">
-      <a href="https://orcid.org">ORCID</a>
-      <a href="https://scholar.google.com">Google Scholar</a>
-      <a href="https://github.com">GitHub</a>
-    </div>
-  </div>
-</div>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="#research">Research</a>
-    <a href="#skills">Expertise</a>
-    <a href="#metrics">Metrics</a>
-    <a href="#publications">Publications</a>
-    <a href="#projects">Projects</a>
-    <a href="#service">Service</a>
-  </div>
-</nav>
-
 <!-- HEADER -->
 <header class="hero">
-  <div class="hero-grid">
+  <div class="hero-inner">
 
-    <div class="hero-info">
+    <div class="hero-text">
       <h1>Md. Abu Bokkor Shiddik</h1>
-      <p class="title">Researcher | Bachelor of Science in Statistics</p>
+      <p>Researcher | Statistics | Machine Learning | Public Health</p>
 
-      <p class="contact">
-        E-mail: abubokkor.brur60@gmail.com<br>
-        Phone: +8801874001360<br>
-        Location: Rangpur, Bangladesh
-      </p>
-
-      <div class="actions">
-        <a class="btn" href="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/raw/main/Md_Abu_Bokkor_Shiddik_CV.pdf">Download CV</a>
-        <a class="btn-outline" href="#">Publications</a>
-      </div>
+      <a class="link-btn" href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">
+        Google Scholar Profile
+      </a>
     </div>
 
-    <div class="hero-photo">
-      <div class="photo-frame">
-        <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/ABS.jpeg?raw=true">
-      </div>
+    <div class="photo">
+      <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/ABS.jpeg?raw=true">
     </div>
 
   </div>
 </header>
 
-<!-- CONTENT -->
-<main class="container">
-
-<section id="research">
-  <h2>Research Interests</h2>
-  <p>
-    Machine learning, explainable artificial intelligence, epidemiological modeling, 
-    spatial analysis, and data-driven public health decision systems.
-  </p>
-</section>
-
-<section id="skills">
-  <h2>Key Expertise</h2>
-
-  <div class="grid-2">
-
-    <div class="box">
-      <h3>Machine Learning</h3>
-      <p>Deep learning, regression, classification, ensemble methods.</p>
-    </div>
-
-    <div class="box">
-      <h3>Explainable AI</h3>
-      <p>SHAP, LIME, Integrated Gradients.</p>
-    </div>
-
-    <div class="box">
-      <h3>Data Science</h3>
-      <p>Python, R, statistical modeling, visualization.</p>
-    </div>
-
-    <div class="box">
-      <h3>Geo Health</h3>
-      <p>GIS, spatial modeling, epidemiology.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<section id="metrics">
+<!-- METRICS -->
+<section class="metrics">
   <h2>Research Metrics</h2>
 
-  <div class="grid-2">
-    <div class="box"><h3>Publications</h3><p>10+</p></div>
-    <div class="box"><h3>Citations</h3><p>500+</p></div>
-    <div class="box"><h3>H-index</h3><p>8</p></div>
-    <div class="box"><h3>Projects</h3><p>5+</p></div>
-  </div>
+  <div class="metrics-grid">
 
-</section>
-
-<section id="publications">
-  <h2>Selected Publications</h2>
-
-  <ul class="pub-list">
-    <li><strong>Explainable AI for Tuberculosis Prediction</strong><br>Scientific Reports, 2025</li>
-    <li><strong>Dengue Early Warning System</strong><br>Health Science Reports, 2025</li>
-    <li><strong>Spatial Analysis of Malaria</strong><br>Scientific Reports, 2025</li>
-    <li><strong>Spatiotemporal Mortality Modeling</strong><br>BMJ Open, 2026</li>
-  </ul>
-
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="grid-2">
-
-    <div class="box">
-      <h3>Dengue Dashboard</h3>
-      <p>Prediction and visualization system.</p>
+    <div class="metric-box">
+      <div class="metric-value" id="citations">520</div>
+      <div class="metric-label">Citations</div>
     </div>
 
-    <div class="box">
-      <h3>Systematic Review Tool</h3>
-      <p>PRISMA based screening tool.</p>
+    <div class="metric-box">
+      <div class="metric-value" id="hindex">9</div>
+      <div class="metric-label">H-index</div>
+    </div>
+
+    <div class="metric-box">
+      <div class="metric-value" id="i10">7</div>
+      <div class="metric-label">i10-index</div>
+    </div>
+
+    <div class="metric-box">
+      <div class="metric-value" id="publications">12</div>
+      <div class="metric-label">Publications</div>
     </div>
 
   </div>
-
 </section>
 
-<section id="service">
-  <h2>Academic Service</h2>
-  <p>
-    Reviewer for BMJ and PLOS journals and related international publications.
-  </p>
-</section>
+<!-- SIMPLE SCRIPT (STATIC NOW, READY FOR FUTURE API) -->
+<script>
+/*
+You can later replace this with real data from an API or backend.
+For now it just animates numbers slightly.
+*/
 
-</main>
+function animateValue(id, start, end, duration) {
+  let obj = document.getElementById(id);
+  let range = end - start;
+  let current = start;
+  let increment = range / (duration / 20);
 
-<footer>
-  <p>© 2026 Md. Abu Bokkor Shiddik</p>
-</footer>
+  let timer = setInterval(function () {
+    current += increment;
+    if (current >= end) {
+      obj.innerText = end;
+      clearInterval(timer);
+    } else {
+      obj.innerText = Math.floor(current);
+    }
+  }, 20);
+}
+
+animateValue("citations", 0, 520, 1000);
+animateValue("hindex", 0, 9, 1000);
+animateValue("i10", 0, 7, 1000);
+animateValue("publications", 0, 12, 1000);
+</script>
 
 </body>
 </html>
