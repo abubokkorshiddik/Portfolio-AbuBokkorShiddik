@@ -21,12 +21,12 @@ body {
 /* NAV */
 .nav {
   background: #020617;
-  padding: 10px 20px;
+  padding: 12px 20px;
 }
 
 .nav a {
   color: #cbd5e1;
-  margin-right: 15px;
+  margin-right: 18px;
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ body {
   margin: auto;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
 }
 
@@ -56,11 +56,7 @@ body {
 
 .subtitle {
   color: #cbd5e1;
-}
-
-.contact {
-  color: #e2e8f0;
-  line-height: 1.6;
+  font-size: 18px;
 }
 
 /* BUTTONS */
@@ -69,7 +65,8 @@ body {
   color: white;
   padding: 10px 16px;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .btn-outline {
@@ -77,8 +74,8 @@ body {
   color: #60a5fa;
   padding: 10px 16px;
   text-decoration: none;
-  border-radius: 4px;
-  margin-left: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 /* PHOTO */
@@ -111,10 +108,11 @@ h2 {
 /* BOX */
 .box {
   background: white;
-  padding: 16px;
+  padding: 18px;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   margin-top: 15px;
+  line-height: 1.7;
 }
 
 /* GRID */
@@ -124,21 +122,25 @@ h2 {
   gap: 20px;
 }
 
-/* READ MORE */
-.more {
-  color: #1d4ed8;
-  text-decoration: none;
-  font-weight: 500;
-}
-
 /* FOOTER */
 footer {
   background: #020617;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
+.footer-links a {
+  color: #93c5fd;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -171,14 +173,23 @@ footer {
 
     <div>
       <h1>Md. Abu Bokkor Shiddik</h1>
-      <p class="subtitle">Researcher | Machine Learning & Public Health</p>
+      <p class="subtitle">Researcher | Machine Learning | Public Health Analytics</p>
 
-      <p class="contact">
-        Email: abubokkor.brur60@gmail.com<br>
-        Phone: +8801874001360<br>
+      <p>
+        I work at the intersection of artificial intelligence, epidemiology, and data science,
+        focusing on disease prediction, climate-health interactions, and explainable machine learning
+        models. My research integrates large-scale datasets with advanced computational techniques
+        to support public health decision-making.
+      </p>
+
+      <p>
+        <strong>Contact:</strong><br>
+        abubokkor.brur60@gmail.com<br>
+        +8801874001360<br>
         Rangpur, Bangladesh
       </p>
 
+      <!-- Buttons -->
       <a class="btn" href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">
         Google Scholar
       </a>
@@ -186,6 +197,9 @@ footer {
       <a class="btn-outline" href="Md_Abu_Bokkor_Shiddik_CV.pdf">
         Download CV
       </a>
+
+      <a class="btn" href="research.html">Research</a>
+
     </div>
 
     <div class="photo">
@@ -202,60 +216,72 @@ footer {
   <h2>About</h2>
 
   <div class="box">
-    <p>
-      I am a researcher specializing in machine learning, explainable artificial intelligence, and
-      data-driven public health systems. My work focuses on developing predictive models for
-      infectious diseases and analyzing complex relationships between climate, socioeconomic,
-      and health-related factors.
-    </p>
+    I am actively engaged in interdisciplinary research combining statistical modeling, machine learning,
+    and public health science. My work includes analyzing infectious diseases such as dengue, malaria,
+    and tuberculosis using spatial-temporal approaches. I also focus on explainable AI techniques to
+    make models more interpretable and useful for policymakers.
 
-    <a class="more" href="research.html">Read full research details →</a>
+    <br><br>
+    I have contributed to multiple peer-reviewed publications and ongoing research projects involving
+    global datasets and real-world health challenges.
+
+    <br><br>
+    <a href="research.html">Explore full research profile →</a>
   </div>
 </section>
 
 <!-- RESEARCH -->
 <section>
-  <h2>Research Focus</h2>
+  <h2>Research Areas</h2>
 
   <div class="grid">
 
     <div class="box">
-      <strong>Disease Prediction</strong>
-      <p>AI-based forecasting for dengue, tuberculosis, and malaria.</p>
+      <strong>Machine Learning & AI</strong>
+      <p>
+        Development and application of predictive models including deep learning and ensemble methods
+        for classification and regression problems in health data.
+      </p>
     </div>
 
     <div class="box">
       <strong>Explainable AI</strong>
-      <p>Interpreting machine learning models using SHAP and LIME.</p>
+      <p>
+        Use of SHAP, LIME, and interpretation methods to explain model outputs and improve trust
+        in AI-driven decision systems.
+      </p>
     </div>
 
     <div class="box">
-      <strong>Spatial Analysis</strong>
-      <p>Geographic and temporal modeling of disease patterns.</p>
+      <strong>Public Health Modeling</strong>
+      <p>
+        Analysis of infectious disease dynamics, risk factors, and environmental interactions
+        using statistical and computational approaches.
+      </p>
     </div>
 
     <div class="box">
-      <strong>Public Health Data</strong>
-      <p>Integration of climate, socioeconomic, and health datasets.</p>
+      <strong>Spatial & Temporal Analysis</strong>
+      <p>
+        Integration of geographic and time-series data to understand disease spread and
+        regional risk variations.
+      </p>
     </div>
 
   </div>
-
-  <a class="more" href="research.html">Explore full research →</a>
 </section>
 
 <!-- PUBLICATIONS -->
 <section>
-  <h2>Selected Publications</h2>
+  <h2>Publications</h2>
 
   <div class="box">
-    <p>
-      Published in leading journals including <strong>Scientific Reports</strong>,
-      <strong>BMJ Open</strong>, and <strong>Global Epidemiology</strong>, focusing on AI-driven
-      epidemiological modeling and public health analytics.
-    </p>
+    I have published research in international journals focusing on machine learning applications
+    in public health, disease prediction, and epidemiological modeling. My work contributes to
+    understanding complex interactions between environmental, socioeconomic, and biological factors.
 
-    <a class="more" href="publications.html">View all publications →</a>
+    <br><br>
+    <a href="publications.html">View all publications →</a>
   </div>
 </section>
 
@@ -266,38 +292,43 @@ footer {
   <div class="grid">
 
     <div class="box">
-      <strong>Dengue Dashboard</strong>
-      <p>AI-based outbreak prediction and visualization system.</p>
+      <strong>Dengue Prediction Dashboard</strong>
+      <p>
+        An interactive system for forecasting dengue outbreaks using machine learning models and
+        visualization tools.
+      </p>
     </div>
 
     <div class="box">
-      <strong>Systematic Review Tool</strong>
-      <p>Automated PRISMA-based screening system for research.</p>
+      <strong>Systematic Review Dashboard</strong>
+      <p>
+        A tool designed for screening and analyzing scientific publications with PRISMA-based filtering
+        and visualization.
+      </p>
     </div>
 
   </div>
 
-  <a class="more" href="projects.html">View all projects →</a>
-</section>
-
-<!-- SERVICE -->
-<section>
-  <h2>Academic Service</h2>
-
-  <div class="box">
-    <p>
-      Active reviewer for international journals including BMJ and PLOS, contributing to
-      scientific quality and peer review processes in global research.
-    </p>
-
-    <a class="more" href="service.html">More details →</a>
-  </div>
+  <br>
+  <a href="projects.html">Explore all projects →</a>
 </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Md. Abu Bokkor Shiddik</p>
+
+  <p>Md. Abu Bokkor Shiddik</p>
+
+  <div class="footer-links">
+    <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">Google Scholar</a>
+    <a href="Md_Abu_Bokkor_Shiddik_CV.pdf">Download CV</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+  </div>
+
+  <p>© 2026 All Rights Reserved</p>
+
 </footer>
 
 </body>
