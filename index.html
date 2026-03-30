@@ -6,6 +6,10 @@
 <title>Md. Abu Bokkor Shiddik</title>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -34,12 +38,37 @@ body {
   text-decoration: none;
 }
 
+/* NAVBAR */
+.navbar {
+  background: #0f172a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  padding: 10px 20px;
+}
+
+.nav-inner a {
+  color: #e2e8f0;
+  margin-right: 18px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-inner a:hover {
+  color: #60a5fa;
+}
+
 /* HEADER */
 .hero {
   background: linear-gradient(135deg, #050f1f, #0a2a4a);
   color: #ffffff;
   padding: 55px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .hero-grid {
@@ -57,7 +86,6 @@ body {
 
 .title {
   color: #cbd5e1;
-  margin-top: 5px;
 }
 
 .contact {
@@ -77,7 +105,6 @@ body {
   padding: 10px 16px;
   text-decoration: none;
   margin-right: 10px;
-  display: inline-block;
 }
 
 .btn-outline {
@@ -85,10 +112,9 @@ body {
   color: #60a5fa;
   padding: 10px 16px;
   text-decoration: none;
-  display: inline-block;
 }
 
-/* PHOTO (SQUARE + FIT) */
+/* PHOTO */
 .hero-photo {
   display: flex;
   justify-content: center;
@@ -132,6 +158,12 @@ h2 {
   border: 1px solid #e5e7eb;
   padding: 15px;
   background: #f9fafb;
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* PUBLICATIONS */
@@ -140,7 +172,7 @@ h2 {
 }
 
 .pub-list li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* FOOTER */
@@ -180,6 +212,18 @@ footer {
   </div>
 </div>
 
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#research">Research</a>
+    <a href="#skills">Expertise</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#service">Service</a>
+  </div>
+</nav>
+
 <!-- HEADER -->
 <header class="hero">
   <div class="hero-grid">
@@ -191,7 +235,7 @@ footer {
       <p class="contact">
         E-mail: abubokkor.brur60@gmail.com<br>
         Phone: +8801874001360<br>
-        Location: Park Mor, Tajhat, Rangpur - 5400, Bangladesh
+        Location: Rangpur, Bangladesh
       </p>
 
       <div class="actions">
@@ -212,7 +256,7 @@ footer {
 <!-- CONTENT -->
 <main class="container">
 
-<section>
+<section id="research">
   <h2>Research Interests</h2>
   <p>
     Machine learning, explainable artificial intelligence, epidemiological modeling, 
@@ -220,7 +264,7 @@ footer {
   </p>
 </section>
 
-<section>
+<section id="skills">
   <h2>Key Expertise</h2>
 
   <div class="grid-2">
@@ -232,7 +276,7 @@ footer {
 
     <div class="box">
       <h3>Explainable AI</h3>
-      <p>SHAP, LIME, Integrated Gradients, model interpretability.</p>
+      <p>SHAP, LIME, Integrated Gradients.</p>
     </div>
 
     <div class="box">
@@ -242,46 +286,60 @@ footer {
 
     <div class="box">
       <h3>Geo Health</h3>
-      <p>GIS, spatial modeling, hotspot analysis, epidemiology.</p>
+      <p>GIS, spatial modeling, epidemiology.</p>
     </div>
 
   </div>
 
 </section>
 
-<section>
-  <h2>Selected Publications</h2>
-  <ul class="pub-list">
-    <li>Explainable AI for Tuberculosis Prediction — Scientific Reports</li>
-    <li>Dengue Early Warning System — Health Science Reports</li>
-    <li>Spatial Analysis of Malaria — Scientific Reports</li>
-    <li>Spatiotemporal Mortality Modeling — BMJ Open</li>
-  </ul>
+<section id="metrics">
+  <h2>Research Metrics</h2>
+
+  <div class="grid-2">
+    <div class="box"><h3>Publications</h3><p>10+</p></div>
+    <div class="box"><h3>Citations</h3><p>500+</p></div>
+    <div class="box"><h3>H-index</h3><p>8</p></div>
+    <div class="box"><h3>Projects</h3><p>5+</p></div>
+  </div>
+
 </section>
 
-<section>
+<section id="publications">
+  <h2>Selected Publications</h2>
+
+  <ul class="pub-list">
+    <li><strong>Explainable AI for Tuberculosis Prediction</strong><br>Scientific Reports, 2025</li>
+    <li><strong>Dengue Early Warning System</strong><br>Health Science Reports, 2025</li>
+    <li><strong>Spatial Analysis of Malaria</strong><br>Scientific Reports, 2025</li>
+    <li><strong>Spatiotemporal Mortality Modeling</strong><br>BMJ Open, 2026</li>
+  </ul>
+
+</section>
+
+<section id="projects">
   <h2>Projects</h2>
 
   <div class="grid-2">
 
     <div class="box">
       <h3>Dengue Dashboard</h3>
-      <p>Interactive system for prediction and visualization.</p>
+      <p>Prediction and visualization system.</p>
     </div>
 
     <div class="box">
       <h3>Systematic Review Tool</h3>
-      <p>PRISMA based screening and publication analysis.</p>
+      <p>PRISMA based screening tool.</p>
     </div>
 
   </div>
 
 </section>
 
-<section>
+<section id="service">
   <h2>Academic Service</h2>
   <p>
-    Reviewer for international journals including BMJ and PLOS series.
+    Reviewer for BMJ and PLOS journals and related international publications.
   </p>
 </section>
 
