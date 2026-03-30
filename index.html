@@ -7,7 +7,9 @@
 
 <style>
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -24,17 +26,11 @@ body {
 }
 
 .topbar-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   padding: 8px 20px;
-}
-
-.top-links a {
-  color: #93c5fd;
-  margin-left: 12px;
-  text-decoration: none;
 }
 
 /* NAV */
@@ -46,14 +42,14 @@ body {
 }
 
 .nav-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 12px 20px;
 }
 
 .nav-inner a {
   color: #cbd5e1;
-  margin-right: 18px;
+  margin-right: 16px;
   text-decoration: none;
 }
 
@@ -65,83 +61,58 @@ body {
 .hero {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 60px 20px;
+  padding: 50px 20px;
 }
 
-.hero-grid {
-  max-width: 1100px;
+.hero-inner {
+  max-width: 1200px;
   margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 25px;
-  align-items: center;
 }
 
-.hero h1 {
-  font-size: 40px;
-}
-
-.title {
-  color: #cbd5e1;
-}
-
-/* BUTTONS */
-.actions {
-  margin-top: 20px;
-}
-
-.btn {
-  background: #1d4ed8;
-  color: white;
-  padding: 10px 16px;
-  text-decoration: none;
-  margin-right: 10px;
-  border-radius: 4px;
-}
-
-.btn-outline {
-  border: 1px solid #60a5fa;
-  color: #60a5fa;
-  padding: 10px 16px;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-/* PHOTO */
-.photo-frame {
-  width: 200px;
-  height: 200px;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 3px solid #1e3a8a;
-}
-
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* MAIN */
+/* SECTION */
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 30px 15px;
 }
 
-h2 {
+.section-title {
   border-left: 4px solid #1d4ed8;
   padding-left: 10px;
+  margin-top: 40px;
 }
 
-/* BOX */
-.box {
+/* CARD */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.card {
   background: white;
-  padding: 18px;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
-  margin-top: 15px;
-  line-height: 1.7;
+  padding: 14px;
+}
+
+.card strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.card small {
+  color: #64748b;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 /* FOOTER */
@@ -149,12 +120,12 @@ footer {
   background: #020617;
   color: #e2e8f0;
   text-align: center;
-  padding: 30px;
+  padding: 25px;
+  margin-top: 40px;
 }
 
-.footer-links a {
+footer a {
   color: #93c5fd;
-  margin: 0 10px;
   text-decoration: none;
 }
 
@@ -168,136 +139,125 @@ footer {
 <div class="topbar">
   <div class="topbar-inner">
     <span>Academic Portfolio</span>
-    <div class="top-links">
-      <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">Google Scholar</a>
-      <a href="https://orcid.org">ORCID</a>
-      <a href="https://github.com">GitHub</a>
-    </div>
+    <span>
+      <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" style="color:#93c5fd;">Google Scholar</a>
+    </span>
   </div>
 </div>
 
 <!-- NAV -->
 <nav class="navbar">
   <div class="nav-inner">
-    <a href="/">Home</a>
-    <a href="about.html">About</a>
-    <a href="research.html">Research</a>
-    <a href="skills.html">Skills</a>
-    <a href="publications.html">Publications</a>
-    <a href="projects.html">Projects</a>
-    <a href="service.html">Service</a>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#courses">Courses</a>
+    <a href="#service">Service</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="hero-grid">
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Md. Abu Bokkor Shiddik</h1>
+    <p>Researcher | Machine Learning | Public Health Analytics</p>
 
-    <div>
-      <h1>Md. Abu Bokkor Shiddik</h1>
-      <p class="title">Researcher | Machine Learning | Public Health</p>
-
-      <p>
-        Email: abubokkor.brur60@gmail.com<br>
-        Phone: +8801874001360<br>
-        Location: Rangpur, Bangladesh
-      </p>
-
-      <div class="actions">
-        <a class="btn" href="Md_Abu_Bokkor_Shiddik_CV.pdf">Download CV</a>
-        <a class="btn-outline" href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">Google Scholar</a>
-        <a class="btn-outline" href="publications.html">Publications</a>
-      </div>
-
-    </div>
-
-    <div class="photo-frame">
-      <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/ABS.jpeg?raw=true">
-    </div>
-
+    <p>
+      📧 abubokkor.brur60@gmail.com <br>
+      📞 +8801874001360 <br>
+      📍 Rangpur, Bangladesh
+    </p>
   </div>
-</header>
+</section>
 
-<main class="container">
+<div class="container">
 
 <!-- ABOUT -->
-<section>
-  <h2>About</h2>
-  <div class="box">
-    Researcher focusing on machine learning, explainable AI, and public health analytics.
-    I work with real-world datasets integrating environmental and socioeconomic factors
-    to understand disease dynamics and support data-driven decision making.
-    <br><br>
-    <a href="about.html">Read full profile →</a>
-  </div>
-</section>
+<h2 class="section-title" id="about">About</h2>
+<p>
+Researcher in statistics with focus on machine learning, deep learning, explainable AI, and public health data analysis. Work includes disease prediction, climate-health modeling, and spatio-temporal data analysis using modern AI methods.
+</p>
 
 <!-- RESEARCH -->
-<section>
-  <h2>Research Areas</h2>
-  <div class="box">
-    Machine Learning, Deep Learning, Explainable AI, Spatial Modeling, Climate-Health Analysis,
-    Epidemiological Modeling, and Data-Driven Public Health Systems.
-    <br><br>
-    <a href="research.html">Explore research →</a>
-  </div>
-</section>
+<h2 class="section-title" id="research">Research Areas</h2>
+<p>
+Machine learning, deep learning, explainable AI, epidemiology, climate-health modeling, spatio-temporal analysis, and public health informatics.
+</p>
 
 <!-- PUBLICATIONS -->
-<section>
-  <h2>Publications</h2>
-  <div class="box">
-    Selected peer-reviewed articles in global health, epidemiology, and AI-based modeling.
-    <br><br>
-    <a href="publications.html">View publications →</a>
+<h2 class="section-title" id="publications">Publications (Selected)</h2>
+
+<div class="card-grid">
+
+  <div class="card">
+    <strong>Dengue prediction using explainable AI</strong>
+    Global Epidemiology, 2025
   </div>
-</section>
+
+  <div class="card">
+    <strong>Tuberculosis modeling using ML</strong>
+    Scientific Reports, 2025
+  </div>
+
+  <div class="card">
+    <strong>Malaria risk prediction using AI</strong>
+    Scientific Reports, 2025
+  </div>
+
+</div>
+
+<a class="btn" href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">View Google Scholar</a>
 
 <!-- PROJECTS -->
-<section>
-  <h2>Projects</h2>
-  <div class="box">
-    Interactive dashboards, R tools, and AI systems including dengue prediction and
-    systematic review automation tools.
-    <br><br>
-    <a href="projects.html">View projects →</a>
-  </div>
-</section>
+<h2 class="section-title" id="projects">Projects</h2>
 
-<!-- SKILLS -->
-<section>
-  <h2>Skills</h2>
-  <div class="box">
-    Programming, Machine Learning, Deep Learning, Statistical Modeling, and Explainable AI methods.
-    <br><br>
-    <a href="skills.html">View skills →</a>
+<div class="card-grid">
+
+  <div class="card">
+    <strong>Dengue Dashboard</strong>
+    AI-based early warning system with visualization<br>
+    <small>Live interactive system</small>
   </div>
-</section>
+
+  <div class="card">
+    <strong>Systematic Review Dashboard</strong>
+    Literature search, screening, PRISMA workflow<br>
+    <small>Research automation tool</small>
+  </div>
+
+  <div class="card">
+    <strong>R Package: whatdis()</strong>
+    Data distribution detection and visualization<br>
+    <small>Open-source tool</small>
+  </div>
+
+</div>
+
+<!-- COURSES -->
+<h2 class="section-title" id="courses">Courses & Training</h2>
+
+<div class="card">
+Completed multiple professional and academic courses from IBM, UNESCO, Elsevier Researcher Academy, University of London, SUNY, and UNICEF, covering machine learning, research methodology, scientific writing, data science, and statistical analysis.
+</div>
 
 <!-- SERVICE -->
-<section>
-  <h2>Academic Service</h2>
-  <div class="box">
-    Reviewer for international journals including BMJ Global Health, BMJ Public Health,
-    Health Science Reports, and PLOS Digital Health.
-    <br><br>
-    <a href="service.html">View service →</a>
-  </div>
-</section>
+<h2 class="section-title" id="service">Academic Service</h2>
 
-</main>
+<div class="card">
+Reviewer for BMJ Global Health, BMJ Public Health, Health Science Reports, Journal of Mathematics and Statistics, and PLOS Digital Health with multiple review contributions across 2025–2026.
+</div>
+
+</div>
 
 <!-- FOOTER -->
 <footer>
-
   <p>Md. Abu Bokkor Shiddik</p>
-
-  <div class="footer-links">
-    <a href="/">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="publications.html">Publications</a>
-  </div>
-
+  <p>
+    <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">Google Scholar</a> |
+    <a href="#projects">Projects</a> |
+    <a href="#publications">Publications</a>
+  </p>
 </footer>
 
 </body>
