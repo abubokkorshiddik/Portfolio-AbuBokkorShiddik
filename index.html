@@ -47,6 +47,7 @@ body {
   align-items: center;
 }
 
+/* IMAGE ROW */
 .image-row {
   display: flex;
   gap: 10px;
@@ -61,12 +62,14 @@ body {
   border: 3px solid #1e3a8a;
 }
 
+/* LINKS */
 .links a {
   color: #93c5fd;
   margin-right: 10px;
   text-decoration: none;
 }
 
+/* BUTTON */
 .cv-btn {
   display: inline-block;
   margin-top: 12px;
@@ -77,7 +80,7 @@ body {
   border-radius: 4px;
 }
 
-/* CONTENT */
+/* CONTAINER */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -90,6 +93,7 @@ h2 {
   margin-top: 40px;
 }
 
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
@@ -97,6 +101,7 @@ h2 {
   margin-top: 15px;
 }
 
+/* CARD */
 .card {
   background: white;
   padding: 14px;
@@ -104,6 +109,24 @@ h2 {
   border: 1px solid #e5e7eb;
 }
 
+/* SEE MORE */
+.see-more {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #1d4ed8;
+  color: #1d4ed8;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.see-more:hover {
+  background: #1d4ed8;
+  color: white;
+}
+
+/* FOOTER */
 footer {
   background: #020617;
   color: #e2e8f0;
@@ -120,6 +143,11 @@ footer {
 
   .image-row {
     justify-content: center;
+  }
+
+  .image-row img {
+    width: 30%;
+    height: 120px;
   }
 }
 
@@ -142,6 +170,7 @@ footer {
 <section class="hero">
   <div class="hero-grid">
 
+    <!-- LEFT TEXT -->
     <div>
       <h1>Md. Abu Bokkor Shiddik</h1>
       <p>Researcher | Machine Learning | Public Health</p>
@@ -164,6 +193,7 @@ footer {
          class="cv-btn" target="_blank">Download CV</a>
     </div>
 
+    <!-- RIGHT IMAGES -->
     <div class="image-row">
       <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/ABS.jpeg?raw=true">
       <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/isrt.jpeg?raw=true">
@@ -175,11 +205,13 @@ footer {
 
 <div class="container">
 
+<!-- ABOUT -->
 <h2>About</h2>
 <div class="card">
 Researcher in statistics focusing on machine learning, explainable AI, and public health analytics.
 </div>
 
+<!-- PUBLICATIONS -->
 <h2>Publications</h2>
 <div class="grid">
 <div class="card"><strong>Tuberculosis prediction using AI</strong><br>Scientific Reports, 2025</div>
@@ -187,27 +219,34 @@ Researcher in statistics focusing on machine learning, explainable AI, and publi
 <div class="card"><strong>Explainable dengue modeling</strong><br>Global Epidemiology, 2025</div>
 <div class="card"><strong>Malaria modeling</strong><br>Scientific Reports, 2025</div>
 </div>
+<a href="publications.html" class="see-more">See more →</a>
 
+<!-- PROJECTS -->
 <h2>Projects</h2>
 <div class="grid">
 <div class="card"><strong>Dengue Dashboard</strong><br>Prediction and visualization</div>
 <div class="card"><strong>Systematic Review Dashboard</strong><br>Filtering and PRISMA tool</div>
 <div class="card"><strong>whatdis() R Package</strong><br>Distribution analysis</div>
 </div>
+<a href="projects.html" class="see-more">See more →</a>
 
+<!-- COURSES -->
 <h2>Courses</h2>
 <div class="grid">
 <div class="card"><strong>Gen AI Research Workflow</strong><br>Elsevier, 2026</div>
 <div class="card"><strong>Machine Learning with Python</strong><br>IBM, 2024</div>
 <div class="card"><strong>Climate Risk Analysis</strong><br>UNESCO, 2024</div>
 </div>
+<a href="courses.html" class="see-more">See more →</a>
 
-<h2>Service</h2>
+<!-- SERVICE -->
+<h2>Academic Service</h2>
 <div class="grid">
 <div class="card"><strong>BMJ Global Health</strong><br>Reviewer, 2026</div>
 <div class="card"><strong>PLOS Digital Health</strong><br>Reviewer, 2025–2026</div>
 <div class="card"><strong>Health Science Reports</strong><br>Reviewer, 2025–2026</div>
 </div>
+<a href="service.html" class="see-more">See more →</a>
 
 </div>
 
