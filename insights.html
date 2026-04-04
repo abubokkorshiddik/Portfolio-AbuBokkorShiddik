@@ -33,14 +33,28 @@ body {
   align-items: center;
 }
 
+/* NAV LINKS */
+.nav-inner a {
+  color: white;       /* white color */
+  font-weight: bold;  /* bold text */
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.nav-inner a:hover {
+  color: #60a5fa;
+  background: rgba(255,255,255,0.1);
+}
+
 /* Dropdown menu */
 .nav-inner .dropdown {
   position: relative;
 }
 
 .nav-inner .dropbtn {
-  color: #cbd5e1;
-  font-weight: 500;
+  color: white;
+  font-weight: bold;
   background: none;
   border: none;
   cursor: pointer;
@@ -106,7 +120,6 @@ body {
   margin: auto;
   padding: 40px 20px;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 /* POSTS AREA */
@@ -121,12 +134,10 @@ body {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .post img {
   width: 100%;
-  border-bottom: 1px solid #e2e8f0;
 }
 
 .post-content {
@@ -136,8 +147,7 @@ body {
 .post-title {
   font-size: 22px;
   color: #1e3a8a;
-  margin-bottom: 8px;
-  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 /* AUTHOR LINE */
@@ -206,11 +216,6 @@ body {
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-.share-btn:hover {
-  background: #2563eb;
 }
 
 /* RIGHT SIDEBAR */
@@ -229,12 +234,12 @@ body {
   margin-top: 0;
   font-size: 18px;
   color: #1e3a8a;
-  margin-bottom: 12px;
 }
 
 .sidebar a {
   display: block;
-  color: #1d4ed8;
+  color: white;       /* white color */
+  font-weight: bold;  /* bold text */
   text-decoration: none;
   margin-bottom: 10px;
   font-size: 15px;
@@ -289,7 +294,7 @@ footer {
 
     <!-- POST 1 -->
     <div class="post" id="ml-journey">
-      <img src="images/post1.jpg" alt="Machine Learning">
+      <img src="images/post1.jpg">
       <div class="post-content">
         <div class="post-title">My Journey into Machine Learning Research</div>
         <div class="author-line">
@@ -311,7 +316,7 @@ footer {
 
     <!-- POST 2 -->
     <div class="post" id="data-vis">
-      <img src="images/post2.jpg" alt="Data Visualization">
+      <img src="images/post2.jpg">
       <div class="post-content">
         <div class="post-title">Learning Data Visualization in R</div>
         <div class="author-line">
@@ -336,9 +341,9 @@ footer {
   <div class="sidebar">
     <h3>Quick View</h3>
     <a href="videos.html">🎥 Videos</a>
+    <!-- Future: add Facebook posts -->
     <a href="insights.html#ml-journey">📝 ML Journey</a>
     <a href="insights.html#data-vis">📝 Data Viz</a>
-    <!-- Future: add Facebook posts or more links -->
   </div>
 
 </div>
