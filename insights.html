@@ -256,6 +256,61 @@ footer {
   background: #020617;
   color: #e2e8f0;
 }
+  /* MOBILE FIXES */
+@media (max-width: 768px) {
+  .main-wrapper {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: unset;  /* remove fixed height */
+    position: relative; /* no sticky */
+    top: unset;
+    padding: 10px 0;
+    border-radius: 6px;
+  }
+
+  .sidebar h3 {
+    font-size: 16px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .post-content {
+    padding: 15px;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .read-more {
+    font-size: 13px;
+  }
+
+  .share-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
 </style>
 </head>
 
