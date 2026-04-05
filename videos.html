@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Navbar Example</title>
+<title>Videos | Md. Abu Bokkor Shiddik</title>
 
 <style>
 
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
 }
 
 /* NAVBAR */
@@ -17,24 +19,21 @@ body {
   background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 
-/* INNER */
 .nav-inner {
   max-width: 1200px;
   margin: auto;
   padding: 12px 20px;
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* LINKS */
 .nav-inner a {
   color: #cbd5e1;
   text-decoration: none;
-  font-weight: 500;
   padding: 6px 10px;
   border-radius: 4px;
 }
@@ -44,88 +43,173 @@ body {
   color: #60a5fa;
 }
 
-/* DROPDOWN */
-.dropdown {
-  position: relative;
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #020617, #0b3a6e);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* BUTTON */
-.dropbtn {
-  background: none;
+/* GRID */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* TITLE */
+.section-title {
+  grid-column: 1 / -1;
+  font-size: 22px;
+  color: #1e3a8a;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* CARD */
+.video-block {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.video-block:hover {
+  transform: translateY(-5px);
+}
+
+.video-block iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
   border: none;
-  color: #cbd5e1;
-  font-weight: 500;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 4px;
 }
 
-.dropbtn:hover {
-  background: rgba(255,255,255,0.1);
-  color: #60a5fa;
+/* CONTENT */
+.video-content {
+  padding: 12px;
 }
 
-/* DROPDOWN CONTENT */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: #0b2d5c;
-  min-width: 160px;
-  border-radius: 6px;
-  top: 100%;
-  left: 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.video-title {
+  font-size: 18px;
+  color: #1e3a8a;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
-/* SHOW ON HOVER */
-.dropdown:hover .dropdown-content {
-  display: block;
+.video-description {
+  font-size: 14px;
+  color: #555;
 }
 
-/* DROPDOWN LINKS */
-.dropdown-content a {
-  display: block;
-  padding: 8px 12px;
-  color: #cbd5e1;
-}
-
-.dropdown-content a:hover {
-  background: #1e3a8a;
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
   color: white;
 }
 
-</style>
+/* RESPONSIVE */
+@media(max-width: 900px){
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media(max-width: 600px){
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-inner">
-
     <a href="home.html">Home</a>
     <a href="conference-and-workshop.html">Conference & Workshop</a>
     <a href="publications.html">Publications</a>
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
     <a href="service.html">Service</a>
-
-    <div class="dropdown">
-      <button class="dropbtn">Insights ▼</button>
-      <div class="dropdown-content">
-        <a href="insights.html">Posts</a>
-        <a href="videos.html">Videos</a>
-      </div>
-    </div>
-
+    <a href="videos.html">Videos</a>
   </div>
 </nav>
 
-<!-- SAMPLE CONTENT -->
-<div style="padding:40px;">
-  <h2>Welcome</h2>
-  <p>This is a working navbar example.</p>
+<!-- HEADER -->
+<div class="header">
+  <h1>Videos & Learning Resources</h1>
+  <p>Programming, statistics and research learning</p>
 </div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <div class="section-title">Latest Video</div>
+
+  <div class="video-block">
+    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCmue_D64tjDjTueuhLUx67g"></iframe>
+    <div class="video-content">
+      <div class="video-title">Newest Upload</div>
+      <div class="video-description">Automatically shows latest video.</div>
+    </div>
+  </div>
+
+  <div class="video-block">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX9bhNDXnYs4D3NPELKC74NB"></iframe>
+    <div class="video-content">
+      <div class="video-title">Python Playlist</div>
+      <div class="video-description">Python for ML & Data Science</div>
+    </div>
+  </div>
+
+  <div class="video-block">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX_Vlid1zJ3vvHfi_0yeQYBe"></iframe>
+    <div class="video-content">
+      <div class="video-title">R Programming</div>
+      <div class="video-description">Statistics and visualization</div>
+    </div>
+  </div>
+
+  <div class="video-block">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX8rcFR38G-JZVMrClNyNIrE"></iframe>
+    <div class="video-content">
+      <div class="video-title">Statistics</div>
+      <div class="video-description">Core concepts and analysis</div>
+    </div>
+  </div>
+
+  <div class="video-block">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX9e1yPUnjXNE-46HC3Kd9hs"></iframe>
+    <div class="video-content">
+      <div class="video-title">Book Reviews</div>
+      <div class="video-description">Academic book insights</div>
+    </div>
+  </div>
+
+  <div class="video-block">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX-0hAM0T15l2732WJeKllcl"></iframe>
+    <div class="video-content">
+      <div class="video-title">Digital Projects</div>
+      <div class="video-description">Tools and project reviews</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Md. Abu Bokkor Shiddik
+</footer>
 
 </body>
 </html>
