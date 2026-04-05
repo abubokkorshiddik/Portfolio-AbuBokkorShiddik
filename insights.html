@@ -39,13 +39,15 @@ body {
   gap: 8px;
 }
 
+/* LINKS */
 .nav-inner a {
   color: white;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 5px;
   transition: 0.25s;
+  font-size: 15px;
 }
 
 .nav-inner a:hover {
@@ -59,8 +61,8 @@ body {
 
 .nav-inner .dropbtn {
   color: white;
-  font-weight: 500;
-  font-size: 17px;
+  font-weight: 700;
+  font-size: 15px;
   font-family: inherit;
   background: none;
   border: none;
@@ -99,6 +101,8 @@ body {
   padding: 8px 12px;
   text-decoration: none;
   display: block;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .nav-inner .dropdown-content a:hover {
@@ -267,8 +271,22 @@ footer {
   color: #e2e8f0;
 }
 
+/* ========================= */
+/* TABLET */
+/* ========================= */
+@media (max-width: 900px) {
+  .nav-inner a,
+  .nav-inner .dropbtn {
+    font-size: 14px;
+  }
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
+
+  .nav-inner a {
+    font-size: 13px;
+  }
 
   .main-wrapper {
     flex-direction: column;
