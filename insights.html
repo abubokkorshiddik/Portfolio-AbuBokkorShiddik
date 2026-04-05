@@ -402,48 +402,83 @@ footer {
     <!-- CONTENT -->
     <div class="post-text short-text">
 
-When working with real-world datasets, variables often come with very different scales. For example, one variable may represent population in millions, while another represents a percentage or a rate. If we use such variables directly in analysis or machine learning models, the results may become biased toward variables with larger scales.
+      <p>
+        When working with real-world datasets, variables often come with very different scales. 
+        For example, one variable may represent population in millions, while another represents 
+        a percentage or a rate. If we use such variables directly in analysis or machine learning 
+        models, the results may become biased toward variables with larger scales.
+      </p>
 
-To solve this issue, two common techniques are used: Normalization and Standardization. Although both aim to make variables comparable, they work in different ways.
+      <p>
+        To solve this issue, two common techniques are used: 
+        <b>Normalization</b> and <b>Standardization</b>. Although both aim to make variables comparable, 
+        they work in different ways.
+      </p>
 
-🔹 Normalization
+      <!-- SUBTITLE -->
+      <h3>Normalization</h3>
 
-Normalization rescales data so that all values fall within a fixed range, usually between 0 and 1.
+      <p>
+        Normalization rescales data so that all values fall within a fixed range, usually between 0 and 1.
+      </p>
 
-In this approach, the smallest value becomes 0, the largest value becomes 1, and the rest of the values are scaled proportionally within this interval.
+      <p>
+        In this approach, the smallest value becomes 0, the largest value becomes 1, and the rest 
+        of the values are scaled proportionally within this interval.
+      </p>
 
-This method preserves the relative relationships between observations while restricting the range of the data.
+      <p>
+        This method preserves the relative relationships between observations while restricting the 
+        range of the data.
+      </p>
 
-Normalization is commonly useful in:
-• Neural networks  
-• Distance-based algorithms  
-• Image processing  
-• Situations where bounded values are required  
+      <!-- BULLET LIST -->
+      <p><b>Normalization is commonly useful in:</b></p>
+      <ul>
+        <li>Neural networks</li>
+        <li>Distance-based algorithms</li>
+        <li>Image processing</li>
+        <li>Situations where bounded values are required</li>
+      </ul>
 
-🔹 Standardization
+      <!-- SUBTITLE -->
+      <h3>Standardization</h3>
 
-Standardization transforms data so that it is centered around the average of the dataset.
+      <p>
+        Standardization transforms data so that it is centered around the average of the dataset.
+      </p>
 
-After standardization:
-• values above the average become positive  
-• values below the average become negative  
-• values near the average remain close to zero  
+      <p><b>After standardization:</b></p>
+      <ul>
+        <li>Values above the average become positive</li>
+        <li>Values below the average become negative</li>
+        <li>Values near the average remain close to zero</li>
+      </ul>
 
-Standardization is widely used in:
-• Regression models  
-• Principal component analysis (PCA)  
-• Clustering methods  
-• Many statistical and machine learning models  
+      <p><b>Standardization is widely used in:</b></p>
+      <ul>
+        <li>Regression models</li>
+        <li>Principal component analysis (PCA)</li>
+        <li>Clustering methods</li>
+        <li>Many statistical and machine learning models</li>
+      </ul>
 
-🔹 Key Difference
+      <!-- KEY DIFFERENCE -->
+      <h3>Key Difference</h3>
 
-Normalization changes the scale of the data, while standardization changes the position of the data relative to its average.
+      <p>
+        Normalization changes the scale of the data, while standardization changes the position 
+        of the data relative to its average.
+      </p>
 
-In simple terms:
-• Normalization focuses on bringing values into a fixed interval  
-• Standardization focuses on understanding how far values are from the dataset’s average  
+      <ul>
+        <li>Normalization focuses on bringing values into a fixed interval</li>
+        <li>Standardization focuses on understanding how far values are from the dataset’s average</li>
+      </ul>
 
-Both methods are essential tools for data preprocessing and improve model performance and stability.
+      <p>
+        Both methods are essential tools for data preprocessing and improve model performance and stability.
+      </p>
 
     </div>
 
@@ -461,6 +496,10 @@ Both methods are essential tools for data preprocessing and improve model perfor
   </div>
 
 </div>
+
+
+
+    
 
     <!-- POST 2 -->
     <div class="post" id="data-vis">
