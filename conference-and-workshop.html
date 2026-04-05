@@ -40,7 +40,7 @@ body {
   padding: 12px 16px;
   display: flex;
   align-items: center;
-  justify-content: center; /* FIX ALIGN */
+  justify-content: center;
   flex-wrap: wrap; /* NO SCROLL */
   gap: 8px;
 }
@@ -65,7 +65,7 @@ body {
   position: relative;
 }
 
-/* MATCH LINKS */
+/* BUTTON */
 .nav-inner .dropbtn {
   background: none;
   border: none;
@@ -92,10 +92,18 @@ body {
   border-radius: 6px;
   top: 100%;
   left: 0;
+  z-index: 9999;
 }
 
 /* DESKTOP HOVER */
-.nav-inner .dropdown:hover .dropdown-content {
+@media (min-width: 601px) {
+  .nav-inner .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+/* MOBILE CLICK FIX */
+.nav-inner .dropdown.active .dropdown-content {
   display: block;
 }
 
@@ -206,12 +214,12 @@ footer a:hover {
 }
 
 /* ========================= */
-/* MOBILE FIX (NO SCROLL + WORKING DROPDOWN) */
+/* MOBILE */
 /* ========================= */
 @media (max-width: 600px) {
 
   .nav-inner {
-    flex-wrap: wrap; /* REMOVE SCROLL */
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -221,16 +229,20 @@ footer a:hover {
     padding: 6px 8px;
   }
 
-  /* DROPDOWN FIX FOR TAP */
+  /* MOBILE DROPDOWN POSITION */
   .nav-inner .dropdown-content {
     position: relative;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
   }
 
   .nav-inner .dropdown:focus-within .dropdown-content {
     display: block;
+  }
+
+  .header {
+    font-size: 22px;
   }
 }
 </style>
