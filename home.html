@@ -31,73 +31,77 @@ body {
   margin: auto;
   padding: 14px 20px;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 }
 
+/* LINKS */
 .nav-inner a {
   color: #cbd5e1;
-  margin-right: 18px;
   text-decoration: none;
   font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 4px;
 }
 
 .nav-inner a:hover {
   color: #60a5fa;
+  background: rgba(255,255,255,0.08);
 }
+
 /* DROPDOWN */
 .nav-inner .dropdown {
   position: relative;
 }
 
-.nav-inner .dropdown-content {
-  pointer-events: auto;
-}
-  
+/* BUTTON */
 .nav-inner .dropbtn {
   background: none;
   border: none;
-  color: #cbd5e1;      /* same as links */
-  font-weight: 500;    /* same as links */
-  font-size: 17px;     /* match body/nav */
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 17px;
   font-family: inherit;
   cursor: pointer;
-  padding: 0;          /* remove extra spacing */
-  margin-right: 18px;  /* match links */
+  padding: 6px 8px;
+  border-radius: 4px;
 }
 
 .nav-inner .dropbtn:hover {
-  background: rgba(255, 255, 255, 0.1); /* subtle hover effect */
+  background: rgba(255,255,255,0.08);
 }
 
+/* DROPDOWN MENU */
 .nav-inner .dropdown-content {
-  display: none;               /* hide by default */
-  position: absolute;          /* absolute positioning */
-  background-color: #0b2d5c;  /* dark blue background */
-  min-width: 160px;            /* width of dropdown */
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #0b2d5c;
+  min-width: 170px;
   border-radius: 6px;
-  z-index: 9999;
-   top: 100%;   /* attach directly under button */
-  left: 0;                 /* space below button */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  overflow: hidden;
 }
 
+/* ITEMS */
 .nav-inner .dropdown-content a {
-  color: #cbd5e1;              /* light gray links */
-  padding: 8px 12px;
-  text-decoration: none;
   display: block;
-  font-weight: 500;
+  padding: 10px 12px;
+  color: #cbd5e1;
+  font-size: 15px;
 }
 
 .nav-inner .dropdown-content a:hover {
-  background-color: #1e3a8a;   /* highlight on hover */
+  background-color: #1e3a8a;
   color: white;
 }
 
-/* Show dropdown on hover */
+/* SHOW ON HOVER (DESKTOP) */
 .nav-inner .dropdown:hover .dropdown-content {
   display: block;
 }
+
 /* HERO */
 .hero {
   background: linear-gradient(135deg, #020617, #0b3a6e);
@@ -189,27 +193,34 @@ footer {
   margin-top: 50px;
 }
 
-/* ===================================== */
-/* 🔥 MOBILE ONLY (DESKTOP UNCHANGED) */
-/* ===================================== */
+/* ========================= */
+/* MOBILE FIX (NO SCROLL BAR) */
+/* ========================= */
 @media (max-width: 768px) {
 
   body {
     font-size: 15px;
-    line-height: 1.6;
   }
 
-  /* NAV FIX */
   .nav-inner {
+    flex-wrap: wrap;
     justify-content: center;
   }
 
-  .nav-inner a {
-    margin: 8px 10px;
+  .nav-inner a,
+  .nav-inner .dropbtn {
     font-size: 14px;
+    padding: 6px 10px;
   }
 
-  /* HERO */
+  /* IMPORTANT FIX: TOUCH STABLE DROPDOWN */
+  .dropdown.active .dropdown-content {
+    display: block;
+    position: static;
+    width: 100%;
+    margin-top: 6px;
+  }
+
   .hero {
     padding: 40px 15px;
     text-align: center;
@@ -217,17 +228,10 @@ footer {
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
-  .hero h1 {
-    font-size: 24px;
-  }
-
-  /* IMAGE */
   .image-row {
     justify-content: center;
-    margin-top: 15px;
     flex-wrap: wrap;
   }
 
@@ -236,46 +240,10 @@ footer {
     height: 110px;
   }
 
-  /* LINKS */
-  .links {
-    display: block;
-    line-height: 1.8;
-  }
-
-  .links a {
-    display: inline-block;
-    margin: 4px 6px;
-  }
-
-  /* SECTION */
-  .section-title {
-    font-size: 18px;
-    margin-top: 30px;
-  }
-
-  /* GRID → STACK */
   .card-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .card {
-    padding: 14px;
-  }
-
-  /* BUTTON */
-  .cv-button {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* FOOTER */
-  footer {
-    font-size: 14px;
-    padding: 25px 15px;
   }
 }
-
 </style>
 </head>
 <meta name="description" content="Md. Abu Bokkor Shiddik is a statistics graduate and researcher working on machine learning, health data analysis, and global studies.">
