@@ -45,7 +45,6 @@ body {
   gap: 8px;
 }
 
-/* LINKS */
 .nav-inner a,
 .nav-inner .dropbtn {
   color: white;
@@ -53,7 +52,6 @@ body {
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 5px;
-  transition: 0.25s;
   font-size: 15px;
   background: none;
   border: none;
@@ -89,7 +87,6 @@ body {
   display: block;
   padding: 8px 12px;
   color: #cbd5e1;
-  font-weight: 700;
   font-size: 14px;
 }
 
@@ -109,11 +106,6 @@ body {
 .header h1 {
   margin: 0;
   font-size: 32px;
-}
-
-.header p {
-  margin-top: 6px;
-  color: #cfd8e8;
 }
 
 /* LAYOUT */
@@ -138,13 +130,11 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* IMAGE SCALING FIX (IMPORTANT) */
+/* IMAGE */
 .post img {
   width: 100%;
-  height: auto;
-  max-height: 280px;
+  height: 220px;
   object-fit: cover;
-  display: block;
 }
 
 /* CONTENT */
@@ -157,7 +147,7 @@ body {
   color: #1e3a8a;
 }
 
-/* AUTHOR */
+/* AUTHOR (FIXED SIZE) */
 .author-line {
   display: flex;
   align-items: center;
@@ -166,11 +156,15 @@ body {
   margin-bottom: 10px;
 }
 
-.author-pic {
-  width: 32px;
-  height: 32px;
+.author-line img.author-pic {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
 }
 
 .author-name {
@@ -192,10 +186,6 @@ body {
 }
 
 /* TEXT */
-.post-text {
-  line-height: 1.6;
-}
-
 .short-text {
   overflow: hidden;
   display: -webkit-box;
@@ -252,18 +242,14 @@ footer {
     padding: 20px 10px;
   }
 
+  .post img {
+    height: 180px;
+  }
+
   .sidebar {
     position: relative;
     top: auto;
     max-height: none;
-  }
-
-  .post img {
-    max-height: 200px;
-  }
-
-  .header h1 {
-    font-size: 26px;
   }
 }
 
@@ -281,27 +267,17 @@ footer {
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
     <a href="service.html">Service</a>
-
-    <div class="dropdown">
-      <button class="dropbtn">Insights ▼</button>
-      <div class="dropdown-content">
-        <a href="insights.html">Posts</a>
-        <a href="videos.html">Videos</a>
-      </div>
-    </div>
   </div>
 </nav>
 
 <div class="header">
   <h1>Insights</h1>
-  <p>Research activities and learning posts by Md. Abu Bokkor Shiddik</p>
 </div>
 
 <div class="main-wrapper">
 
 <div class="container">
 
-<!-- YOUR FULL POST CONTENT (UNCHANGED) -->
 <div class="post" id="post-normalization-standardization-01">
 
   <img src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5">
@@ -314,31 +290,18 @@ footer {
       <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
       <div>
         <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
-        <div class="author-icons">
-          <a href="https://orcid.org/0009-0002-0424-446X">🌐</a>
-          <a href="mailto:abubokkor.brur60@gmail.com">✉️</a>
-        </div>
       </div>
     </div>
 
-    <div class="meta">📅 6 April 2026 | ⏰ 12:00 AM</div>
+    <div class="meta">📅 6 April 2026</div>
 
-    <div class="post-text short-text">
+    <div class="short-text">
       <p>When working with real-world datasets, variables often come with very different scales...</p>
-      <p>To solve this issue, two common techniques are used: <b>Normalization</b> and <b>Standardization</b>.</p>
-
-      <h3>Normalization</h3>
-      <p>Normalization rescales data so that all values fall within a fixed range, usually between 0 and 1.</p>
-
-      <h3>Standardization</h3>
-      <p>Standardization transforms data so that it is centered around the average.</p>
-
-      <p><b>Key Difference:</b> Normalization changes scale while standardization changes position.</p>
     </div>
 
     <span class="read-more" onclick="toggleText(this)">Read more</span>
 
-    <button class="share-btn" onclick="copyLink('post-normalization-standardization-01')">🔗 Share</button>
+    <button class="share-btn" onclick="copyLink('post-normalization-standardization-01')">Share</button>
 
   </div>
 </div>
@@ -347,9 +310,6 @@ footer {
 
 <div class="sidebar">
   <h3>Quick View</h3>
-  <a href="videos.html">🎥 Videos</a>
-  <a href="insights.html#ml-journey">📝 ML Journey</a>
-  <a href="insights.html#data-vis">📝 Data Viz</a>
 </div>
 
 </div>
@@ -375,7 +335,7 @@ function toggleText(el) {
 }
 
 function copyLink(postId) {
-  const url = window.location.origin + window.location.pathname + "?post=" + postId;
+  const url = window.location.href + "#" + postId;
   navigator.clipboard.writeText(url);
   alert("Link copied!");
 }
