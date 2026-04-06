@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Insights | Md. Abu Bokkor Shiddik</title>
-<meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
+
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
 
 <style>
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f8fafc;
   color: #1f2937;
-  display: flex;
-  flex-direction: column;
 }
 
-/* ========================= */
-/* NAV (UPDATED ONLY) */
-/* ========================= */
+/* NAV */
 .navbar {
   background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
@@ -35,117 +31,39 @@ body {
   margin: auto;
   padding: 12px 16px;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-/* LINKS */
 .nav-inner a {
   color: white;
   font-weight: 700;
   text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  transition: 0.25s;
-  font-size: 15px;
-}
-
-.nav-inner a:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.12);
-}
-
-.nav-inner .dropdown {
-  position: relative;
-}
-
-.nav-inner .dropbtn {
-  color: white;
-  font-weight: 700;
-  font-size: 15px;
-  font-family: inherit;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 5px;
-}
-
-.nav-inner .dropbtn:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.12);
-}
-
-.nav-inner .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #0b2d5c;
-  min-width: 160px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-  border-radius: 6px;
-  z-index: 9999;
-  top: 100%;
-  left: 0;
-}
-
-.nav-inner .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.nav-inner .dropdown.active .dropdown-content {
-  display: block;
-}
-
-.nav-inner .dropdown-content a {
-  color: #cbd5e1;
-  padding: 8px 12px;
-  text-decoration: none;
-  display: block;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.nav-inner .dropdown-content a:hover {
-  background-color: #1e3a8a;
-  color: white;
 }
 
 /* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 45px 20px;
   text-align: center;
+  padding: 40px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 32px;
-}
-
-.header p {
-  margin-top: 6px;
-  font-size: 16px;
-  color: #cfd8e8;
-}
-
-/* MAIN CONTENT + SIDEBAR */
+/* MAIN */
 .main-wrapper {
   display: flex;
   max-width: 1200px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 30px;
   gap: 20px;
 }
 
-/* POSTS AREA */
 .container {
   flex: 3;
 }
 
-/* POST CARD */
+/* POST */
 .post {
   background: white;
   margin-bottom: 25px;
@@ -154,10 +72,14 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.post img {
+/* IMAGE FIX (important) */
+.post-image img {
   width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
+/* CONTENT */
 .post-content {
   padding: 20px;
 }
@@ -165,7 +87,7 @@ body {
 .post-title {
   font-size: 22px;
   color: #1e3a8a;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 /* AUTHOR */
@@ -177,174 +99,38 @@ body {
   margin-bottom: 10px;
 }
 
-.author-line img.author-pic {
+.author-pic {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  object-fit: cover;
-}
-
-.author-name {
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: 500;
-}
-
-.author-icons {
-  display: inline-flex;
-  gap: 6px;
-  font-size: 14px;
 }
 
 /* META */
 .meta {
   font-size: 13px;
   color: #777;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* TEXT */
 .short-text {
-  overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .full-text {
   -webkit-line-clamp: unset;
 }
 
+/* BUTTON */
 .read-more {
   color: #2563eb;
   cursor: pointer;
-  font-size: 14px;
-  display: inline-block;
-  margin-top: 6px;
 }
 
-/* BUTTON */
-.share-btn {
-  margin-top: 15px;
-  background: #1d4ed8;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* SIDEBAR */
-.sidebar {
-  flex: 1;
-  background: #f1f5f9;
-  padding: 15px;
-  border-radius: 10px;
-  max-height: 600px;
-  overflow-y: auto;
-  position: sticky;
-  top: 100px;
-}
-
-.sidebar h3 {
-  margin-top: 0;
-  font-size: 18px;
-  color: #1e3a8a;
-}
-
-.sidebar a {
-  display: block;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-.sidebar a:hover {
-  text-decoration: underline;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #020617;
-  color: #e2e8f0;
-}
-
-/* ========================= */
-/* TABLET */
-/* ========================= */
-@media (max-width: 900px) {
-  .nav-inner a,
-  .nav-inner .dropbtn {
-    font-size: 14px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .nav-inner a {
-    font-size: 13px;
-  }
-
-  .main-wrapper {
-    flex-direction: column;
-    padding: 20px 10px;
-    gap: 20px;
-  }
-
-  .container {
-    width: 100%;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-height: unset;
-    position: relative;
-    top: unset;
-    padding: 10px 0;
-    border-radius: 6px;
-  }
-
-  .sidebar h3 {
-    font-size: 16px;
-  }
-
-  .sidebar a {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  .post-content {
-    padding: 15px;
-  }
-
-  .post-title {
-    font-size: 20px;
-  }
-
-  .header h1 {
-    font-size: 26px;
-  }
-
-  .header p {
-    font-size: 14px;
-  }
-
-  .read-more {
-    font-size: 13px;
-  }
-
-  .share-btn {
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-}
 </style>
-  
 </head>
 
 <body>
@@ -352,51 +138,37 @@ footer {
 <!-- NAV -->
 <nav class="navbar">
   <div class="nav-inner">
-    <a href="home.html">Home</a>
-    <a href="conference-and-workshop.html">Conference & Workshop</a>
-    <a href="publications.html">Publications</a>
-    <a href="projects.html">Projects</a>
-    <a href="courses.html">Courses</a>
-    <a href="service.html">Service</a>
-    <div class="dropdown">
-      <button class="dropbtn">Insights ▼</button>
-      <div class="dropdown-content">
-        <a href="insights.html">Posts</a>
-        <a href="videos.html">Videos</a>
-      </div>
-    </div>
+    <a href="#">Home</a>
+    <a href="#">Publications</a>
   </div>
 </nav>
 
 <!-- HEADER -->
 <div class="header">
   <h1>Insights</h1>
-  <p>Research activities and learning posts by Md. Abu Bokkor Shiddik</p>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="main-wrapper">
 
-  <!-- POSTS AREA -->
-  <div class="container">
+<div class="container">
 
-   
+
+
+  
+<!-- ================= FIRST POST (UNCHANGED STRUCTURE) ================= -->
+
+
+  
 <div class="post" id="post-normalization-standardization-01">
 
-  <!-- POST IMAGE -->
   <div class="post-image">
-    <img src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5" 
-         alt="Normalization vs Standardization">
+    <img src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5">
   </div>
 
   <div class="post-content">
 
-    <!-- TITLE -->
-    <div class="post-title">
-      Normalization vs. Standardization
-    </div>
-
-    <!-- AUTHOR -->
+    <div class="post-title">Normalization vs. Standardization</div>
+<!-- AUTHOR -->
     <div class="author-line">
       <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" 
            class="author-pic" 
@@ -413,16 +185,12 @@ footer {
         </div>
       </div>
     </div>
+    
+  
+    <div class="meta">📅 6 April 2026</div>
 
-    <!-- META -->
-    <div class="meta">
-      📅 6 April 2026 | ⏰ 12:00 AM
-    </div>
-
-    <!-- CONTENT -->
-    <div class="post-text short-text">
-
-      <p>
+    <div class="short-text">
+       <p>
         When working with real-world datasets, variables often come with very different scales. 
         For example, one variable may represent population in millions, while another represents 
         a percentage or a rate. If we use such variables directly in analysis or machine learning 
@@ -499,87 +267,62 @@ footer {
       <p>
         Both methods are essential tools for data preprocessing and improve model performance and stability.
       </p>
-
     </div>
 
-    <!-- ACTIONS -->
-    <span class="read-more" onclick="toggleText(this)">
-      Read more
-    </span>
-
-    <br>
-
-    <button class="share-btn" onclick="copyLink('post-normalization-standardization-01')">
-      🔗 Share
-    </button>
+    <span class="read-more" onclick="toggleText(this)">Read more</span>
 
   </div>
-
 </div>
 
 
 
-    
+  
+<!-- ================= SECOND POST (UPDATED FORMAT) ================= -->
+<div class="post" id="data-vis">
 
-    <!-- POST 2 -->
-    <div class="post" id="data-vis">
-      <img src="images/post2.jpg" alt="Data Visualization">
-      <div class="post-content">
-        <div class="post-title">Learning Data Visualization in R</div>
-        <div class="author-line">
-          <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic" alt="Author">
-          <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
-          <span class="author-icons">
-            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">👤</a>
-            <a href="mailto:abubokkor.brur60@gmail.com">✉️</a>
-          </span>
-        </div>
-        <div class="meta">📅 April 2026 | ⏰ 4:00 PM</div>
-        <div class="post-text short-text">
-          Data visualization is essential for communicating research findings. Today I practiced creating clear plots in R.
-        </div>
-        <span class="read-more" onclick="toggleText(this)">Read more</span>
-        <br>
-        <button class="share-btn" onclick="copyLink('data-vis')">🔗 Share</button>
-      </div>
+  <div class="post-image">
+    <img src="images/post2.jpg">
+  </div>
+
+  <div class="post-content">
+
+    <div class="post-title">Learning Data Visualization in R</div>
+
+    <div class="author-line">
+      <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
+      <a href="#">Md. Abu Bokkor Shiddik</a>
     </div>
 
-  </div>
+    <div class="meta">📅 April 2026 | ⏰ 4:00 PM</div>
 
-  <!-- RIGHT SIDEBAR -->
-  <div class="sidebar">
-    <h3>Quick View</h3>
-    <a href="videos.html">🎥 Videos</a>
-    <a href="insights.html#ml-journey">📝 ML Journey</a>
-    <a href="insights.html#data-vis">📝 Data Viz</a>
+    <div class="short-text">
+      Data visualization is essential for communicating research findings. Today I practiced creating clear plots in R.
+    </div>
+
+    <span class="read-more" onclick="toggleText(this)">Read more</span>
+
   </div>
+</div>
 
 </div>
 
-<footer>
-© 2026 Md. Abu Bokkor Shiddik
-</footer>
+</div>
 
 <script>
 function toggleText(el) {
   const text = el.previousElementSibling;
-  if (text.classList.contains("short-text")) {
-    text.classList.remove("short-text");
-    text.classList.add("full-text");
-    el.innerText = "Show less";
-  } else {
-    text.classList.add("short-text");
-    text.classList.remove("full-text");
-    el.innerText = "Read more";
-  }
-}
-
-function copyLink(postId) {
-  const url = window.location.origin + window.location.pathname + "?post=" + postId;
-  navigator.clipboard.writeText(url);
-  alert("Link copied! Share anywhere.");
+  text.classList.toggle("short-text");
+  text.classList.toggle("full-text");
 }
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
