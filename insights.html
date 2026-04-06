@@ -325,7 +325,7 @@ footer {
 
 
   
-<div class="post" id="post-gather-guidelines-01">
+<div class="post" id="post-gather-guidelines-02">
 
   <img src="https://github.com/user-attachments/assets/bb76126f-aa6f-4c7f-ab7e-e03ef4f3afd0">
 
@@ -488,7 +488,7 @@ GATHER promotes transparent and trustworthy science. It helps ensure that resear
  
     <span class="read-more" onclick="toggleText(this)">Read more</span>
 
-    <button class="share-btn" onclick="copyLink('post-gather-guidelines-01')">Share</button>
+    <button class="share-btn" onclick="copyLink('post-gather-guidelines-02')">Share</button>
 
   </div>
 </div>
@@ -670,6 +670,8 @@ X_std = std_scaler.fit_transform(X_train)
 <!-- SIDEBAR -->
 <div class="sidebar">
   <h3>Quick View</h3>
+  <div id="quick-links"></div>
+  <hr>
   <a href="videos.html">🎥 Videos</a>
 </div>
 
@@ -698,22 +700,22 @@ function copyLink(postId) {
   navigator.clipboard.writeText(url);
   alert("Link copied!");
 }
-// AUTO GENERATE QUICK VIEW LINKS
+// AUTO INDEX POSTS INTO QUICK VIEW
 document.addEventListener("DOMContentLoaded", function () {
 
   const posts = document.querySelectorAll(".post");
-  const quickContainer = document.getElementById("quick-links");
+  const container = document.getElementById("quick-links");
 
-  posts.forEach(post => {
+  posts.forEach((post, index) => {
     const id = post.id;
     const title = post.querySelector(".post-title").innerText;
 
     const link = document.createElement("a");
     link.href = "#" + id;
-    link.innerText = "• " + title;
+    link.innerText = (index + 1) + ". " + title;
 
     link.style.display = "block";
-    link.style.marginBottom = "6px";
+    link.style.marginBottom = "8px";
     link.style.fontSize = "14px";
     link.style.color = "#1e3a8a";
     link.style.textDecoration = "none";
@@ -721,7 +723,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.onmouseover = () => link.style.textDecoration = "underline";
     link.onmouseout = () => link.style.textDecoration = "none";
 
-    quickContainer.appendChild(link);
+    container.appendChild(link);
   });
 
 });
