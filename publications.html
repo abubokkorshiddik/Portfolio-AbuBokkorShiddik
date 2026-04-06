@@ -226,6 +226,71 @@ footer a:hover {
 <!-- CONTENT -->
 <div class="container">
 
+
+<div class="pub">
+
+  <!-- TITLE -->
+  <p>
+   Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally
+  </p>
+
+  <!-- AUTHORS -->
+  <strong>
+    Md. Siddikur Rahman & Abu Bokkor Shiddik 
+  </strong>
+
+  <!-- ABSTRACT (manual) -->
+  <div class="abstract-box">
+    <p class="abstract-short">
+      Abstract
+Tuberculosis (TB) is a major global health issue, contributing significantly to mortality and morbidity rates worldwide. Socioeconomic, environmental, and healthcare factors significantly impact TB trends. Therefore, we aimed to predict TB and identify the determinants of the disease using advanced artificial intelligence (AI). 
+    </p>
+
+    <p class="abstract-full" style="display:none;">
+      This study employed the advanced machine learning (ML) model, XGBoost (eXtreme gradient boosting), combined with XAI (eXplainable artificial intelligence) and spatial analysis to describe global TB incidence and mortality rates across 194 countries from 2000 to 2022. Spatial autocorrelation analysis utilizing Moran’s I revealed geographical clusters and significant determinants affecting TB incidence. Treatment success rates and MDR-TB treatment initiation were identified as pivotal determinants of TB incidence. The correlation study revealed a substantial positive relationship between TB incidence in HIV-positive patients and overall TB incidence (r = 0.83). Confirmed cases of MDR-TB had the most significant impact on TB incidence (SHAP = 0.874). Additionally, air pollution had a notable impact on TB incidence (SHAP = 1.36). The XGBoost model demonstrated the best predictive performance for TB incidence and mortality, exhibiting the lowest RMSE (0.88), the highest R2 (0.67), and Adjusted R2 (0.65). This study highlights the potential of integrating XGBoost and XAI methodologies as a holistic framework for effectively tackling global tuberculosis incidence and mortality rates, as well as for the proficient application of advanced analytical techniques in public health.
+    </p>
+
+    <a href="#" onclick="toggleAbstract(this); return false;">Show more</a>
+  </div>
+
+  <!-- FIGURES -->
+  <div class="figures">
+
+  <div class="fig-preview">
+    <img src="preview1.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/1')">
+    <img src="preview2.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/2')">
+  </div>
+
+  <div class="fig-full" style="display:none;">
+    <img src="preview1.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/1')">
+    <img src="preview2.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/2')">
+    <img src="preview3.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/3')">
+    <img src="preview4.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/4')">
+  </div>
+
+  <a href="#" onclick="toggleFigures(this); return false;">
+    View all figures
+  </a>
+
+</div>
+
+    <a href="#" onclick="toggleFigures(this); return false;">View all figures</a>
+  </div>
+
+  <!-- LINK -->
+  <a href="https://doi.org/10.1038/s41598-025-96973-w" target="_blank">
+    View Publication
+  </a>
+
+</div>
+
+
+
+
+
+
+
+  
 <div class="pub">
 Rahman, M.S., Shiddik, A.B. Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally.
 <strong>Scientific Reports, 2025</strong>
@@ -292,5 +357,45 @@ District-level dengue early warning prediction system using hybrid explainable A
   </p>
 </footer>
 
+<script>
+function toggleAbstract(el) {
+  const parent = el.parentElement;
+  const shortText = parent.querySelector(".abstract-short");
+  const fullText = parent.querySelector(".abstract-full");
+
+  if (fullText.style.display === "none") {
+    fullText.style.display = "block";
+    shortText.style.display = "none";
+    el.textContent = "Show less";
+  } else {
+    fullText.style.display = "none";
+    shortText.style.display = "block";
+    el.textContent = "Show more";
+  }
+}
+
+function toggleFigures(el) {
+  const parent = el.parentElement;
+  const full = parent.querySelector(".fig-full");
+
+  if (full.style.display === "none") {
+    full.style.display = "block";
+    el.textContent = "Hide figures";
+  } else {
+    full.style.display = "none";
+    el.textContent = "View all figures";
+  }
+}
+
+function openFigure(img) {
+  const w = window.open("");
+  w.document.write(`<img src="${img.src}" style="width:100%">`);
+}
+</script>
+  <script>
+function openFigureLink(url) {
+  window.open(url, "_blank");
+}
+</script>
 </body>
 </html>
