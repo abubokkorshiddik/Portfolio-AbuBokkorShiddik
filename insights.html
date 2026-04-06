@@ -87,7 +87,7 @@ body {
   background: rgba(255,255,255,0.12);
 }
 
-/* DROPDOWN (FULLY KEPT) */
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -119,7 +119,7 @@ body {
   color: white;
 }
 
-/* HEADER (UNCHANGED) */
+/* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
@@ -160,7 +160,7 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* IMAGE FIX (ONLY SAFE CHANGE) */
+/* IMAGE */
 .post img {
   width: 100%;
   height: auto;
@@ -170,10 +170,11 @@ body {
 }
 
 /* CONTENT */
-  .post-content {
+.post-content {
   padding: 22px 22px 20px 22px;
   line-height: 1.65;
 }
+
 .post-content h3 {
   margin-top: 18px;
   margin-bottom: 8px;
@@ -188,9 +189,7 @@ body {
   padding-left: 18px;
 }
 
-
-
-/* BOOK STYLE TABLE */
+/* TABLE */
 .post-content table {
   width: 100%;
   border-collapse: collapse;
@@ -199,7 +198,6 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
 .post-content th {
   text-align: left;
   padding: 10px 8px;
@@ -207,13 +205,11 @@ body {
   font-weight: 600;
 }
 
-/* Body cells */
 .post-content td {
   padding: 10px 8px;
   border-bottom: 1px solid #e5e7eb;
 }
 
-/* Remove vertical lines */
 .post-content table,
 .post-content th,
 .post-content td {
@@ -222,18 +218,17 @@ body {
   border-top: none;
 }
 
-/* Row hover (very subtle, optional) */
 .post-content tr:hover {
   background: rgba(30, 58, 138, 0.04);
 }
 
-  
+/* TITLE */
 .post-title {
   font-size: 22px;
   color: #1e3a8a;
 }
 
-/* AUTHOR (FIXED SIZE ONLY) */
+/* AUTHOR */
 .author-line {
   display: flex;
   align-items: center;
@@ -245,17 +240,8 @@ body {
 .author-line img.author-pic {
   width: 36px;
   height: 36px;
-  min-width: 36px;
-  min-height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
-}
-
-.author-name {
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: 500;
 }
 
 /* META */
@@ -314,59 +300,18 @@ footer {
   color: #e2e8f0;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .main-wrapper {
-    flex-direction: column;
-    padding: 20px 10px;
-  }
-
-  .sidebar {
-    position: relative;
-    top: auto;
-    max-height: none;
-  }
-
-  .header h1 {
-    font-size: 26px;
-  }
-
-}
-  /* IMPROVED RESPONSIVE TYPOGRAPHY */
-html {
-  font-size: 16px;
-}
-
-@media (max-width: 1024px) {
-  html {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    font-size: 13px;
-  }
-}
-
-/* FLEX LAYOUT IMPROVEMENT */
-.main-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* TABLET VIEW */
+/* ========================= */
+/* TABLET (IMPORTANT FIX) */
+/* ========================= */
 @media (max-width: 1024px) {
 
   .main-wrapper {
     flex-direction: column;
+    padding: 25px 15px;
+  }
+
+  .container {
+    width: 100%;
   }
 
   .sidebar {
@@ -376,25 +321,28 @@ html {
     margin-top: 20px;
   }
 
-  .container {
-    width: 100%;
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+
+  .post-content {
+    font-size: 15px;
   }
 
 }
 
-/* MOBILE VIEW */
+/* ========================= */
+/* MOBILE (MAIN FIX) */
+/* ========================= */
 @media (max-width: 768px) {
 
-  .nav-inner {
-    justify-content: center;
-    gap: 6px;
-    padding: 10px;
-  }
-
-  .nav-inner a,
-  .nav-inner .dropbtn {
-    font-size: 13px;
-    padding: 5px 8px;
+  .main-wrapper {
+    flex-direction: column;
+    padding: 20px 10px;
   }
 
   .header {
@@ -405,8 +353,8 @@ html {
     font-size: 24px;
   }
 
-  .post {
-    margin-bottom: 18px;
+  .header p {
+    font-size: 14px;
   }
 
   .post-content {
@@ -418,22 +366,29 @@ html {
     font-size: 18px;
   }
 
-  .author-line {
-    font-size: 13px;
-  }
-
   .meta {
     font-size: 12px;
   }
 
+  .author-line {
+    font-size: 13px;
+  }
+
+  .nav-inner a,
+  .nav-inner .dropbtn {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+
   .share-btn {
     width: 100%;
-    text-align: center;
   }
 
 }
 
+/* ========================= */
 /* SMALL MOBILE */
+/* ========================= */
 @media (max-width: 480px) {
 
   .header h1 {
@@ -446,11 +401,11 @@ html {
 
   .post-content {
     padding: 14px;
+    font-size: 13.5px;
   }
 
   .nav-inner {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .nav-inner a,
