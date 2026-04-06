@@ -333,6 +333,133 @@ footer {
   }
 
 }
+  /* IMPROVED RESPONSIVE TYPOGRAPHY */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* FLEX LAYOUT IMPROVEMENT */
+.main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* TABLET VIEW */
+@media (max-width: 1024px) {
+
+  .main-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
+    max-height: none;
+    margin-top: 20px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+
+  .nav-inner {
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .nav-inner a,
+  .nav-inner .dropbtn {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+
+  .header {
+    padding: 30px 15px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .post {
+    margin-bottom: 18px;
+  }
+
+  .post-content {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .post-title {
+    font-size: 18px;
+  }
+
+  .author-line {
+    font-size: 13px;
+  }
+
+  .meta {
+    font-size: 12px;
+  }
+
+  .share-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .post-title {
+    font-size: 16px;
+  }
+
+  .post-content {
+    padding: 14px;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-inner a,
+  .nav-inner .dropbtn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
 
 </style>
 
