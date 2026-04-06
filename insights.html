@@ -698,7 +698,33 @@ function copyLink(postId) {
   navigator.clipboard.writeText(url);
   alert("Link copied!");
 }
+// AUTO GENERATE QUICK VIEW LINKS
+document.addEventListener("DOMContentLoaded", function () {
 
+  const posts = document.querySelectorAll(".post");
+  const quickContainer = document.getElementById("quick-links");
+
+  posts.forEach(post => {
+    const id = post.id;
+    const title = post.querySelector(".post-title").innerText;
+
+    const link = document.createElement("a");
+    link.href = "#" + id;
+    link.innerText = "• " + title;
+
+    link.style.display = "block";
+    link.style.marginBottom = "6px";
+    link.style.fontSize = "14px";
+    link.style.color = "#1e3a8a";
+    link.style.textDecoration = "none";
+
+    link.onmouseover = () => link.style.textDecoration = "underline";
+    link.onmouseout = () => link.style.textDecoration = "none";
+
+    quickContainer.appendChild(link);
+  });
+
+});
 </script>
 
 </body>
