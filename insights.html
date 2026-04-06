@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Insights | Md. Abu Bokkor Shiddik</title>
-<meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
 
 <style>
 
@@ -39,60 +38,23 @@ body {
   margin: auto;
   padding: 12px 16px;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.nav-inner a,
-.nav-inner .dropbtn {
+.nav-inner a {
   color: white;
   font-weight: 700;
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 5px;
   font-size: 15px;
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
-.nav-inner a:hover,
-.nav-inner .dropbtn:hover {
+.nav-inner a:hover {
   color: #60a5fa;
   background: rgba(255,255,255,0.12);
-}
-
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: #0b2d5c;
-  min-width: 160px;
-  border-radius: 6px;
-  top: 100%;
-  left: 0;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 8px 12px;
-  color: #cbd5e1;
-  font-size: 14px;
-}
-
-.dropdown-content a:hover {
-  background: #1e3a8a;
-  color: white;
 }
 
 /* HEADER */
@@ -101,11 +63,6 @@ body {
   color: white;
   padding: 45px 20px;
   text-align: center;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 32px;
 }
 
 /* LAYOUT */
@@ -147,35 +104,18 @@ body {
   color: #1e3a8a;
 }
 
-/* AUTHOR (FIXED SIZE) */
+/* AUTHOR FIXED */
 .author-line {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
-  margin-bottom: 10px;
 }
 
-.author-line img.author-pic {
+.author-pic {
   width: 36px;
   height: 36px;
-  min-width: 36px;
-  min-height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center;
-  flex-shrink: 0;
-}
-
-.author-name {
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: 500;
-}
-
-.author-icons {
-  display: inline-flex;
-  gap: 6px;
 }
 
 /* META */
@@ -197,13 +137,13 @@ body {
   -webkit-line-clamp: unset;
 }
 
+/* BUTTON */
 .read-more {
   color: #2563eb;
   cursor: pointer;
-  font-size: 14px;
 }
 
-/* BUTTON */
+/* SHARE */
 .share-btn {
   margin-top: 15px;
   background: #1d4ed8;
@@ -211,7 +151,6 @@ body {
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 /* SIDEBAR */
@@ -222,8 +161,6 @@ body {
   border-radius: 10px;
   position: sticky;
   top: 100px;
-  max-height: 600px;
-  overflow-y: auto;
 }
 
 /* FOOTER */
@@ -234,31 +171,13 @@ footer {
   color: #e2e8f0;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .main-wrapper {
-    flex-direction: column;
-    padding: 20px 10px;
-  }
-
-  .post img {
-    height: 180px;
-  }
-
-  .sidebar {
-    position: relative;
-    top: auto;
-    max-height: none;
-  }
-}
-
 </style>
 
 </head>
 
 <body>
 
+<!-- NAV WITH VIDEOS LINK -->
 <nav class="navbar">
   <div class="nav-inner">
     <a href="home.html">Home</a>
@@ -267,6 +186,7 @@ footer {
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
     <a href="service.html">Service</a>
+    <a href="videos.html">Videos</a>
   </div>
 </nav>
 
@@ -288,9 +208,7 @@ footer {
 
     <div class="author-line">
       <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
-      <div>
-        <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
-      </div>
+      <a href="index.html">Md. Abu Bokkor Shiddik</a>
     </div>
 
     <div class="meta">📅 6 April 2026</div>
@@ -310,13 +228,12 @@ footer {
 
 <div class="sidebar">
   <h3>Quick View</h3>
+  <a href="videos.html">🎥 Videos</a>
 </div>
 
 </div>
 
-<footer>
-© 2026 Md. Abu Bokkor Shiddik
-</footer>
+<footer>© 2026 Md. Abu Bokkor Shiddik</footer>
 
 <script>
 
