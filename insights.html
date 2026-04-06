@@ -314,34 +314,70 @@ footer {
 /* MOBILE */
 @media (max-width: 768px) {
 
-  /* make everything truly full width */
+  /* stop flex layout on mobile */
   body {
     display: block;
   }
 
-  .navbar {
-    width: 150%;
+  /* full width container reset */
+  .nav-inner,
+  .main-wrapper,
+  .header,
+  footer {
+    width: 100%;
+    max-width: 100%;
   }
 
+  /* navbar fix */
   .nav-inner {
-    max-width: 150%;
-    width: 150%;
+    margin: 0;
+    padding: 10px;
     justify-content: center;
   }
 
+  /* header fix */
   .header {
-    width: 150%;
+    padding: 25px 10px;
+    text-align: center;
   }
 
-  footer {
-    width: 150%;
-  }
-
-  /* override main wrapper constraint */
+  /* main layout fix */
   .main-wrapper {
-    max-width: 150%;
-    width: 150%;
+    display: block;
     margin: 0;
+    padding: 10px;
+  }
+
+  /* sidebar fix */
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    top: auto;
+    margin-top: 15px;
+  }
+
+  /* post fix */
+  .post {
+    width: 100%;
+  }
+
+  /* content fix */
+  .post-content {
+    padding: 14px;
+    overflow-x: auto;
+  }
+
+  /* table fix (very important) */
+  .post-content table {
+    width: 100%;
+    min-width: 600px;
+  }
+
+  /* footer fix */
+  footer {
+    text-align: center;
+    padding: 20px 10px;
   }
 
 }
