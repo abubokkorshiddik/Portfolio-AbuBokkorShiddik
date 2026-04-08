@@ -534,26 +534,27 @@ const projects = [
     rId: "rCodeBox3",
     pyId: null
   },
- {
-  name: "Dengue AI and EWS",
-  data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDData.csv",
-  var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDVariable.csv",
+  {
+    name: "Dengue AI and EWS",
 
-  pycode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/CAIPythonCodeDengue.txt",
-  pycode2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/PythonCode_Dengue_BD.txt",
+    data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDData.csv",
+    var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDVariable.csv",
 
-  rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/EWS_DengueRcode.txt",
-  rcode2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/Rcode__XAI_Dengue.txt",
+    pycode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/CAIPythonCodeDengue.txt",
+    pycode2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/PythonCode_Dengue_BD.txt",
 
-  tableId: "dataTable1",
-  varId: "varTable1",
+    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/EWS_DengueRcode.txt",
+    rcode2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/Rcode__XAI_Dengue.txt",
 
-  rId: "rCodeBox1",
-  rId2: "rCodeBox2",
+    tableId: "dataTable1",
+    varId: "varTable1",
 
-  pyId: "pyCodeBox1",
-  pyId2: "pyCodeBox2"
-}
+    rId: "rCodeBox1",
+    rId2: "rCodeBox2",
+
+    pyId: "pyCodeBox1",
+    pyId2: "pyCodeBox2"
+  }
 ];
 
 /* ================= SAFE LOAD TABLE ================= */
@@ -617,8 +618,13 @@ async function downloadProject(index) {
   try {
     if (p.data) zip.file("Dataset.csv", await fetch(p.data).then(r => r.text()));
     if (p.var) zip.file("Variables.csv", await fetch(p.var).then(r => r.text()));
+
     if (p.rcode) zip.file("R_Code.txt", await fetch(p.rcode).then(r => r.text()));
+    if (p.rcode2) zip.file("R_Code_2.txt", await fetch(p.rcode2).then(r => r.text()));
+
     if (p.pycode) zip.file("Python_Code.txt", await fetch(p.pycode).then(r => r.text()));
+    if (p.pycode2) zip.file("Python_Code_2.txt", await fetch(p.pycode2).then(r => r.text()));
+
   } catch {
     alert("Files not available");
     return;
@@ -644,12 +650,15 @@ projects.forEach(p => {
   if (p.var1) loadTable(p.var1, p.varId1, 100);
   if (p.var2) loadTable(p.var2, p.varId2, 100);
 
-  // code
+  // code (single + multiple)
   loadCode(p.rcode, p.rId);
+  loadCode(p.rcode2, p.rId2);
+
   loadCode(p.pycode, p.pyId);
+  loadCode(p.pycode2, p.pyId2);
 
 });
- 
+
 </script>
  
 
