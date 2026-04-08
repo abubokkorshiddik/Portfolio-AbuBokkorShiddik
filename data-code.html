@@ -9,7 +9,6 @@
 
 <style>
 
-/* GLOBAL */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -17,71 +16,6 @@ body {
   color: #1f2937;
 }
 
-/* NAVBAR */
-.navbar {
-  background: linear-gradient(90deg, #00264d, #004080);
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-}
-
-.nav-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 12px 16px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.nav-inner a, .dropbtn {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 15px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-inner a:hover, .dropbtn:hover {
-  background: rgba(255,255,255,0.12);
-}
-
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: white;
-  min-width: 180px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-radius: 6px;
-  top: 35px;
-}
-
-.dropdown-content a {
-  color: #1f2937;
-  padding: 10px;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background: #f1f5f9;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
@@ -89,14 +23,12 @@ body {
   padding: 40px 15px;
 }
 
-/* CONTAINER */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 25px 20px;
 }
 
-/* CARD */
 .card {
   background: white;
   padding: 22px;
@@ -105,12 +37,23 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-/* TABLE */
+button {
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
 .table-wrapper {
   overflow-x: auto;
   margin-top: 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
 }
 
 table {
@@ -130,40 +73,21 @@ th {
   color: white;
 }
 
-/* CODE BOX */
 .code-box {
   width: 100%;
   height: 200px;
   margin-top: 10px;
   padding: 10px;
   font-family: monospace;
-  font-size: 13px;
-  border-radius: 6px;
   border: 1px solid #e5e7eb;
+  border-radius: 6px;
 }
 
-/* BUTTON */
-button {
-  background: #1d4ed8;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:hover {
-  background: #1e40af;
-}
-
-/* FOOTER */
 footer {
   text-align: center;
   background: #020617;
   color: #e2e8f0;
   padding: 20px;
-  margin-top: 30px;
 }
 
 </style>
@@ -172,122 +96,68 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-inner">
-
-    <a href="home.html">Home</a>
-    <a href="publications.html">Publications</a>
-    <a href="service.html">Services</a>
-
-    <div class="dropdown">
-      <button class="dropbtn">Digital Lab ▼</button>
-      <div class="dropdown-content">
-        <a href="projects.html">Projects</a>
-        <a href="data-code.html">Data & Code</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <button class="dropbtn">Learning & Events ▼</button>
-      <div class="dropdown-content">
-        <a href="courses.html">Courses & Training</a>
-        <a href="conference-and-workshop.html">Conferences & Workshops</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <button class="dropbtn">Insights ▼</button>
-      <div class="dropdown-content">
-        <a href="insights.html">Posts</a>
-        <a href="videos.html">Videos</a>
-        <a href="archive.html">Photos & Archive</a>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-<!-- HEADER -->
 <div class="header">
   <h1>Code and Data Lab</h1>
-  <p>Dataset, variables, code and publication in one place</p>
+  <p>Dataset, variables and code in one place</p>
 </div>
 
-<!-- MAIN -->
 <div class="container">
 
-  <!-- DATASET CARD -->
   <div class="card">
 
-    <h2>Global Tuberculosis AI Dataset and Code</h2>
+    <h2>Global Tuberculosis AI Dataset</h2>
 
     <!-- DOWNLOAD -->
     <button onclick="downloadAll()">Download Full Package</button>
 
-    <!-- FILE LINKS -->
+    <!-- LINKS -->
     <p>
       <strong>Files:</strong><br>
-      <a href="https://github.com/user-attachments/files/26576279/GlobalTB.csv" target="_blank">GlobalTB.csv</a><br>
-      <a href="https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv" target="_blank">Variables.csv</a><br>
-      <a href="https://github.com/user-attachments/files/20176842/TBXAI.txt" target="_blank">TBXAI.txt</a>
+      <a href="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/GlobalTB.csv" target="_blank">GlobalTB.csv</a><br>
+      <a href="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/GlobalTBVariables.csv" target="_blank">Variables.csv</a><br>
+      <a href="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/TBXAI.txt" target="_blank">TBXAI.txt</a>
     </p>
 
-    <!-- DATASET PREVIEW -->
+    <!-- DATASET -->
     <h3>Dataset Preview</h3>
     <button onclick="loadCSV()">Load Dataset</button>
-
     <div class="table-wrapper">
       <table id="table"></table>
     </div>
 
-    <!-- VARIABLES PREVIEW -->
+    <!-- VARIABLES -->
     <h3>Variables Preview</h3>
     <button onclick="loadVariables()">Load Variables</button>
-
     <div class="table-wrapper">
       <table id="varTable"></table>
     </div>
 
-    <!-- CODE PREVIEW -->
+    <!-- CODE -->
     <h3>Code Preview</h3>
     <button onclick="loadCode()">Load Code</button>
-
     <textarea id="codeBox" class="code-box"></textarea>
-
-    <!-- PUBLICATION -->
-    <h3>Publication</h3>
-    <p>
-      Rahman, M.S. and Shiddik, A.B. (2025).  
-      Utilizing artificial intelligence to predict and analyze tuberculosis globally.  
-      <em>Scientific Reports</em>.
-    </p>
 
   </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
   © 2026 Md. Abu Bokkor Shiddik
 </footer>
 
-<!-- JS -->
+<!-- JS ZIP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
 <script>
 
-/* LOAD DATASET */
+/* LOAD CSV */
 function loadCSV() {
-
-  fetch("https://github.com/user-attachments/files/26576279/GlobalTB.csv")
-  .then(r => r.text())
+  fetch("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/GlobalTB.csv")
+  .then(res => res.text())
   .then(text => {
-
     const rows = text.split("\n").map(r => r.split(","));
     let html = "";
-
     rows.forEach((row, i) => {
       html += "<tr>";
       row.forEach(cell => {
@@ -295,23 +165,17 @@ function loadCSV() {
       });
       html += "</tr>";
     });
-
     document.getElementById("table").innerHTML = html;
-
   });
-
 }
 
 /* LOAD VARIABLES */
 function loadVariables() {
-
-  fetch("https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv")
-  .then(r => r.text())
+  fetch("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/GlobalTBVariables.csv")
+  .then(res => res.text())
   .then(text => {
-
     const rows = text.split("\n").map(r => r.split(","));
     let html = "";
-
     rows.forEach((row, i) => {
       html += "<tr>";
       row.forEach(cell => {
@@ -319,22 +183,17 @@ function loadVariables() {
       });
       html += "</tr>";
     });
-
     document.getElementById("varTable").innerHTML = html;
-
   });
-
 }
 
 /* LOAD CODE */
 function loadCode() {
-
-  fetch("https://github.com/user-attachments/files/20176842/TBXAI.txt")
-  .then(r => r.text())
+  fetch("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/TBXAI.txt")
+  .then(res => res.text())
   .then(text => {
     document.getElementById("codeBox").value = text;
   });
-
 }
 
 /* DOWNLOAD ZIP */
@@ -342,16 +201,16 @@ async function downloadAll() {
 
   const zip = new JSZip();
 
-  const csv1 = await fetch("https://github.com/user-attachments/files/26576279/GlobalTB.csv").then(r => r.text());
-  const csv2 = await fetch("https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv").then(r => r.text());
-  const code = await fetch("https://github.com/user-attachments/files/20176842/TBXAI.txt").then(r => r.text());
+  const csv1 = await fetch("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/GlobalTB.csv").then(r => r.text());
+  const csv2 = await fetch("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/GlobalTBVariables.csv").then(r => r.text());
+  const code = await fetch("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/TBXAI.txt").then(r => r.text());
 
   zip.file("GlobalTB.csv", csv1);
   zip.file("Variables.csv", csv2);
   zip.file("TBXAI.txt", code);
 
   zip.generateAsync({type:"blob"}).then(function(content) {
-    saveAs(content, "GlobalTB_AI_Package.zip");
+    saveAs(content, "TB_Data_Code.zip");
   });
 
 }
