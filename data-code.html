@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Research Resources | Md. Abu Bokkor Shiddik</title>
 
 <style>
 
-/* GLOBAL RESET */
+/* GLOBAL */
 * {
   box-sizing: border-box;
 }
@@ -21,7 +22,7 @@ body {
   font-size:16px;
 }
 
-/* NAVBAR (UNCHANGED STRUCTURE, ONLY SMALL POLISH) */
+/* NAVBAR */
 .navbar {
   background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
@@ -52,7 +53,7 @@ body {
   background: rgba(255,255,255,0.12);
 }
 
-/* DROPDOWN (minimal fix for consistency) */
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -185,7 +186,7 @@ th, td {
 
 <body>
 
-<!-- NAVBAR (UNCHANGED) -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-inner">
 
@@ -243,7 +244,7 @@ th, td {
 
   <div class="card">
     <div class="code-box" id="rcode">
-# Load CSV
+# Load data
 library(readr)
 data <- read_csv("dataset.csv")
 
@@ -251,6 +252,7 @@ summary(data)
 
 plot(data$Year, data$Cases)
     </div>
+
     <button class="btn" onclick="toggleCode('rcode', this)">Show More</button>
     <button class="btn copy-btn" onclick="copyCode('rcode')">Copy</button>
   </div>
@@ -272,37 +274,29 @@ print(df.head())
 plt.plot(df['Year'], df['Cases'])
 plt.show()
     </div>
+
     <button class="btn" onclick="toggleCode('pycode', this)">Show More</button>
     <button class="btn copy-btn" onclick="copyCode('pycode')">Copy</button>
   </div>
 </div>
 
-<!-- PUBLICATIONS -->
-<div class="section">
-  <h2>Published Papers</h2>
-
-  <div class="card">
-    <ul>
-      <li>Global Prediction Study - 2024</li>
-      <li>Health Data Analysis Paper - 2025</li>
-    </ul>
-  </div>
-</div>
-
 <script>
 
+/* toggle code */
 function toggleCode(id, btn){
   let box = document.getElementById(id);
   box.classList.toggle("expanded");
   btn.innerText = box.classList.contains("expanded") ? "Show Less" : "Show More";
 }
 
+/* copy code */
 function copyCode(id){
   let text = document.getElementById(id).innerText;
   navigator.clipboard.writeText(text);
   alert("Code copied!");
 }
 
+/* load csv */
 function loadCSV(url){
   fetch(url)
     .then(res => res.text())
@@ -325,6 +319,7 @@ function loadCSV(url){
     });
 }
 
+/* default load */
 loadCSV("files/dataset.csv");
 
 </script>
