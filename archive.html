@@ -11,12 +11,13 @@
 
 /* RESET */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 /* BODY */
 body {
-  margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f8fafc;
   color: #1f2937;
@@ -24,20 +25,21 @@ body {
 
 /* NAVBAR */
 .navbar {
-  background: #020617;
+  background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
   top: 0;
   z-index: 999;
 }
 
 .nav-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   padding: 10px 15px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-inner a,
@@ -45,16 +47,17 @@ body {
   color: white;
   text-decoration: none;
   font-size: 14px;
-  padding: 8px 10px;
+  padding: 7px 10px;
   border: none;
   background: none;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .nav-inner a:hover,
 .dropbtn:hover {
-  background: #1f2937;
-  border-radius: 6px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 5px;
 }
 
 /* DROPDOWN */
@@ -69,16 +72,17 @@ body {
   min-width: 180px;
   top: 35px;
   border-radius: 6px;
-  overflow: hidden;
 }
 
 .dropdown-content a {
   display: block;
   padding: 10px;
+  color: #cbd5e1;
 }
 
 .dropdown-content a:hover {
   background: #1f2937;
+  color: white;
 }
 
 .dropdown:hover .dropdown-content {
@@ -87,58 +91,55 @@ body {
 
 /* HEADER */
 .header {
-  background: linear-gradient(90deg, #00264d, #004080);
+  background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
   text-align: center;
-  padding: 30px 15px;
+  padding: 40px 15px;
 }
 
 .header h1 {
-  margin: 0;
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .header p {
   margin-top: 5px;
   font-size: 14px;
-  opacity: 0.9;
+  color: #cbd5e1;
 }
 
 /* SECTION */
 .section {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 30px auto;
   padding: 0 15px;
 }
 
 .section h2 {
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 15px;
-  border-left: 5px solid #2563eb;
+  border-left: 5px solid #1d4ed8;
   padding-left: 10px;
 }
 
-/* GRID SYSTEM */
+/* GRID */
 .grid {
   display: grid;
   gap: 15px;
 }
 
-/* DESKTOP */
+/* RESPONSIVE GRID */
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* TABLET */
 @media (min-width: 600px) and (max-width: 1023px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* MOBILE */
 @media (max-width: 599px) {
   .grid {
     grid-template-columns: 1fr;
@@ -148,14 +149,14 @@ body {
 /* CARD */
 .card {
   background: white;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 /* IMAGE */
@@ -172,7 +173,7 @@ body {
   line-height: 1.4;
 }
 
-/* HIDDEN ITEMS */
+/* HIDDEN */
 .hidden {
   display: none;
 }
@@ -183,27 +184,38 @@ body {
   margin: 20px auto;
   padding: 10px 18px;
   border: none;
-  background: #2563eb;
+  background: #1d4ed8;
   color: white;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
 }
 
 .show-btn:hover {
-  background: #1d4ed8;
+  background: #1e40af;
 }
 
-@media (max-width: 599px) {
-  .show-btn {
-    width: 100%;
-    font-size: 16px;
-  }
+/* FOOTER */
+footer {
+  background: #020617;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
 }
 
 </style>
 
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -249,7 +261,7 @@ body {
   <p>Moments, Achievements & Experiences</p>
 </div>
 
-<!-- ================= CONFERENCE ================= -->
+<!-- CONFERENCE -->
 <div class="section">
   <h2>Conference</h2>
   <div class="grid" id="conference">
@@ -266,7 +278,7 @@ body {
   <button class="show-btn" onclick="showMore('conference', this)">Show More</button>
 </div>
 
-<!-- ================= RESEARCH ================= -->
+<!-- RESEARCH -->
 <div class="section">
   <h2>Research Work</h2>
   <div class="grid" id="research">
@@ -281,7 +293,7 @@ body {
   <button class="show-btn" onclick="showMore('research', this)">Show More</button>
 </div>
 
-<!-- ================= TRAVEL ================= -->
+<!-- TRAVEL -->
 <div class="section">
   <h2>Travel & Visits</h2>
   <div class="grid" id="travel">
@@ -296,7 +308,7 @@ body {
   <button class="show-btn" onclick="showMore('travel', this)">Show More</button>
 </div>
 
-<!-- ================= WORKSHOP ================= -->
+<!-- WORKSHOP -->
 <div class="section">
   <h2>Workshop & Meetings</h2>
   <div class="grid" id="workshop">
@@ -311,7 +323,17 @@ body {
   <button class="show-btn" onclick="showMore('workshop', this)">Show More</button>
 </div>
 
+<!-- FOOTER -->
+<footer>
+  <p>Md. Abu Bokkor Shiddik</p>
+  <p>
+    <a href="home.html">Home</a> |
+    <a href="publications.html">Publications</a>
+  </p>
+</footer>
+
 <script>
+
 function showMore(sectionId, btn) {
   let section = document.getElementById(sectionId);
   let hiddenItems = section.querySelectorAll('.hidden');
@@ -322,6 +344,7 @@ function showMore(sectionId, btn) {
 
   btn.style.display = "none";
 }
+
 </script>
 
 </body>
