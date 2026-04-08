@@ -412,13 +412,33 @@ function copyCode() {
 
 /* DOWNLOAD */
 function downloadFile(url) {
-  const a = document.createElement("a");
-  a.href = url;
-  a.target = "_blank";
-  a.download = "";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+
+  fetch(url)
+  .then(response => response.blob())
+  .then(blob => {
+
+    const blobUrl = window.URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = blobUrl;
+
+    // extract filename from URL
+    const fileName = url.split("/").pop();
+
+    a.download = fileName;
+
+    document.body.appendChild(a);
+    a.click();
+
+    document.body.removeChild(a);
+
+    window.URL.revokeObjectURL(blobUrl);
+
+  })
+  .catch(() => {
+    alert("Download failed. Please try again.");
+  });
+
 }
 
 /* INIT */
