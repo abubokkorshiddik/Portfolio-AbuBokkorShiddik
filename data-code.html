@@ -3,104 +3,97 @@
 
 <head>
 
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Data and Code Lab | ABS</title>
+<title>Data and Code Lab</title>
 
 <style>
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* GLOBAL */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
   background: #f8fafc;
-  color: #1f2937;
 }
 
-/* NAVBAR (YOUR STYLE) */
+/* NAVBAR */
 .navbar {
   background: linear-gradient(90deg, #00264d, #004080);
-  position: sticky;
-  top: 0;
-  z-index: 9999;
 }
 
 .nav-inner {
   max-width: 1100px;
   margin: auto;
-  padding: 10px 14px;
+  padding: 10px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 6px;
+  gap: 12px;
 }
 
-.nav-inner a,
-.dropbtn {
+.nav-inner a {
   color: white;
   text-decoration: none;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 15px;
-}
-
-.nav-inner a:hover,
-.dropbtn:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.12);
+  font-weight: 600;
 }
 
 /* HEADER */
 .header {
-  background: linear-gradient(135deg, #020617, #0b3a6e);
-  color: white;
   text-align: center;
-  padding: 35px 20px;
+  padding: 25px;
+  background: #020617;
+  color: white;
 }
 
-/* MAIN CARD */
-.main-card {
-  max-width: 1200px;
-  margin: 30px auto;
+/* CARD */
+.card {
+  max-width: 1100px;
+  margin: 25px auto;
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
 }
 
-/* FLEX LAYOUT SIDE BY SIDE */
-.flex-container {
+/* TITLE */
+.card h2 {
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn {
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 6px 6px 12px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #1e40af;
+}
+
+/* FLEX LAYOUT */
+.flex {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-/* TABLE CONTAINER */
-.table-box {
+/* TABLE */
+.box {
   flex: 1;
   min-width: 350px;
 }
 
-/* SCROLLABLE TABLE */
-.scroll-box {
-  max-height: 400px;
+.scroll {
+  max-height: 350px;
   overflow: auto;
   border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  margin-top: 10px;
 }
 
-/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -109,7 +102,7 @@ table {
 
 th, td {
   border: 1px solid #e5e7eb;
-  padding: 8px;
+  padding: 6px;
   font-size: 13px;
 }
 
@@ -119,37 +112,19 @@ th {
 }
 
 /* CODE */
-.code-box {
+textarea {
   width: 100%;
-  height: 200px;
-  margin-top: 15px;
-  padding: 10px;
-  font-family: monospace;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-}
-
-/* BUTTON */
-button {
-  background: #1d4ed8;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 5px;
+  height: 220px;
   margin-top: 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #1e40af;
+  font-family: monospace;
 }
 
 /* FOOTER */
 footer {
-  background: #020617;
-  color: #e2e8f0;
   text-align: center;
-  padding: 20px;
+  background: #020617;
+  color: white;
+  padding: 15px;
   margin-top: 30px;
 }
 
@@ -160,79 +135,63 @@ footer {
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
+<div class="navbar">
   <div class="nav-inner">
-
-    <a href="home.html">Home</a>
-    <a href="publications.html">Publications</a>
- <a href="service.html">Services</a>
-    <div class="dropdown">
-      <button class="dropbtn">Digital Lab ▼</button>
-      <div class="dropdown-content">
-        <a href="projects.html">Projects</a>
-        <a href="data-code.html">Data & Code</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <button class="dropbtn">Learning & Events ▼</button>
-      <div class="dropdown-content">
-        <a href="courses.html">Courses & Training</a>
-        <a href="conference-and-workshop.html">Conferences & Workshops</a>
-      </div>
-    </div>
-
-   
-    <div class="dropdown">
-      <button class="dropbtn">Insights ▼</button>
-      <div class="dropdown-content">
-        <a href="insights.html">Posts</a>
-        <a href="videos.html">Videos</a>
-        <a href="archive.html">Photos & Archive</a>
-      </div>
-    </div>
-
+    <a href="#">Home</a>
+    <a href="#">Publications</a>
+    <a href="#">Contact</a>
   </div>
-</nav>
+</div>
 
 <!-- HEADER -->
 <div class="header">
   <h1>Data and Code Lab</h1>
-  <p>Compact preview with scrollable tables</p>
 </div>
 
-<!-- MAIN CARD -->
-<div class="main-card">
+<!-- DATA CARD -->
+<div class="card">
 
-  <!-- SIDE BY SIDE TABLES -->
-  <div class="flex-container">
+  <h2>Global TB Dataset</h2>
 
-    <!-- DATA -->
-    <div class="table-box">
-      <h3>Dataset</h3>
-      <div class="scroll-box">
-        <table id="table"></table>
+  <!-- DOWNLOAD BUTTONS -->
+  <button class="btn" onclick="downloadFile(dataURL)">Download Dataset</button>
+  <button class="btn" onclick="downloadFile(varURL)">Download Variables</button>
+
+  <div class="flex">
+
+    <!-- DATA TABLE -->
+    <div class="box">
+      <h3>Dataset Preview (20 rows)</h3>
+      <div class="scroll">
+        <table id="dataTable"></table>
       </div>
     </div>
 
     <!-- VARIABLES -->
-    <div class="table-box">
-      <h3>Variables</h3>
-      <div class="scroll-box">
+    <div class="box">
+      <h3>Variables Preview (20 rows)</h3>
+      <div class="scroll">
         <table id="varTable"></table>
       </div>
     </div>
 
   </div>
 
-  <!-- CODE -->
-  <h3 style="margin-top:20px;">Code Preview</h3>
-  <textarea id="codeBox" class="code-box"></textarea>
+</div>
+
+<!-- CODE CARD -->
+<div class="card">
+
+  <h2>TB Analysis Code</h2>
+
+  <button class="btn" onclick="downloadFile(codeURL)">Download Code</button>
+
+  <textarea id="codeBox"></textarea>
 
 </div>
 
 <footer>
-  © 2026 ABS Research Lab
+  © ABS Research Lab
 </footer>
 
 <script>
@@ -242,29 +201,25 @@ const dataURL = "https://raw.githubusercontent.com/abubokkorshiddik/Research-and
 const varURL = "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTBVariables.csv";
 const codeURL = "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/TBXAI.txt";
 
-/* LIMIT */
-const LIMIT = 1000;
-
-/* LOAD CSV */
-function loadCSV(url, tableId) {
+/* LOAD TABLE FUNCTION */
+function loadTable(url, id) {
 
   fetch(url)
-  .then(r => r.text())
+  .then(res => res.text())
   .then(text => {
 
-    const rows = text.split("\n").map(r => r.split(","));
-
+    let rows = text.split("\n").slice(0, 20);
     let html = "";
 
-    rows.slice(0, LIMIT).forEach((row, i) => {
+    rows.forEach((row, i) => {
       html += "<tr>";
-      row.forEach(cell => {
+      row.split(",").forEach(cell => {
         html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
       });
       html += "</tr>";
     });
 
-    document.getElementById(tableId).innerHTML = html;
+    document.getElementById(id).innerHTML = html;
 
   });
 
@@ -272,18 +227,27 @@ function loadCSV(url, tableId) {
 
 /* LOAD CODE */
 function loadCode() {
-
   fetch(codeURL)
-  .then(r => r.text())
+  .then(res => res.text())
   .then(text => {
-    document.getElementById("codeBox").value = text.split("\n").slice(0, 15).join("\n");
+    document.getElementById("codeBox").value = text.split("\n").slice(0, 20).join("\n");
   });
-
 }
 
-/* AUTO LOAD */
-loadCSV(dataURL, "table");
-loadCSV(varURL, "varTable");
+/* DOWNLOAD FUNCTION */
+function downloadFile(url) {
+  const a = document.createElement("a");
+  a.href = url;
+  a.target = "_blank";
+  a.download = "";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+/* INIT */
+loadTable(dataURL, "dataTable");
+loadTable(varURL, "varTable");
 loadCode();
 
 </script>
