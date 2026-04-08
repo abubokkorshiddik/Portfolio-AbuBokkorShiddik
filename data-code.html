@@ -3,12 +3,10 @@
 
 <head>
 
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Data & Code | ABS</title>
+<title>Global TB Data & Code</title>
 
 <style>
 
@@ -20,83 +18,201 @@ body {
   color: #1f2937;
 }
 
-/* HEADER */
-.header {
-  background: linear-gradient(135deg, #020617, #0b3a6e);
-  color: white;
-  text-align: center;
-  padding: 45px 15px;
-}
-
 /* NAVBAR */
+
+
+  /* ========================= */
+/* NAV (UPDATED ONLY) */
+/* ========================= */
 .navbar {
-  background: #0b1f3a;
+  background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
   top: 0;
   z-index: 9999;
 }
 
 .nav-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
+  padding: 12px 16px;
   display: flex;
-  justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
-  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.nav-inner a,
-.dropbtn {
-  color: #e2e8f0;
+/* LINKS */
+.nav-inner a {
+  color: white;
   text-decoration: none;
-  font-weight: 600;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: 0.25s;
+  font-size: 15px;
+}
+
+.nav-inner a:hover {
+  color: #60a5fa;
+  background: rgba(255,255,255,0.12);
+}
+
+.nav-inner .dropdown {
+  position: relative;
+}
+
+.nav-inner .dropbtn {
   background: none;
   border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
   cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 5px;
 }
 
-.nav-inner a:hover,
-.dropbtn:hover {
+.nav-inner .dropbtn:hover {
+  color: #60a5fa;
   background: rgba(255,255,255,0.12);
 }
 
 /* DROPDOWN */
-.dropdown {
+.nav-inner .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #0b2d5c;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+}
+
+.nav-inner .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-inner .dropdown.active .dropdown-content {
+  display: block;
+}
+
+.nav-inner .dropdown-content a {
+  display: block;
+  padding: 10px 12px;
+  color: #cbd5e1;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.nav-inner .dropdown-content a:hover {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+/* ========================= */
+/* DROPDOWN (FIXED ONLY) */
+/* ========================= */
+
+.nav-inner .dropdown {
   position: relative;
 }
 
-.dropdown-content {
-  display: none;
+.nav-inner .dropbtn {
+  background: none;
+  border: none;
+  color: #fafbfc;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 18px;
+}
+
+/* dropdown hidden state */
+.nav-inner .dropdown-content {
+  display: block;
   position: absolute;
-  background: #0b1f3a;
-  min-width: 180px;
+  background-color: #0b2d5c;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
   border-radius: 6px;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: 0.2s ease;
+  pointer-events: none;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px;
+/* links */
+.nav-inner .dropdown-content a {
   color: #cbd5e1;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  font-weight: 700;
 }
 
-.dropdown-content a:hover {
-  background: #1d4ed8;
+.nav-inner .dropdown-content a:hover {
+  background-color: #1e3a8a;
   color: white;
+}
+
+/* hover open */
+.nav-inner .dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* click open */
+.nav-inner .dropdown.active .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .nav-inner {
+    justify-content: center;
+  }
+
+  .nav-inner a {
+    margin: 8px 10px;
+    font-size: 13px;
+  }
+  
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #020617, #0b3a6e);
+  color: white;
+  text-align: center;
+  padding: 40px 15px;
 }
 
 /* CONTAINER */
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 30px 20px;
+  padding: 25px 20px;
 }
 
 /* CARD */
@@ -120,27 +236,17 @@ th, td {
   font-size: 14px;
 }
 
-/* CODE */
-.code-box {
-  background: #020617;
-  color: #e2e8f0;
-  padding: 12px;
-  border-radius: 8px;
-  overflow-x: auto;
-}
-
 /* BUTTON */
-.btn {
-  margin-top: 10px;
-  padding: 8px 14px;
+button {
   background: #1d4ed8;
   color: white;
   border: none;
+  padding: 8px 14px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.btn:hover {
+button:hover {
   background: #1e40af;
 }
 
@@ -150,7 +256,6 @@ footer {
   background: #020617;
   color: #e2e8f0;
   padding: 20px;
-  margin-top: 40px;
 }
 
 </style>
@@ -159,19 +264,13 @@ footer {
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <h1>Data & Code</h1>
-  <p>Datasets, Variables, and Publications</p>
-</div>
-
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-inner">
 
     <a href="home.html">Home</a>
     <a href="publications.html">Publications</a>
-
+ <a href="service.html">Services</a>
     <div class="dropdown">
       <button class="dropbtn">Digital Lab ▼</button>
       <div class="dropdown-content">
@@ -179,8 +278,6 @@ footer {
         <a href="data-code.html">Data & Code</a>
       </div>
     </div>
-
-    <a href="service.html">Services</a>
 
     <div class="dropdown">
       <button class="dropbtn">Learning & Events ▼</button>
@@ -190,10 +287,25 @@ footer {
       </div>
     </div>
 
-    <a href="insights.html">Insights</a>
+   
+
+    <div class="dropdown">
+      <button class="dropbtn">Insights ▼</button>
+      <div class="dropdown-content">
+        <a href="insights.html">Posts</a>
+        <a href="videos.html">Videos</a>
+        <a href="archive.html">Photos & Archive</a>
+      </div>
+    </div>
 
   </div>
 </nav>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Global Tuberculosis Dataset</h1>
+  <p>AI-based analysis of socioeconomic, environmental, and healthcare factors</p>
+</div>
 
 <!-- CONTENT -->
 <div class="container">
@@ -202,54 +314,54 @@ footer {
   <div class="card">
     <h2>Dataset</h2>
 
-    <input type="file" id="csvFile" accept=".csv">
-    <button class="btn" onclick="loadCSV()">Load CSV</button>
+    <p>
+      Download datasets:
+      <br>
+      <a href="https://github.com/user-attachments/files/26576279/GlobalTB.csv" target="_blank">
+        GlobalTB.csv
+      </a>
+      <br>
+      <a href="https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv" target="_blank">
+        GlobalTBVariables.csv
+      </a>
+    </p>
+
+    <h3>Preview CSV</h3>
+
+    <input type="file" id="fileInput" accept=".csv">
+    <button onclick="loadCSV()">Load CSV</button>
 
     <div style="overflow-x:auto; margin-top:15px;">
       <table id="table"></table>
     </div>
+
   </div>
 
   <!-- VARIABLES -->
   <div class="card">
-    <h2>Variables</h2>
+    <h2>Variables Description</h2>
 
-    <table>
-      <tr><th>Variable</th><th>Description</th></tr>
-      <tr><td>X1</td><td>Climate variable (temperature)</td></tr>
-      <tr><td>X2</td><td>Socioeconomic factor (GDP)</td></tr>
-      <tr><td>X3</td><td>Health infrastructure (hospital beds)</td></tr>
-      <tr><td>X4</td><td>Disease incidence</td></tr>
-    </table>
+    <p>
+      The dataset includes variables related to tuberculosis incidence along with:
+    </p>
 
-  </div>
-
-  <!-- CODE -->
-  <div class="card">
-    <h2>Code Example</h2>
-
-    <div class="code-box">
-import pandas as pd
-
-df = pd.read_csv("data.csv")
-
-print(df.head())
-    </div>
+    <ul>
+      <li>Socioeconomic indicators (GDP, education, income)</li>
+      <li>Healthcare factors (hospital beds, access)</li>
+      <li>Environmental variables (temperature, precipitation)</li>
+      <li>Demographic variables (population, density)</li>
+    </ul>
 
   </div>
 
   <!-- PUBLICATION -->
   <div class="card">
-    <h2>Publication Citation</h2>
+    <h2>Publication</h2>
 
     <p>
-    Rahman, M.S., Shiddik, A.B. (2026). 
-    "Explainable AI for disease prediction using climate and socioeconomic data." 
-    <em>Scientific Reports</em>.
-    </p>
-
-    <p>
-    DOI: 10.xxxx/xxxxx
+      Rahman, M.S. and Shiddik, A.B., 2025. 
+      Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally. 
+      <em>Scientific Reports</em>, 15(1), p.13619.
     </p>
 
   </div>
@@ -263,29 +375,37 @@ print(df.head())
 
 <script>
 
-function loadCSV(){
-  const file = document.getElementById("csvFile").files[0];
-  if (!file) return alert("Select CSV first");
+function loadCSV() {
+
+  const file = document.getElementById("fileInput").files[0];
+
+  if (!file) {
+    alert("Please select a CSV file");
+    return;
+  }
 
   const reader = new FileReader();
 
-  reader.onload = function(e){
+  reader.onload = function(e) {
+
     const rows = e.target.result.split("\n").map(r => r.split(","));
 
     let html = "";
 
-    rows.forEach((row,i)=>{
+    rows.forEach((row, i) => {
       html += "<tr>";
-      row.forEach(cell=>{
-        html += i===0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
+      row.forEach(cell => {
+        html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
       });
       html += "</tr>";
     });
 
     document.getElementById("table").innerHTML = html;
+
   };
 
   reader.readAsText(file);
+
 }
 
 </script>
