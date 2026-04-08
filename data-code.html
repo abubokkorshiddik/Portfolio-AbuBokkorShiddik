@@ -32,7 +32,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .nav-inner {
@@ -40,7 +39,6 @@ body {
   margin: auto;
   padding: 10px 14px;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 6px;
@@ -62,63 +60,47 @@ body {
   background: rgba(255,255,255,0.12);
 }
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: #0b2d5c;
-  min-width: 160px;
-  border-radius: 6px;
-  top: 100%;
-  left: 0;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px;
-  color: #cbd5e1;
-}
-
-.dropdown-content a:hover {
-  background: #1e3a8a;
-  color: white;
-}
-
 /* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 40px 20px;
   text-align: center;
+  padding: 35px 20px;
 }
 
-.header h1 {
-  font-size: 30px;
-}
-
-/* SINGLE MAIN CARD */
+/* MAIN CARD */
 .main-card {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 30px auto;
   background: white;
-  padding: 22px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
 
-/* TABLE */
-.table-wrapper {
-  overflow-x: auto;
-  margin-top: 12px;
+/* FLEX LAYOUT SIDE BY SIDE */
+.flex-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
+/* TABLE CONTAINER */
+.table-box {
+  flex: 1;
+  min-width: 350px;
+}
+
+/* SCROLLABLE TABLE */
+.scroll-box {
+  max-height: 400px;
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -136,6 +118,17 @@ th {
   color: white;
 }
 
+/* CODE */
+.code-box {
+  width: 100%;
+  height: 200px;
+  margin-top: 15px;
+  padding: 10px;
+  font-family: monospace;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
 /* BUTTON */
 button {
   background: #1d4ed8;
@@ -151,28 +144,13 @@ button:hover {
   background: #1e40af;
 }
 
-/* CODE */
-.code-box {
-  width: 100%;
-  height: 180px;
-  margin-top: 10px;
-  padding: 10px;
-  font-family: monospace;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-}
-
-.downloads button {
-  margin-right: 8px;
-}
-
 /* FOOTER */
 footer {
   background: #020617;
   color: #e2e8f0;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 </style>
@@ -191,10 +169,6 @@ footer {
 
     <div class="dropdown">
       <button class="dropbtn">Digital Lab ▼</button>
-      <div class="dropdown-content">
-        <a href="projects.html">Projects</a>
-        <a href="data-code.html">Data & Code</a>
-      </div>
     </div>
 
   </div>
@@ -203,40 +177,36 @@ footer {
 <!-- HEADER -->
 <div class="header">
   <h1>Data and Code Lab</h1>
-  <p>Preview datasets, variables and code with quick download</p>
+  <p>Compact preview with scrollable tables</p>
 </div>
 
 <!-- MAIN CARD -->
 <div class="main-card">
 
-  <h2>TB Research Package</h2>
+  <!-- SIDE BY SIDE TABLES -->
+  <div class="flex-container">
 
-  <!-- DOWNLOAD -->
-  <div class="downloads">
-    <button onclick="downloadFile('data')">Download Data</button>
-    <button onclick="downloadFile('variables')">Download Variables</button>
-    <button onclick="downloadFile('code')">Download Code</button>
-    <button onclick="downloadAll()">Download All</button>
-  </div>
+    <!-- DATA -->
+    <div class="table-box">
+      <h3>Dataset (20 rows)</h3>
+      <div class="scroll-box">
+        <table id="table"></table>
+      </div>
+    </div>
 
-  <!-- DATA -->
-  <h3 style="margin-top:20px;">Dataset Preview (Max 100 rows)</h3>
-  <div class="table-wrapper">
-    <table id="table"></table>
-  </div>
-  <button onclick="showMore('data')">See more</button>
+    <!-- VARIABLES -->
+    <div class="table-box">
+      <h3>Variables (20 rows)</h3>
+      <div class="scroll-box">
+        <table id="varTable"></table>
+      </div>
+    </div>
 
-  <!-- VARIABLES -->
-  <h3 style="margin-top:20px;">Variables Preview (Max 40 rows)</h3>
-  <div class="table-wrapper">
-    <table id="varTable"></table>
   </div>
-  <button onclick="showMore('variables')">See more</button>
 
   <!-- CODE -->
   <h3 style="margin-top:20px;">Code Preview</h3>
   <textarea id="codeBox" class="code-box"></textarea>
-  <button onclick="showMoreCode()">See more</button>
 
 </div>
 
@@ -244,29 +214,28 @@ footer {
   © 2026 ABS Research Lab
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-
 <script>
 
+/* LINKS */
 const dataURL = "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTB.csv";
 const varURL = "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTBVariables.csv";
 const codeURL = "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/TBXAI.txt";
 
-const LIMIT_DATA = 100;
-const LIMIT_VAR = 40;
+/* LIMIT */
+const LIMIT = 20;
 
 /* LOAD CSV */
-function loadCSV(url, tableId, limit) {
+function loadCSV(url, tableId) {
 
   fetch(url)
   .then(r => r.text())
   .then(text => {
 
     const rows = text.split("\n").map(r => r.split(","));
+
     let html = "";
 
-    rows.slice(0, limit).forEach((row, i) => {
+    rows.slice(0, LIMIT).forEach((row, i) => {
       html += "<tr>";
       row.forEach(cell => {
         html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
@@ -286,95 +255,14 @@ function loadCode() {
   fetch(codeURL)
   .then(r => r.text())
   .then(text => {
-    document.getElementById("codeBox").value = text.split("\n").slice(0, 10).join("\n");
-  });
-
-}
-
-/* SEE MORE */
-function showMore(type) {
-
-  fetch(type === "data" ? dataURL : varURL)
-  .then(r => r.text())
-  .then(text => {
-
-    const limit = type === "data" ? LIMIT_DATA : LIMIT_VAR;
-    const rows = text.split("\n").map(r => r.split(","));
-
-    let html = "";
-
-    rows.slice(0, limit).forEach((row, i) => {
-      html += "<tr>";
-      row.forEach(cell => {
-        html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
-      });
-      html += "</tr>";
-    });
-
-    document.getElementById(type === "data" ? "table" : "varTable").innerHTML = html;
-
-  });
-
-}
-
-/* CODE SEE MORE */
-function showMoreCode() {
-
-  fetch(codeURL)
-  .then(r => r.text())
-  .then(text => {
-    document.getElementById("codeBox").value = text;
-  });
-
-}
-
-/* DOWNLOAD SINGLE */
-async function downloadFile(type) {
-
-  let url, name;
-
-  if(type === "data") {
-    url = dataURL;
-    name = "GlobalTB.csv";
-  }
-
-  if(type === "variables") {
-    url = varURL;
-    name = "Variables.csv";
-  }
-
-  if(type === "code") {
-    url = codeURL;
-    name = "TBXAI.txt";
-  }
-
-  const blob = await fetch(url).then(r => r.blob());
-
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = name;
-  a.click();
-
-}
-
-/* DOWNLOAD ALL */
-async function downloadAll() {
-
-  const zip = new JSZip();
-
-  zip.file("GlobalTB.csv", await fetch(dataURL).then(r => r.text()));
-  zip.file("Variables.csv", await fetch(varURL).then(r => r.text()));
-  zip.file("TBXAI.txt", await fetch(codeURL).then(r => r.text()));
-
-  zip.generateAsync({type:"blob"}).then(function(content) {
-    saveAs(content, "ABS_Data_Package.zip");
+    document.getElementById("codeBox").value = text.split("\n").slice(0, 15).join("\n");
   });
 
 }
 
 /* AUTO LOAD */
-loadCSV(dataURL, "table", LIMIT_DATA);
-loadCSV(varURL, "varTable", LIMIT_VAR);
+loadCSV(dataURL, "table");
+loadCSV(varURL, "varTable");
 loadCode();
 
 </script>
