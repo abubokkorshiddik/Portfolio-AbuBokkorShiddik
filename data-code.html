@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Global TB Data & Code</title>
+<title>Code and Data Lab</title>
 
 <style>
 
-/* ========================= */
 /* GLOBAL */
-/* ========================= */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -20,9 +17,7 @@ body {
   color: #1f2937;
 }
 
-/* ========================= */
 /* NAVBAR */
-/* ========================= */
 .navbar {
   background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
@@ -38,25 +33,55 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.nav-inner a {
+.nav-inner a, .dropbtn {
   color: white;
   text-decoration: none;
   font-weight: 700;
   padding: 6px 10px;
   border-radius: 5px;
   font-size: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.nav-inner a:hover {
+.nav-inner a:hover, .dropbtn:hover {
   background: rgba(255,255,255,0.12);
 }
 
-/* ========================= */
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  top: 35px;
+}
+
+.dropdown-content a {
+  color: #1f2937;
+  padding: 10px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background: #f1f5f9;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* HEADER */
-/* ========================= */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
@@ -64,32 +89,26 @@ body {
   padding: 40px 15px;
 }
 
-/* ========================= */
 /* CONTAINER */
-/* ========================= */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 25px 20px;
 }
 
-/* ========================= */
 /* CARD */
-/* ========================= */
 .card {
   background: white;
-  padding: 18px;
-  margin-bottom: 20px;
+  padding: 20px;
+  margin-bottom: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-/* ========================= */
-/* TABLE (SCROLLABLE) */
-/* ========================= */
+/* TABLE */
 .table-wrapper {
   overflow-x: auto;
-  margin-top: 15px;
+  margin-top: 12px;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
 }
@@ -97,14 +116,13 @@ body {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 700px;
+  min-width: 600px;
 }
 
 th, td {
   border: 1px solid #e5e7eb;
   padding: 8px;
   font-size: 13px;
-  white-space: nowrap;
 }
 
 th {
@@ -112,9 +130,19 @@ th {
   color: white;
 }
 
-/* ========================= */
+/* TEXT AREA FOR CODE */
+.code-box {
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
 /* BUTTON */
-/* ========================= */
 button {
   background: #1d4ed8;
   color: white;
@@ -129,9 +157,7 @@ button:hover {
   background: #1e40af;
 }
 
-/* ========================= */
 /* FOOTER */
-/* ========================= */
 footer {
   text-align: center;
   background: #020617;
@@ -149,39 +175,71 @@ footer {
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-inner">
+
     <a href="home.html">Home</a>
     <a href="publications.html">Publications</a>
     <a href="service.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="data-code.html">Data & Code</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Digital Lab ▼</button>
+      <div class="dropdown-content">
+        <a href="projects.html">Projects</a>
+        <a href="data-code.html">Data & Code</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Learning & Events ▼</button>
+      <div class="dropdown-content">
+        <a href="courses.html">Courses & Training</a>
+        <a href="conference-and-workshop.html">Conferences & Workshops</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Insights ▼</button>
+      <div class="dropdown-content">
+        <a href="insights.html">Posts</a>
+        <a href="videos.html">Videos</a>
+        <a href="archive.html">Photos & Archive</a>
+      </div>
+    </div>
+
   </div>
 </nav>
 
 <!-- HEADER -->
 <div class="header">
-  <h1>Global Tuberculosis Dataset</h1>
-  <p>AI-based analysis of socioeconomic, environmental, and healthcare factors</p>
+  <h1>Code and Data Lab</h1>
+  <p>Dataset, variables, code and publication in one place</p>
 </div>
 
-<!-- MAIN CONTAINER -->
+<!-- MAIN -->
 <div class="container">
 
-  <!-- DATA CARD -->
+  <!-- SINGLE DATASET CARD -->
   <div class="card">
-    <h2>Dataset</h2>
 
+    <h2>Global Tuberculosis Dataset</h2>
+
+    <!-- DOWNLOAD -->
     <p>
-      Download:
-      <br>
-      <a href="https://github.com/user-attachments/files/26576279/GlobalTB.csv" target="_blank">
-        GlobalTB.csv
-      </a>
-      <br>
-      <a href="https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv" target="_blank">
-        GlobalTBVariables.csv
-      </a>
+      <strong>Download dataset:</strong><br>
+      <a href="https://github.com/user-attachments/files/26576279/GlobalTB.csv" target="_blank">GlobalTB.csv</a><br>
+      <a href="https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv" target="_blank">Variables.csv</a>
     </p>
 
+    <!-- VARIABLES -->
+    <p><strong>Variables:</strong></p>
+    <ul>
+      <li>TB incidence and prevalence</li>
+      <li>GDP and socioeconomic indicators</li>
+      <li>Healthcare access indicators</li>
+      <li>Environmental factors</li>
+      <li>Demographic features</li>
+    </ul>
+
+    <!-- CSV PREVIEW -->
     <input type="file" id="fileInput" accept=".csv">
     <button onclick="loadCSV()">Preview CSV</button>
 
@@ -189,32 +247,19 @@ footer {
       <table id="table"></table>
     </div>
 
-  </div>
+    <!-- CODE PREVIEW -->
+    <p><strong>Code preview:</strong></p>
+    <input type="file" id="codeInput" accept=".txt">
+    <button onclick="loadCode()">Preview Code</button>
 
-  <!-- VARIABLES CARD -->
-  <div class="card">
-    <h2>Variables</h2>
+    <textarea id="codeBox" class="code-box" placeholder="Code will appear here..."></textarea>
 
-    <p>Key variables used in the dataset:</p>
-
-    <ul>
-      <li>TB incidence and prevalence</li>
-      <li>GDP and socioeconomic indicators</li>
-      <li>Healthcare access indicators</li>
-      <li>Environmental factors (temperature, precipitation)</li>
-      <li>Demographic data (population, density)</li>
-    </ul>
-
-  </div>
-
-  <!-- PUBLICATION CARD -->
-  <div class="card">
-    <h2>Publication</h2>
-
+    <!-- PUBLICATION -->
+    <p><strong>Publication:</strong></p>
     <p>
-      Rahman, M.S. and Shiddik, A.B., 2025. 
-      Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally. 
-      <em>Scientific Reports</em>, 15(1), p.13619.
+      Rahman, M.S. and Shiddik, A.B. (2025).  
+      Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally.  
+      <em>Scientific Reports</em>.
     </p>
 
   </div>
@@ -228,12 +273,13 @@ footer {
 
 <script>
 
+/* CSV PREVIEW */
 function loadCSV() {
 
   const file = document.getElementById("fileInput").files[0];
 
   if (!file) {
-    alert("Please select a CSV file");
+    alert("Select a CSV file");
     return;
   }
 
@@ -258,7 +304,25 @@ function loadCSV() {
   };
 
   reader.readAsText(file);
+}
 
+/* CODE PREVIEW */
+function loadCode() {
+
+  const file = document.getElementById("codeInput").files[0];
+
+  if (!file) {
+    alert("Select a TXT code file");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    document.getElementById("codeBox").value = e.target.result;
+  };
+
+  reader.readAsText(file);
 }
 
 </script>
