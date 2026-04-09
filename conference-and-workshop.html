@@ -487,7 +487,8 @@ footer a:hover {
   </p>
 
 </footer>
-<scripy> document.querySelectorAll('.dropbtn').forEach(btn => {
+<script> 
+  document.querySelectorAll('.dropbtn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
       const dd = btn.closest('.dropdown');
@@ -511,6 +512,8 @@ footer a:hover {
       ham.classList.remove('open');
       drawer.classList.remove('open');
     });
-  });</scripy>
+  });
+</script>
+  
 </body>
 </html>
