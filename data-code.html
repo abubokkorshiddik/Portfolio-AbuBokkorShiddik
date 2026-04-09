@@ -354,6 +354,154 @@ footer {
     font-size: 13px;
   }
 }
+
+ 
+/* ================= TABLE BASE ================= */
+.scroll {
+  max-height: 260px;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 5px;
+  font-size: 12px;
+  word-break: break-word;
+  white-space: normal;
+}
+
+th {
+  background: #0b3a6e;
+  color: white;
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    margin: 18px;
+    padding: 16px;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .box {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .scroll {
+    max-height: 280px;
+  }
+
+  table {
+    min-width: 700px;
+  }
+
+  .nav-inner {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .nav-inner a,
+  .nav-inner .dropbtn {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  textarea {
+    height: 160px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 767px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 6px;
+  }
+
+  .card {
+    margin: 10px;
+    padding: 12px;
+    box-shadow: 
+      -3px -3px 0px #0b3a6e,
+      0px 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  /* TABLE FIX */
+  .scroll {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+  th, td {
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  /* NAVBAR */
+  .nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-inner a,
+  .nav-inner .dropbtn {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .nav-inner .dropdown-content {
+    position: relative;
+    width: 100%;
+  }
+
+  /* BUTTON */
+  .btn {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* TEXTAREA */
+  textarea {
+    height: 140px;
+    font-size: 13px;
+  }
+}
 </style>
 
 </head>
