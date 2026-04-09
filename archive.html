@@ -257,21 +257,31 @@ footer a:hover {
   </div>
 </nav>
 
-  <div id="lightbox" style="
+<div id="lightbox" style="
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.95);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  padding: 20px;
+  cursor: zoom-out;
 ">
+
   <img id="lightbox-img" style="
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 95%;
+    max-height: 95%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   ">
+
+</div>
+
 </div>
   
 <!-- HEADER -->
@@ -597,30 +607,35 @@ footer a:hover {
   </p>
 </footer>
 
+
+
+
+
+
+  
 <script>
 
-/* SHOW MORE / SHOW LESS (clean logic) */
+/* SHOW MORE / SHOW LESS (safe toggle per section) */
 function showMore(sectionId, btn) {
   const section = document.getElementById(sectionId);
   const cards = section.querySelectorAll('.card');
 
-  const hiddenCards = section.querySelectorAll('.card.hidden');
+  const isExpanded = btn.getAttribute("data-expanded") === "true";
 
-  // If there are hidden items → show all
-  if (hiddenCards.length > 0) {
+  if (!isExpanded) {
     cards.forEach(card => card.classList.remove('hidden'));
     btn.innerText = "Show Less";
-  } 
-  // Otherwise → collapse again
-  else {
+    btn.setAttribute("data-expanded", "true");
+  } else {
     cards.forEach((card, index) => {
       if (index >= 4) card.classList.add('hidden');
     });
     btn.innerText = "Show More";
+    btn.setAttribute("data-expanded", "false");
   }
 }
 
-/* LIGHTBOX (stable and faster, no event binding issue) */
+/* LIGHTBOX OPEN */
 function openLightbox(img) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -629,7 +644,7 @@ function openLightbox(img) {
   lightboxImg.src = img.src;
 }
 
-/* Close lightbox */
+/* LIGHTBOX CLOSE */
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
@@ -638,11 +653,23 @@ function closeLightbox() {
 document.addEventListener("DOMContentLoaded", () => {
 
   const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
 
-  /* click outside image to close */
-  lightbox.addEventListener("click", closeLightbox);
+  /* close when clicking outside image */
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
 
-  /* ensure first 4 cards are visible on load */
+  /* ESC key support */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
+  });
+
+  /* ensure first 4 cards visible */
   document.querySelectorAll(".section").forEach(section => {
     const cards = section.querySelectorAll(".card");
 
@@ -651,6 +678,12 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.add("hidden");
       }
     });
+
+    const btn = section.querySelector(".show-btn");
+    if (btn) {
+      btn.setAttribute("data-expanded", "false");
+      btn.innerText = "Show More";
+    }
   });
 
 });
