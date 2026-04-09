@@ -48,13 +48,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .nav-inner {
   max-width: 1100px;
   margin: auto;
-  padding: 10px 14px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -64,44 +63,15 @@ body {
 .nav-inner a,
 .nav-inner .dropbtn {
   color: white;
-  text-decoration: none;
-  font-weight: 800;
+  font-weight: 700;
   padding: 6px 10px;
   border-radius: 5px;
-  font-size: 15px;
-  cursor: pointer;
-  background: none;
-  border: none;
+  text-decoration: none;
 }
 
 .nav-inner a:hover,
 .nav-inner .dropbtn:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.12);
-}
-
-/* ================= DROPDOWN ================= */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: #0b2d5c;
-  min-width: 160px;
-  top: 100%;
-  left: 0;
-  border-radius: 6px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 8px;
+  background: rgba(255,255,255,0.15);
 }
 
 /* ================= HEADER ================= */
@@ -119,8 +89,8 @@ body {
   padding: 18px;
   border-radius: 12px;
   background: linear-gradient(135deg, #e6e6fa, #ffffff);
-  border-top: 6px solid #0b3a6e;
-  box-shadow: -5px -5px 0 #0b3a6e, 0 4px 14px rgba(0,0,0,0.08);
+  border-top: 5px solid #0b3a6e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* ================= BUTTON ================= */
@@ -129,7 +99,7 @@ body {
   color: white;
   border: none;
   padding: 8px 12px;
-  margin: 6px 6px 12px 0;
+  margin: 6px 0;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -138,7 +108,7 @@ body {
   background: #1e40af;
 }
 
-/* ================= LAYOUT ================= */
+/* ================= FLEX ================= */
 .flex {
   display: flex;
   gap: 20px;
@@ -150,37 +120,53 @@ body {
   min-width: 300px;
 }
 
-/* ================= TABLE ================= */
+/* ================= TABLE WRAPPER ================= */
 .scroll {
-  max-height: 280px;
-  overflow: auto;
-  border: 1px solid #e5e7eb;
+  max-height: 320px;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
 }
 
+/* ================= TABLE ================= */
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 650px;
-  table-layout: fixed;
+  min-width: 700px; /* allows horizontal scroll */
+  table-layout: auto;
 }
 
+/* cells */
 th, td {
   border: 1px solid #e5e7eb;
-  padding: 5px;
-  font-size: 12px;
-  word-break: break-word;
+  padding: 8px;
+  font-size: 13px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
+/* header */
 th {
   background: #0b3a6e;
   color: white;
+  font-weight: 600;
+}
+
+/* hover effect for readability */
+tr:hover td {
+  background: #f1f5f9;
 }
 
 /* ================= TEXTAREA ================= */
 textarea {
   width: 100%;
-  height: 160px;
+  height: 170px;
   font-family: monospace;
+  font-size: 13px;
 }
 
 /* ================= FOOTER ================= */
@@ -198,12 +184,13 @@ footer {
     flex-direction: column;
   }
 
-  .card {
-    margin: 16px;
+  table {
+    min-width: 650px;
   }
 
-  table {
-    min-width: 600px;
+  th, td {
+    font-size: 12px;
+    padding: 6px;
   }
 }
 
@@ -214,39 +201,40 @@ footer {
     font-size: 14px;
   }
 
-  .flex {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .box {
-    min-width: 100%;
-  }
-
   .card {
     margin: 10px;
     padding: 12px;
   }
 
+  .flex {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  /* important for scroll */
   .scroll {
     overflow-x: auto;
   }
 
   table {
-    min-width: 700px;
+    min-width: 800px; /* keeps readability */
   }
 
   th, td {
-    font-size: 8px;
-    padding: 4px;
-  }
-
-  .btn {
-    width: 100%;
+    font-size: 11px;
+    padding: 5px;
   }
 
   textarea {
     height: 140px;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
 </style>
