@@ -265,14 +265,14 @@ footer a:hover {
   display: none;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   z-index: 9999;
   padding: 20px;
-  cursor: zoom-out;
 ">
 
   <img id="lightbox-img" style="
     max-width: 95%;
-    max-height: 95%;
+    max-height: 85%;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -280,7 +280,20 @@ footer a:hover {
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   ">
 
-</div>
+  <!-- CLOSE BUTTON -->
+  <button onclick="closeLightbox()" style="
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    background: #dc2626;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+  ">
+    ✕ Close
+  </button>
 
 </div>
   
@@ -491,72 +504,70 @@ footer a:hover {
     Some of my most memorable moments spent in the Department of Statistics, where I learned, grew, and shared valuable experiences with my peers and mentors.
   </h4>
 
-  <p></p>
-
   <div class="grid" id="stat">
 
     <div class="card">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/f2ff218d-4f7b-4ec9-a1a9-dbf797734a51">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/f2ff218d-4f7b-4ec9-a1a9-dbf797734a51" onclick="openLightbox(this)">
       <p>A memorable photoshoot in the Department of Statistics, BRUR, capturing a special academic moment.</p>
     </div>
 
     <div class="card">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/bfa3110e-b202-4d22-aa4d-06bc37d635eb">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/bfa3110e-b202-4d22-aa4d-06bc37d635eb" onclick="openLightbox(this)">
       <p>Group photoshoot after a successful presentation with my team and course instructor, marking a proud achievement.</p>
     </div>
 
     <div class="card">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/843323aa-a195-4259-8e94-fa848df2e2c6">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/843323aa-a195-4259-8e94-fa848df2e2c6" onclick="openLightbox(this)">
       <p>A confident presentation on Explainable Artificial Intelligence, sharing my ideas with the audience.</p>
     </div>
 
     <div class="card">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/9c6ff761-47b6-4228-8316-1ac344166c99">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/9c6ff761-47b6-4228-8316-1ac344166c99" onclick="openLightbox(this)">
       <p>Presenting my published research in the classroom, highlighting my academic progress.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/01fd56db-7701-4dee-b967-5155065bbc56">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/01fd56db-7701-4dee-b967-5155065bbc56" onclick="openLightbox(this)">
       <p>Another moment presenting my research work, reflecting continuous academic engagement.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/997320fa-539d-4457-bf57-d00dacd62116">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/997320fa-539d-4457-bf57-d00dacd62116" onclick="openLightbox(this)">
       <p>Participating in a cultural event and reciting the famous poem “Dhumketu”.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/d73e54f8-fab5-4288-a230-0d8ba0d5a7dd">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/d73e54f8-fab5-4288-a230-0d8ba0d5a7dd" onclick="openLightbox(this)">
       <p>Another cultural performance moment, celebrating literature and heritage.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/2bd0a9a0-a1c2-497b-8fd5-65060170a80a">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/2bd0a9a0-a1c2-497b-8fd5-65060170a80a" onclick="openLightbox(this)">
       <p>A group photo with seniors and peers from the Department of Statistics, BRUR.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/7c9ee783-2a3d-4cd0-8cd9-0a89bb4c7073">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/7c9ee783-2a3d-4cd0-8cd9-0a89bb4c7073" onclick="openLightbox(this)">
       <p>Attending a seminar on higher study and career opportunities in the USA.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/c9bb19cf-d843-4bcd-8b3e-e3d7dbc249e5">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/c9bb19cf-d843-4bcd-8b3e-e3d7dbc249e5" onclick="openLightbox(this)">
       <p>Preparing presentation slides and practicing with team on Correlation Analysis.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/be242ba6-c5d1-4808-b6ed-61e5842bc48f">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/be242ba6-c5d1-4808-b6ed-61e5842bc48f" onclick="openLightbox(this)">
       <p>Observing Victory Day of Bangladesh with the Department.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/1aa9cffc-12f6-4040-879f-26b5a23cbc50">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/1aa9cffc-12f6-4040-879f-26b5a23cbc50" onclick="openLightbox(this)">
       <p>Group photo after final viva voce, marking semester completion.</p>
     </div>
 
     <div class="card hidden">
-      <img loading="lazy" src="https://github.com/user-attachments/assets/b1afb243-1f75-4a86-bb9e-e2def7745196">
+      <img loading="lazy" src="https://github.com/user-attachments/assets/b1afb243-1f75-4a86-bb9e-e2def7745196" onclick="openLightbox(this)">
       <p>Team photo after presentation on Introduction to Computer with instructor.</p>
     </div>
 
@@ -564,6 +575,7 @@ footer a:hover {
 
   <button class="show-btn" onclick="showMore('stat', this)">Show More</button>
 </div>
+  
 
 
 
@@ -571,30 +583,62 @@ footer a:hover {
 <!-- TRAVEL -->
 <div class="section">
   <h2>Travel & Visits</h2>
+
   <div class="grid" id="travel">
 
-    <div class="card"><img src="img/travel1.jpg"><p>Visited National Memorial.</p></div>
-    <div class="card"><img src="img/travel2.jpg"><p>Explored Lalbagh Fort.</p></div>
+    <div class="card">
+      <img src="img/travel1.jpg" loading="lazy" onclick="openLightbox(this)">
+      <p>Visited National Memorial.</p>
+    </div>
 
-    <div class="card hidden"><img src="img/travel3.jpg"><p>Historical site visit.</p></div>
-    <div class="card hidden"><img src="img/travel4.jpg"><p>Memorable travel journey.</p></div>
+    <div class="card">
+      <img src="img/travel2.jpg" loading="lazy" onclick="openLightbox(this)">
+      <p>Explored Lalbagh Fort.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="img/travel3.jpg" loading="lazy" onclick="openLightbox(this)">
+      <p>Historical site visit.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="img/travel4.jpg" loading="lazy" onclick="openLightbox(this)">
+      <p>Memorable travel journey.</p>
+    </div>
 
   </div>
+
   <button class="show-btn" onclick="showMore('travel', this)">Show More</button>
 </div>
 
-<!-- WORKSHOP -->
+  <!-- WORKSHOP -->
 <div class="section">
   <h2>Workshop & Meetings</h2>
+
   <div class="grid" id="workshop">
 
-    <div class="card"><img src="img/work1.jpg"><p>Data science workshop participation.</p></div>
-    <div class="card"><img src="img/work2.jpg"><p>Presentation session.</p></div>
+    <div class="card">
+      <img src="img/work1.jpg" loading="lazy" onclick="openLightbox(this)">
+      <p>Data science workshop participation.</p>
+    </div>
 
-    <div class="card hidden"><img src="img/work3.jpg"><p>Discussion session.</p></div>
-    <div class="card hidden"><img src="img/work4.jpg"><p>Certificate receiving moment.</p></div>
+    <div class="card">
+      <img src="img/work2.jpg" loading="lazy" onclick="openLightbox(this)">
+      <p>Presentation session.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="img/work3.jpg" loading="lazy" onclick="openLightbox(this)">
+      <p>Discussion session.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="img/work4.jpg" loading="lazy" onclick="openLightbox(this)">
+      <p>Certificate receiving moment.</p>
+    </div>
 
   </div>
+
   <button class="show-btn" onclick="showMore('workshop', this)">Show More</button>
 </div>
 
