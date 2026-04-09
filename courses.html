@@ -421,14 +421,33 @@ footer{
 <p>Md. Abu Bokkor Shiddik</p>
 </footer>
 
-<script>
-const ham=document.getElementById('hamburger');
-const drawer=document.getElementById('nav-drawer');
-ham.onclick=()=>{
-ham.classList.toggle('open');
-drawer.classList.toggle('open');
-};
-</script>
 
+<script>
+  document.querySelectorAll('.dropbtn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const dd = btn.closest('.dropdown');
+      const open = dd.classList.contains('active');
+      document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
+      if (!open) dd.classList.add('active');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
+  });
+
+  const ham = document.getElementById('hamburger');
+  const drawer = document.getElementById('nav-drawer');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      ham.classList.remove('open');
+      drawer.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>
