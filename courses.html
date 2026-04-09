@@ -1,473 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="
-ABS798,
-ABUBOKKORSHIDDIK,
-AbuBokkorShiddik,
-Abu Bokkor Shiddik,
-Md. Abu Bokkor Shiddik,
-Shiddik ABS,
-BRUR,
-Begum Rokeya University,
-Statistics,
-STAT,
-Data Science,
-Machine Learning,
-Public Health,
-Researcher Bangladesh,
-Bangladesh Research,
-Academic Portfolio,
-Bio Statistics,
-Epidemiology,
-Dengue Research,
-Thesis Work,
-Scientific Research,
-Health Data Analysis
-">
-  
-<title>Courses & Training | Md. Abu Bokkor Shiddik</title>
+
+<title>Courses and training | Md. Abu Bokkor Shiddik</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* BASE RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* base */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Inter',sans-serif;
+  background:#f8fafc;
+  color:#0f172a;
 }
 
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f8fafc;
-  color: #1f2937;
+/* navbar (aligned with homepage) */
+.navbar{
+  background:#0b1f3a;
+  position:sticky;
+  top:0;
+  z-index:9999;
+}
+.nav-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:10px 20px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.nav-inner a, .dropbtn{
+  color:rgba(255,255,255,0.8);
+  font-size:14px;
+  font-weight:500;
+  padding:6px 10px;
+  border-radius:6px;
+  text-decoration:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+.nav-inner a:hover,.dropbtn:hover{
+  background:rgba(255,255,255,0.08);
+  color:#fff;
 }
 
-/* ========================= */
-/* NAVBAR (UPDATED) */
-/* ========================= */
-.navbar {
-  background: linear-gradient(90deg, #00264d, #004080);
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+/* dropdown */
+.dropdown{position:relative;}
+.dropdown-content{
+  position:absolute;
+  top:110%;
+  left:0;
+  background:#132444;
+  border-radius:8px;
+  display:none;
+  min-width:180px;
+}
+.dropdown-content a{
+  display:block;
+  padding:8px 12px;
+  font-size:13px;
+  color:#cbd5e1;
+}
+.dropdown-content a:hover{
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+}
+.dropdown:hover .dropdown-content{display:block;}
+
+/* header */
+.header{
+  background:linear-gradient(140deg,#07152a,#0f2d5c);
+  color:white;
+  text-align:center;
+  padding:60px 20px 50px;
+}
+.header h1{
+  font-family:'Lora',serif;
+  font-size:28px;
+  margin-bottom:8px;
+}
+.header p{
+  font-size:14px;
+  color:#93c5fd;
 }
 
-/* NAV CONTAINER */
-.nav-inner {
-  max-width: 1100px;
-  margin: auto;
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 6px;
+/* container */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
 }
 
-/* LINKS */
-.nav-inner a {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 5px;
-  transition: 0.25s;
-  font-size: 15px;
+/* course card upgraded */
+.course{
+  background:#ffffff;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+  padding:18px 20px;
+  margin-bottom:14px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04);
+  transition:0.25s;
+  position:relative;
+}
+.course:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(0,0,0,0.08);
+  border-color:#bfdbfe;
 }
 
-.nav-inner a:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.12);
+/* left accent */
+.course::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:4px;
+  height:100%;
+  background:linear-gradient(#1a56db,#6366f1);
+  border-radius:4px 0 0 4px;
 }
 
-/* DROPDOWN */
-.nav-inner .dropdown {
-  position: relative;
+/* content */
+.course-title{
+  font-size:14.5px;
+  font-weight:600;
+  margin-bottom:4px;
+}
+.date{
+  font-size:12.5px;
+  font-weight:600;
+  color:#1a56db;
+}
+.provider{
+  font-size:12.5px;
+  color:#64748b;
 }
 
-.nav-inner .dropbtn {
-  background: none;
-  border: none;
-  color: white;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 5px;
+/* footer */
+footer{
+  background:#0b1f3a;
+  color:#cbd5e1;
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+}
+footer a{
+  color:#93c5fd;
+  text-decoration:none;
 }
 
-.nav-inner .dropbtn:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.12);
+/* responsive */
+@media(max-width:600px){
+  .header h1{font-size:22px;}
+  .container{padding:25px 15px;}
 }
 
-/* DROPDOWN CONTENT */
-.nav-inner .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #0b2d5c;
-  min-width: 160px;
-  box-shadow: 0px 6px 16px rgba(0,0,0,0.2);
-  border-radius: 6px;
-  top: 100%;
-  left: 0;
-  z-index: 9999;
-}
-
-/* DESKTOP HOVER */
-@media (min-width: 601px) {
-  .nav-inner .dropdown:hover .dropdown-content {
-    display: block;
-  }
-}
-
-/* MOBILE CLICK */
-.nav-inner .dropdown.active .dropdown-content {
-  display: block;
-}
-
-/* DROPDOWN LINKS */
-.nav-inner .dropdown-content a {
-  color: #cbd5e1;
-  padding: 10px 12px;
-  display: block;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.nav-inner .dropdown-content a:hover {
-  background-color: #1e3a8a;
-  color: white;
-}
-
-/* ========================= */
-/* HEADER */
-/* ========================= */
-.header {
-  background: linear-gradient(135deg, #020617, #0b3a6e);
-  color: white;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 32px;
-}
-
-.header p {
-  margin-top: 8px;
-  font-size: 15px;
-  color: #cfd8e8;
-}
-
-/* ========================= */
-/* CONTAINER */
-/* ========================= */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-/* COURSE CARD */
-.course {
-  background: white;
-  padding: 18px;
-  margin-bottom: 18px;
-  border-left: 4px solid #1d4ed8;
-  border-radius: 8px;
-  line-height: 1.7;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: 0.25s;
-}
-
-.course:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-/* DATE */
-.date {
-  font-weight: 600;
-  color: #1d4ed8;
-  font-size: 14px;
-}
-
-/* PROVIDER */
-.provider {
-  color: #475569;
-  font-size: 14px;
-}
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-footer {
-  background: #020617;
-  color: #e2e8f0;
-  text-align: center;
-  padding: 25px;
-  margin-top: 40px;
-}
-
-footer a {
-  color: #93c5fd;
-  text-decoration: none;
-  margin: 0 6px;
-}
-
-footer a:hover {
-  color: white;
-}
-
-/* ========================= */
-/* TABLET */
-/* ========================= */
-@media (max-width: 768px) {
-
-  .nav-inner a,
-  .nav-inner .dropbtn {
-    font-size: 14px;
-  }
-}
-
-/* ========================= */
-/* MOBILE FIX */
-/* ========================= */
-@media (max-width: 600px) {
-
-  .nav-inner {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-inner a,
-  .nav-inner .dropbtn {
-    font-size: 13px;
-    padding: 6px 8px;
-  }
-
-  .nav-inner .dropdown-content {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .nav-inner .dropdown:focus-within .dropdown-content {
-    display: block;
-  }
-
-  .header h1 {
-    font-size: 26px;
-  }
-
-  .header p {
-    font-size: 14px;
-  }
-
-  .container {
-    padding: 25px 15px;
-  }
-
-  .course {
-    padding: 15px;
-  }
-}
 </style>
-  
-</style>
-  
 </head>
 
 <body>
 
-<!-- NAVBAR (FIXED + CLEAN) -->
+<!-- navbar -->
 <nav class="navbar">
-  <div class="nav-inner">
+<div class="nav-inner">
 
-    <a href="home.html">Home</a>
-    <a href="publications.html">Publications</a>
- <a href="service.html">Services</a>
-    <div class="dropdown">
-      <button class="dropbtn">Digital Lab ▼</button>
-      <div class="dropdown-content">
-        <a href="projects.html">Projects</a>
-        <a href="data-code.html">Data & Code</a>
-      </div>
-    </div>
+<a href="home.html">Home</a>
+<a href="publications.html">Publications</a>
+<a href="service.html">Service</a>
 
-    <div class="dropdown">
-      <button class="dropbtn">Learning & Events ▼</button>
-      <div class="dropdown-content">
-        <a href="courses.html">Courses & Training</a>
-        <a href="conference-and-workshop.html">Conferences & Workshops</a>
-      </div>
-    </div>
-
-   
-    <div class="dropdown">
-      <button class="dropbtn">Insights ▼</button>
-      <div class="dropdown-content">
-        <a href="insights.html">Posts</a>
-        <a href="videos.html">Videos</a>
-        <a href="archive.html">Photos & Archive</a>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-
-<!-- HEADER -->
-<div class="header">
-  <h1>Courses and Training</h1>
-  <p>Professional development and certified learning in research, machine learning, and data science</p>
+<div class="dropdown">
+<button class="dropbtn">Digital lab ▾</button>
+<div class="dropdown-content">
+<a href="projects.html">Projects</a>
+<a href="data-code.html">Data & Code</a>
+</div>
 </div>
 
-<!-- CONTENT -->
+<div class="dropdown">
+<button class="dropbtn">Learning ▾</button>
+<div class="dropdown-content">
+<a href="courses.html">Courses & Training</a>
+<a href="conference-and-workshop.html">Conferences & Workshops</a>
+</div>
+</div>
+
+<div class="dropdown">
+<button class="dropbtn">Insights ▾</button>
+<div class="dropdown-content">
+<a href="insights.html">Posts</a>
+<a href="videos.html">Videos</a>
+<a href="archive.html">Photos & Archive</a>
+</div>
+</div>
+
+</div>
+</nav>
+
+<!-- header -->
+<div class="header">
+<h1>Courses and training</h1>
+<p>Professional learning and certified research development</p>
+</div>
+
+<!-- content -->
 <div class="container">
 
 <div class="course">
-<span class="date">21 March, 2026</span><br>
-Gen AI use in the research workflow<br>
-<span class="provider">Researcher Academy, Elsevier</span>
+<div class="date">21 March, 2026</div>
+<div class="course-title">Gen AI use in the research workflow</div>
+<div class="provider">Elsevier researcher academy</div>
 </div>
 
 <div class="course">
-<span class="date">14 January, 2026</span><br>
-How to write for an interdisciplinary audience<br>
-<span class="provider">Researcher Academy, Elsevier</span>
+<div class="date">14 January, 2026</div>
+<div class="course-title">How to write for interdisciplinary audience</div>
+<div class="provider">Elsevier researcher academy</div>
 </div>
 
 <div class="course">
-<span class="date">14 January, 2026</span><br>
-How to write case reports<br>
-<span class="provider">Researcher Academy, Elsevier</span>
+<div class="date">15 March, 2025</div>
+<div class="course-title">Practical time series analysis</div>
+<div class="provider">State university of New York</div>
 </div>
 
 <div class="course">
-<span class="date">12 January, 2026</span><br>
-How to identify research gaps<br>
-<span class="provider">Researcher Academy, Elsevier</span>
+<div class="date">10 September, 2024</div>
+<div class="course-title">Climate risk informed decision analysis</div>
+<div class="provider">UNESCO</div>
 </div>
 
 <div class="course">
-<span class="date">11 January, 2026</span><br>
-Beginners’ guide to writing a manuscript in LaTeX<br>
-<span class="provider">Researcher Academy, Elsevier</span>
+<div class="date">7 June, 2024</div>
+<div class="course-title">Python for data science</div>
+<div class="provider">IBM</div>
 </div>
 
 <div class="course">
-<span class="date">10 January, 2026</span><br>
-How to write and review a methods article<br>
-<span class="provider">Researcher Academy, Elsevier</span>
-</div>
-
-<div class="course">
-<span class="date">10 January, 2026</span><br>
-An editor’s guide to writing a review article<br>
-<span class="provider">Researcher Academy, Elsevier</span>
-</div>
-
-<div class="course">
-<span class="date">15 March, 2025</span><br>
-Practical Time Series Analysis<br>
-<span class="provider">State University of New York</span>
-</div>
-
-<div class="course">
-<span class="date">10 September, 2024</span><br>
-Climate Risk Informed Decision Analysis (CRIDA)<br>
-<span class="provider">UNESCO</span>
-</div>
-
-<div class="course">
-<span class="date">7 June, 2024</span><br>
-Python 101 for Data Science<br>
-<span class="provider">IBM</span>
-</div>
-
-<div class="course">
-<span class="date">4 January, 2024</span><br>
-Machine Learning with Python<br>
-<span class="provider">IBM</span>
-</div>
-
-<div class="course">
-<span class="date">16 January, 2024</span><br>
-Data Visualization with R<br>
-<span class="provider">IBM</span>
-</div>
-
-<div class="course">
-<span class="date">30 December, 2023</span><br>
-R for Data Science<br>
-<span class="provider">IBM</span>
-</div>
-
-<div class="course">
-<span class="date">26 December, 2023</span><br>
-Research Methodologies<br>
-<span class="provider">Queen Mary University of London</span>
-</div>
-
-<div class="course">
-<span class="date">23 December, 2023</span><br>
-Introduction to Computer Programming<br>
-<span class="provider">University of London</span>
-</div>
-
-<div class="course">
-<span class="date">4 December, 2023</span><br>
-Machine Learning for All<br>
-<span class="provider">University of London</span>
-</div>
-
-<div class="course">
-<span class="date">6 November, 2023</span><br>
-Education in Emergencies Global Course<br>
-<span class="provider">UNICEF</span>
-</div>
-
-<div class="course">
-<span class="date">24 November, 2023</span><br>
-What is Data Science?<br>
-<span class="provider">IBM</span>
-</div>
-
-<div class="course">
-<span class="date">1 November, 2023</span><br>
-Leadership for Planning and Decision-Making with Adolescents<br>
-<span class="provider">UNICEF</span>
-</div>
-
-<div class="course">
-<span class="date">2016</span><br>
-Diploma in Computer Science<br>
-<span class="provider">Bangladesh Computer Education (BCE)</span>
+<div class="date">2016</div>
+<div class="course-title">Diploma in computer science</div>
+<div class="provider">Bangladesh computer education</div>
 </div>
 
 </div>
 
-<!-- FOOTER -->
+<!-- footer -->
 <footer>
-  <p>Md. Abu Bokkor Shiddik</p>
-  <p>
-    <a href="home.html">Home</a> |
-    <a href="publications.html">Publications</a> |
-    <a href="projects.html">Projects</a>
-  </p>
+<p>Md. Abu Bokkor Shiddik</p>
+<p>
+<a href="home.html">Home</a> |
+<a href="publications.html">Publications</a> |
+<a href="projects.html">Projects</a>
+</p>
 </footer>
 
 </body>
