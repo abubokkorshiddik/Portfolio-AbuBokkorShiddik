@@ -140,7 +140,16 @@ body {
   gap: 15px;
   align-items: stretch;
 }
+.card {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
 
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* RESPONSIVE GRID */
 @media (min-width: 1024px) {
   .grid {
@@ -1056,7 +1065,7 @@ footer a:hover {
   
 <script>
 
-/* SHOW MORE / SHOW LESS (safe toggle per section) */
+/* SHOW MORE / SHOW LESS (smooth + optimized) */
 function showMore(sectionId, btn) {
   const section = document.getElementById(sectionId);
   if (!section) return;
@@ -1065,13 +1074,24 @@ function showMore(sectionId, btn) {
   const isExpanded = btn.dataset.expanded === "true";
 
   if (!isExpanded) {
-    cards.forEach(card => card.classList.remove('hidden'));
+
+    cards.forEach((card, index) => {
+      card.classList.remove('hidden');
+
+      /* add smooth stagger animation */
+      setTimeout(() => {
+        card.classList.add('show');
+      }, index * 40);
+    });
 
     btn.innerText = "Show Less";
     btn.dataset.expanded = "true";
+
   } else {
+
     cards.forEach((card, index) => {
       if (index >= 4) {
+        card.classList.remove('show');
         card.classList.add('hidden');
       }
     });
@@ -1095,27 +1115,29 @@ function openLightbox(img) {
 /* LIGHTBOX CLOSE */
 function closeLightbox() {
   const lightbox = document.getElementById("lightbox");
+
   if (lightbox) {
     lightbox.style.display = "none";
   }
 }
 
-/* INIT */
+/* INITIAL SETUP */
 document.addEventListener("DOMContentLoaded", () => {
 
   const lightbox = document.getElementById("lightbox");
 
   if (lightbox) {
+
     const lightboxImg = document.getElementById("lightbox-img");
 
-    /* close when clicking outside image */
+    /* close on outside click */
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) {
         closeLightbox();
       }
     });
 
-    /* ESC key support */
+    /* close on ESC key */
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         closeLightbox();
@@ -1131,6 +1153,8 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach((card, index) => {
       if (index >= 4) {
         card.classList.add("hidden");
+      } else {
+        card.classList.add("show");
       }
     });
 
