@@ -1,47 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
- <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="
-ABS798,
-ABUBOKKORSHIDDIK,
-AbuBokkorShiddik,
-Abu Bokkor Shiddik,
-Md. Abu Bokkor Shiddik,
-Shiddik ABS,
-BRUR,
-Begum Rokeya University,
-Statistics,
-STAT,
-Data Science,
-Machine Learning,
-Public Health,
-Researcher Bangladesh,
-Bangladesh Research,
-Academic Portfolio,
-Bio Statistics,
-Epidemiology,
-Dengue Research,
-Thesis Work,
-Scientific Research,
-Health Data Analysis
-  Dataset: Tuberculosis, Global
-">
-<title>Data and Code Lab</title>
-
-<style>
- *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Data & Code Lab — Open research datasets and reproducible code by Md. Abu Bokkor Shiddik.">
+  <meta name="keywords" content="ABS798, Abu Bokkor Shiddik, Data Code Lab, Dengue Dataset, Malaria Dataset, Tuberculosis Dataset, Open Data, R Code, Python Code, Bangladesh, BRUR">
+  <title>Data &amp; Code Lab | Md. Abu Bokkor Shiddik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --navy:       #0b1f3a;
-      --navy2:      #122444;
-      --navy3:      #1a3460;
       --blue:       #1a56db;
       --blue-hover: #1648c0;
       --sky:        #e8f0fe;
@@ -52,6 +26,12 @@ Health Data Analysis
       --purple:     #5b21b6;
       --purple-bg:  #f5f3ff;
       --purple-bd:  #ddd6fe;
+      --amber:      #92400e;
+      --amber-bg:   #fffbeb;
+      --amber-bd:   #fde68a;
+      --teal:       #0e7490;
+      --teal-bg:    #ecfeff;
+      --teal-bd:    #a5f3fc;
       --text:       #0f172a;
       --text2:      #334155;
       --text3:      #64748b;
@@ -62,260 +42,183 @@ Health Data Analysis
       --radius:     8px;
       --radius-lg:  14px;
       --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow:     0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
-    }
-  body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      font-size: 15.5px;
-      line-height: 1.75;
-      background: var(--bg);
+      --shadow:     0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
     }
 
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 15.5px; line-height: 1.75; }
+    a { color: inherit; text-decoration: none; }
 
-a { color: inherit; text-decoration: none; }
- 
- /* ── NAVBAR ── */
-    .navbar {
-      background: var(--navy);
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-bar-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      height: 56px;
-    }
-    .nav-brand {
-      font-size: 14.5px;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.2px;
-      margin-right: auto;
-      white-space: nowrap;
-    }
+    /* ── NAVBAR ── */
+    .navbar { background: var(--navy); position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-bar-inner { max-width: 1180px; margin: auto; padding: 0 24px; display: flex; align-items: center; height: 56px; }
+    .nav-brand { font-size: 14.5px; font-weight: 600; color: #fff; letter-spacing: 0.2px; margin-right: auto; white-space: nowrap; }
     .nav-brand span { color: #93c5fd; font-weight: 300; }
-
     .nav-links { display: flex; align-items: center; gap: 2px; }
-    .nav-links > a, .dropbtn {
-      color: rgba(255,255,255,0.75);
-      font-size: 13.5px;
-      font-weight: 500;
-      padding: 6px 11px;
-      border-radius: 6px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-family: inherit;
-      transition: background 0.18s, color 0.18s;
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+    .nav-links > a, .dropbtn { color: rgba(255,255,255,0.75); font-size: 13.5px; font-weight: 500; padding: 6px 11px; border-radius: 6px; border: none; background: none; cursor: pointer; font-family: inherit; transition: background 0.18s, color 0.18s; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
     .nav-links > a:hover, .dropbtn:hover { color: #fff; background: rgba(255,255,255,0.09); }
-
     .dropdown { position: relative; }
-    .dropdown-content {
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      background: #132444;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      min-width: 190px;
-      padding: 6px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(6px);
-      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-      pointer-events: none;
-      z-index: 9999;
-    }
-    .dropdown:hover .dropdown-content,
-    .dropdown.active .dropdown-content {
-      opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
-    }
-    .dropdown-content a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      color: rgba(255,255,255,0.72);
-      font-size: 13px;
-      font-weight: 500;
-      border-radius: 6px;
-      transition: background 0.15s, color 0.15s;
-    }
+    .dropdown-content { position: absolute; top: calc(100% + 6px); left: 0; background: #132444; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; min-width: 190px; padding: 6px; box-shadow: 0 12px 32px rgba(0,0,0,0.3); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; pointer-events: none; z-index: 9999; }
+    .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+    .dropdown-content a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; color: rgba(255,255,255,0.72); font-size: 13px; font-weight: 500; border-radius: 6px; transition: background 0.15s, color 0.15s; }
     .dropdown-content a:hover { background: rgba(255,255,255,0.08); color: #fff; }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 7px;
-      border-radius: 6px;
-      margin-left: 10px;
-      transition: background 0.2s;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 7px; border-radius: 6px; margin-left: 10px; transition: background 0.2s; }
     .hamburger:hover { background: rgba(255,255,255,0.1); }
-    .hamburger span {
-      display: block;
-      width: 21px;
-      height: 2px;
-      background: rgba(255,255,255,0.85);
-      border-radius: 2px;
-      transition: transform 0.28s, opacity 0.28s;
-    }
+    .hamburger span { display: block; width: 21px; height: 2px; background: rgba(255,255,255,0.85); border-radius: 2px; transition: transform 0.28s, opacity 0.28s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* Drawer */
-    .nav-drawer {
-      display: none;
-      background: #0d1c38;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1);
-    }
+    .nav-drawer { display: none; background: #0d1c38; border-top: 1px solid rgba(255,255,255,0.07); overflow: hidden; max-height: 0; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1); }
     .nav-drawer.open { max-height: 700px; }
     .drawer-inner { padding: 8px 0 16px; }
-    .drawer-link {
-      display: block;
-      color: rgba(255,255,255,0.78);
-      font-size: 15px;
-      font-weight: 500;
-      padding: 11px 24px;
-      transition: background 0.15s, color 0.15s;
-    }
+    .drawer-link { display: block; color: rgba(255,255,255,0.78); font-size: 15px; font-weight: 500; padding: 11px 24px; transition: background 0.15s, color 0.15s; }
     .drawer-link:hover { background: rgba(255,255,255,0.06); color: #fff; }
-    .drawer-section-label {
-      font-size: 10.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: rgba(255,255,255,0.3);
-      padding: 14px 24px 4px;
-    }
+    .drawer-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.3); padding: 14px 24px 4px; }
     .drawer-sub .drawer-link { padding-left: 38px; font-size: 14px; color: rgba(255,255,255,0.58); }
     .drawer-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 4px 0; }
+    @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: flex; } .nav-drawer { display: block; } }
 
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-drawer { display: block; }
+    /* ── HERO ── */
+    .page-hero { background: linear-gradient(140deg, #07152a 0%, #0d2247 50%, #0f2d5c 100%); color: white; padding: 58px 24px 50px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 25%, rgba(59,130,246,0.12) 0%, transparent 50%); pointer-events: none; }
+    .hero-inner { max-width: 1180px; margin: auto; position: relative; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #93c5fd; margin-bottom: 14px; }
+    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: #4ade80; border-radius: 50%; }
+    .page-hero h1 { font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 600; line-height: 1.18; margin-bottom: 10px; }
+    .page-hero p { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 600px; margin-bottom: 28px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,0.75); }
+
+    /* ── PAGE BODY ── */
+    .page-body { max-width: 1180px; margin: 0 auto; padding: 44px 24px 80px; }
+
+    /* ── PROJECT CARD ── */
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s;
     }
+    .project-card:hover { box-shadow: var(--shadow); }
 
+    /* colored top bar per project */
+    .project-card.dengue-dist::before,
+    .project-card.dengue-ews::before,
+    .project-card.tb::before,
+    .project-card.malaria::before { content: ''; display: block; height: 3px; }
+    .project-card.dengue-dist::before { background: linear-gradient(90deg, #e05a2b, #f59e0b); }
+    .project-card.dengue-ews::before  { background: linear-gradient(90deg, #1a56db, #6366f1); }
+    .project-card.tb::before           { background: linear-gradient(90deg, #059669, #0d9488); }
+    .project-card.malaria::before      { background: linear-gradient(90deg, #7c3aed, #a855f7); }
 
-/* ================= HEADER ================= */
-.header {
-  text-align: center;
-  background: #020617;
-  color: white;
-  padding: 20px;
-}
+    /* card header */
+    .card-header { padding: 22px 28px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .card-header-left { flex: 1; min-width: 0; }
+    .project-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 5px; margin-bottom: 8px; }
+    .badge-dengue  { background: #fff3e0; color: #c2410c; border: 1px solid #fdba74; }
+    .badge-tb      { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bd); }
+    .badge-malaria { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-bd); }
+    .card-title { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .card-desc { font-size: 13.5px; color: var(--text3); line-height: 1.6; }
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--blue); color: #fff; padding: 10px 20px;
+      border-radius: 8px; font-size: 13px; font-weight: 600; border: none;
+      cursor: pointer; font-family: inherit; white-space: nowrap;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .download-btn:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    .download-btn:disabled { background: var(--border2); color: var(--text3); cursor: wait; transform: none; }
 
-/* ================= CARD ================= */
-.card {
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 18px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #e6e6fa, #ffffff);
-  border-top: 5px solid #0b3a6e;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+    /* ── TABS ── */
+    .card-tabs { display: flex; border-bottom: 1px solid var(--border); padding: 0 28px; gap: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .card-tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { display: inline-flex; align-items: center; gap: 5px; padding: 11px 16px; font-size: 13px; font-weight: 500; color: var(--text3); border: none; border-bottom: 2.5px solid transparent; background: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.18s, border-color 0.18s; min-height: 42px; -webkit-tap-highlight-color: transparent; }
+    .tab-btn:hover { color: var(--blue); }
+    .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+    .tab-icon { font-size: 13px; }
 
-/* ================= BUTTON ================= */
-.btn {
-  background: #1d4ed8;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  margin: 6px 0;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    /* ── TAB PANELS ── */
+    .tab-panel { display: none; padding: 20px 28px; }
+    .tab-panel.active { display: block; }
 
-.btn:hover {
-  background: #1e40af;
-}
+    /* ── DATA TABLE ── */
+    .table-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+    .table-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text3); }
+    .row-count { font-size: 12px; color: var(--text3); background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 2px 8px; }
+    .table-scroll {
+      max-height: 300px;
+      overflow: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      -webkit-overflow-scrolling: touch;
+    }
+    .table-scroll table { width: 100%; border-collapse: collapse; min-width: 600px; font-size: 12.5px; }
+    .table-scroll th { background: var(--navy); color: rgba(255,255,255,0.9); padding: 9px 12px; text-align: left; font-weight: 600; font-size: 12px; white-space: nowrap; position: sticky; top: 0; z-index: 1; }
+    .table-scroll td { padding: 8px 12px; border-bottom: 1px solid var(--border); color: var(--text2); vertical-align: top; }
+    .table-scroll tr:last-child td { border-bottom: none; }
+    .table-scroll tr:hover td { background: var(--sky); }
+    .table-loading { padding: 32px; text-align: center; color: var(--text3); font-size: 13.5px; }
+    .skeleton-row td { background: #f1f5f9; color: transparent; border-radius: 4px; animation: pulse 1.4s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-/* ================= FLEX ================= */
-.flex {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    /* ── DUAL TABLE ── */
+    .dual-table { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 760px) { .dual-table { grid-template-columns: 1fr; } }
 
-.box {
-  flex: 1;
-  min-width: 300px;
-}
+    /* ── CODE PANEL ── */
+    .code-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+    .lang-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; padding: 3px 10px; border-radius: 5px; }
+    .lang-r      { background: #e0f4ff; color: #0369a1; border: 1px solid #7dd3fc; }
+    .lang-py     { background: #fefce8; color: #854d0e; border: 1px solid #fde047; }
+    .copy-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 600; color: var(--text3);
+      background: var(--bg); border: 1px solid var(--border2); border-radius: 6px;
+      padding: 5px 12px; cursor: pointer; font-family: inherit;
+      transition: background 0.18s, color 0.18s;
+    }
+    .copy-btn:hover { background: var(--sky); color: var(--blue); border-color: #93c5fd; }
+    .copy-btn.copied { background: var(--green-bg); color: var(--green); border-color: var(--green-bd); }
+    .code-box {
+      background: #020617;
+      border-radius: 8px;
+      padding: 16px;
+      overflow: auto;
+      max-height: 320px;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 12.5px;
+      color: #e2e8f0;
+      line-height: 1.65;
+      white-space: pre;
+      -webkit-overflow-scrolling: touch;
+    }
+    .code-loading { color: #475569; font-style: italic; }
 
-/* ================= TABLE WRAPPER ================= */
-.scroll {
-  max-height: 320px;
-  overflow-x: auto;
-  overflow-y: auto;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  background: white;
-}
+    /* ── PUBLICATIONS PANEL ── */
+    .pub-list { display: flex; flex-direction: column; gap: 12px; }
+    .pub-ref {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 13.5px;
+      color: var(--text2);
+      line-height: 1.7;
+      border-left: 3px solid var(--blue);
+    }
+    .pub-ref em { color: var(--text); font-style: italic; }
+    .pub-ref a { color: var(--blue); font-weight: 500; }
+    .pub-ref a:hover { text-decoration: underline; }
 
-/* ================= TABLE ================= */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 700px; /* allows horizontal scroll */
-  table-layout: auto;
-}
+    /* ── COPY TOAST ── */
+    #copy-toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: #0f172a; color: #fff; font-size: 13.5px; font-weight: 500; padding: 12px 22px; border-radius: 8px; opacity: 0; pointer-events: none; transition: opacity 0.25s, transform 0.25s; z-index: 9999; white-space: nowrap; }
+    #copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* cells */
-th, td {
-  border: 1px solid #e5e7eb;
-  padding: 8px;
-  font-size: 13px;
-  text-align: left;
-  vertical-align: top;
-  word-wrap: break-word;
-  white-space: normal;
-}
-
-/* header */
-th {
-  background: #0b3a6e;
-  color: white;
-  font-weight: 600;
-}
-
-/* hover effect for readability */
-tr:hover td {
-  background: #f1f5f9;
-}
-
-/* ================= TEXTAREA ================= */
-textarea {
-  width: 100%;
-  height: 170px;
-  font-family: monospace;
-  font-size: 13px;
-}
-
- /* ── FOOTER ── */
-    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 44px 24px 32px; margin-top: 60px; }
+    /* ── FOOTER ── */
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 44px 24px 32px; margin-top: 0; }
     .footer-inner { max-width: 1180px; margin: auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .footer-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
     .footer-name { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 8px; }
@@ -326,107 +229,20 @@ textarea {
     .footer-social-links a:hover { color: #93c5fd; }
     .footer-bottom { max-width: 1180px; margin: 22px auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
     .footer-bottom p { font-size: 12px; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .pub-grid { grid-template-columns: repeat(2, 1fr); }
-      .project-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .hero { padding: 48px 20px 40px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-      .hero h1 { font-size: 1.75rem; }
-      .hero-photo-wrap { order: -1; flex-direction: row; align-items: center; gap: 20px; }
-      .hero-photo-ring { width: 100px; height: 100px; }
-      .hero-affil { text-align: left; }
-    }
-    @media (max-width: 600px) {
-      .pub-grid { grid-template-columns: 1fr; }
-      .project-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .interest-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-/* ================= TABLET ================= */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-  .flex {
-    flex-direction: column;
-  }
-
-  table {
-    min-width: 650px;
-  }
-
-  th, td {
-    font-size: 12px;
-    padding: 6px;
-  }
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 767px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  .card {
-    margin: 10px;
-    padding: 12px;
-  }
-
-  .flex {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .box {
-    width: 100%;
-  }
-
-  /* important for scroll */
-  .scroll {
-    overflow-x: auto;
-  }
-
-  table {
-    min-width: 800px; /* keeps readability */
-  }
-
-  th, td {
-    font-size: 11px;
-    padding: 5px;
-  }
-
-  textarea {
-    height: 140px;
-  }
-
-  .btn {
-    width: 100%;
-  }
-}
-</style>
-
-
+    @media (max-width: 1024px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } .card-header { flex-direction: column; } .tab-panel { padding: 16px; } .card-tabs { padding: 0 16px; } }
+  </style>
 </head>
-
 <body>
-
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-bar-inner">
     <div class="nav-brand">ABS<span> · </span>Abu Bokkor Shiddik</div>
-
     <div class="nav-links">
       <a href="home.html">Home</a>
       <a href="publications.html">Publications</a>
       <a href="service.html">Service</a>
-
       <div class="dropdown">
         <button class="dropbtn">Digital Lab ▾</button>
         <div class="dropdown-content">
@@ -434,7 +250,6 @@ textarea {
           <a href="data-code.html">💾 Data &amp; Code</a>
         </div>
       </div>
-
       <div class="dropdown">
         <button class="dropbtn">Learning ▾</button>
         <div class="dropdown-content">
@@ -442,7 +257,6 @@ textarea {
           <a href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
         </div>
       </div>
-
       <div class="dropdown">
         <button class="dropbtn">Insights ▾</button>
         <div class="dropdown-content">
@@ -452,12 +266,10 @@ textarea {
         </div>
       </div>
     </div>
-
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-
   <div class="nav-drawer" id="nav-drawer">
     <div class="drawer-inner">
       <a class="drawer-link" href="home.html">Home</a>
@@ -486,215 +298,231 @@ textarea {
   </div>
 </nav>
 
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Open Science · Reproducible Research</div>
+    <h1>Data &amp; Code Lab</h1>
+    <p>Openly shared datasets and reproducible analysis code from published research in epidemiology, global health, and machine learning.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">💾 4 Datasets</span>
+      <span class="hero-pill">🧬 R &amp; Python Code</span>
+      <span class="hero-pill">📦 ZIP Download</span>
+      <span class="hero-pill">🔗 Linked to Publications</span>
+    </div>
+  </div>
+</section>
 
+<!-- COPY TOAST -->
+<div id="copy-toast">✓ Code copied to clipboard</div>
 
-<!-- HEADER -->
-<div class="header">
-  <h1>Data and Code Lab</h1>
-</div>
-
-
-
-<!-- REQUIRED LIBRARIES -->
+<!-- REQUIRED LIBS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
-<!-- ================= CONTAINER ================= -->
-<div class="container">
+<!-- PAGE BODY -->
+<div class="page-body">
 
-<!-- ================= DENGUE CARD ================= -->
-<div class="card">
-
-  <h2>District Level Dengue Project</h2>
-
-  <button class="btn" onclick="downloadProject(1)">Download All</button>
-
-  <!-- YEARLY -->
-  <div class="flex">
-
-    <div class="box">
-      <h3>Dataset (Yearly)</h3>
-      <div class="scroll"><table id="dataTable2"></table></div>
+  <!-- ═══════════════════════════════════════
+       PROJECT 1: DISTRICT DENGUE
+  ═══════════════════════════════════════ -->
+  <div class="project-card dengue-dist" id="card-dengue-dist">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span class="project-badge badge-dengue">🦟 Dengue · Bangladesh · District Level</span>
+        <h2 class="card-title">District-Level Dengue Early Warning System</h2>
+        <p class="card-desc">Yearly and monthly dengue surveillance data across all 64 districts of Bangladesh (2017–2024), integrated with climate, socio-demographic, economic, and healthcare indicators.</p>
+      </div>
+      <button class="download-btn" id="dl-dengue-dist" onclick="downloadProject('dengue-dist')">↓ Download All</button>
     </div>
 
-    <div class="box">
-      <h3>Variables (Yearly)</h3>
-      <div class="scroll"><table id="varTable2"></table></div>
+    <div class="card-tabs">
+      <button class="tab-btn active" data-card="dengue-dist" data-tab="data-yearly"><span class="tab-icon">📊</span> Dataset (Yearly)</button>
+      <button class="tab-btn" data-card="dengue-dist" data-tab="vars-yearly"><span class="tab-icon">📋</span> Variables (Yearly)</button>
+      <button class="tab-btn" data-card="dengue-dist" data-tab="data-monthly"><span class="tab-icon">📊</span> Dataset (Monthly)</button>
+      <button class="tab-btn" data-card="dengue-dist" data-tab="vars-monthly"><span class="tab-icon">📋</span> Variables (Monthly)</button>
+      <button class="tab-btn" data-card="dengue-dist" data-tab="code-r"><span class="tab-icon">🔵</span> R Code</button>
+      <button class="tab-btn" data-card="dengue-dist" data-tab="code-py"><span class="tab-icon">🟡</span> Python Code</button>
+      <button class="tab-btn" data-card="dengue-dist" data-tab="pubs"><span class="tab-icon">📄</span> Publication</button>
     </div>
 
-  </div>
-
-  <!-- MONTHLY -->
-  <div class="flex">
-
-    <div class="box">
-      <h3>Dataset (Monthly)</h3>
-      <div class="scroll"><table id="dataTable3"></table></div>
+    <div class="tab-panel active" id="dengue-dist-data-yearly">
+      <div class="table-meta"><span class="table-label">Yearly surveillance dataset</span><span class="row-count" id="rc-dengue-dist-yearly">Loading…</span></div>
+      <div class="table-scroll"><table id="tbl-dengue-dist-yearly"><tr><td class="table-loading">Loading data…</td></tr></table></div>
     </div>
-
-    <div class="box">
-      <h3>Variables (Monthly)</h3>
-      <div class="scroll"><table id="varTable3"></table></div>
+    <div class="tab-panel" id="dengue-dist-vars-yearly">
+      <div class="table-meta"><span class="table-label">Variable dictionary (yearly)</span></div>
+      <div class="table-scroll"><table id="tbl-dengue-dist-vars-yearly"><tr><td class="table-loading">Loading…</td></tr></table></div>
     </div>
-
-  </div>
-
-  <!-- R CODE -->
-  <h3 style="margin-top:15px;">R Code</h3>
-  <button class="btn" onclick="copyCode('rCodeBox2')">Copy R Code</button>
-  <textarea id="rCodeBox2" readonly></textarea>
-
-  <!-- PYTHON CODE -->
-  <h3 style="margin-top:15px;">Python Code</h3>
-  <button class="btn" onclick="copyCode('pyCodeBox2')">Copy Python Code</button>
-  <textarea id="pyCodeBox2" readonly></textarea>
-
-  <!-- PUBLICATION -->
-  <h3 style="margin-top:15px;">Publication</h3>
-  <p>
-    Shiddik, M.A.B., Toshi, F.Z., Yesmin, S. and Rahman, M.S., 2026. District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning. Tropical Medicine and Infectious Disease, 11(3), p.73.
-  </p>
-
-</div>
-
-
-
- <div class="card">
-
-  <h2>Dengue AI and Early Warning System</h2>
-
-  <button class="btn" onclick="downloadProject(0)">Download All</button>
-
-  <div class="flex">
-
-    <div class="box">
-      <h3>Dataset (Monthly)</h3>
-      <div class="scroll">
-        <table id="dataTable1"></table>
+    <div class="tab-panel" id="dengue-dist-data-monthly">
+      <div class="table-meta"><span class="table-label">Monthly surveillance dataset</span><span class="row-count" id="rc-dengue-dist-monthly">Loading…</span></div>
+      <div class="table-scroll"><table id="tbl-dengue-dist-monthly"><tr><td class="table-loading">Loading data…</td></tr></table></div>
+    </div>
+    <div class="tab-panel" id="dengue-dist-vars-monthly">
+      <div class="table-meta"><span class="table-label">Variable dictionary (monthly)</span></div>
+      <div class="table-scroll"><table id="tbl-dengue-dist-vars-monthly"><tr><td class="table-loading">Loading…</td></tr></table></div>
+    </div>
+    <div class="tab-panel" id="dengue-dist-code-r">
+      <div class="code-header">
+        <span class="lang-badge lang-r">R · Bayesian Spatiotemporal</span>
+        <button class="copy-btn" onclick="copyCode('code-dengue-dist-r', this)">⎘ Copy</button>
+      </div>
+      <div class="code-box" id="code-dengue-dist-r"><span class="code-loading">Loading R code…</span></div>
+    </div>
+    <div class="tab-panel" id="dengue-dist-code-py">
+      <div class="code-header">
+        <span class="lang-badge lang-py">Python · MLP · ConvLSTM · SHAP</span>
+        <button class="copy-btn" onclick="copyCode('code-dengue-dist-py', this)">⎘ Copy</button>
+      </div>
+      <div class="code-box" id="code-dengue-dist-py"><span class="code-loading">Loading Python code…</span></div>
+    </div>
+    <div class="tab-panel" id="dengue-dist-pubs">
+      <div class="pub-list">
+        <div class="pub-ref">Shiddik, M.A.B., Toshi, F.Z., Yesmin, S. &amp; Rahman, M.S. (2026). District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning. <em>Tropical Medicine and Infectious Disease</em>, 11(3), p.73. <a href="https://doi.org/10.3390/tropicalmed11030073" target="_blank">↗ DOI</a></div>
       </div>
     </div>
+  </div>
 
-    <div class="box">
-      <h3>Variables</h3>
-      <div class="scroll">
-        <table id="varTable1"></table>
+  <!-- ═══════════════════════════════════════
+       PROJECT 2: DENGUE EWS / AI
+  ═══════════════════════════════════════ -->
+  <div class="project-card dengue-ews" id="card-dengue-ews">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span class="project-badge badge-dengue">🦟 Dengue · Bangladesh · National</span>
+        <h2 class="card-title">Dengue AI &amp; Early Warning System</h2>
+        <p class="card-desc">Monthly national dengue data (2000–2024) with climatic, sociodemographic, and landscape variables used to train XGBoost, LightGBM, and causal inference models.</p>
+      </div>
+      <button class="download-btn" id="dl-dengue-ews" onclick="downloadProject('dengue-ews')">↓ Download All</button>
+    </div>
+
+    <div class="card-tabs">
+      <button class="tab-btn active" data-card="dengue-ews" data-tab="data"><span class="tab-icon">📊</span> Dataset</button>
+      <button class="tab-btn" data-card="dengue-ews" data-tab="vars"><span class="tab-icon">📋</span> Variables</button>
+      <button class="tab-btn" data-card="dengue-ews" data-tab="code-py"><span class="tab-icon">🟡</span> Python Code</button>
+      <button class="tab-btn" data-card="dengue-ews" data-tab="code-r"><span class="tab-icon">🔵</span> R Code (EWS)</button>
+      <button class="tab-btn" data-card="dengue-ews" data-tab="pubs"><span class="tab-icon">📄</span> Publications</button>
+    </div>
+
+    <div class="tab-panel active" id="dengue-ews-data">
+      <div class="table-meta"><span class="table-label">Monthly dengue dataset</span><span class="row-count" id="rc-dengue-ews">Loading…</span></div>
+      <div class="table-scroll"><table id="tbl-dengue-ews"><tr><td class="table-loading">Loading data…</td></tr></table></div>
+    </div>
+    <div class="tab-panel" id="dengue-ews-vars">
+      <div class="table-meta"><span class="table-label">Variable dictionary</span></div>
+      <div class="table-scroll"><table id="tbl-dengue-ews-vars"><tr><td class="table-loading">Loading…</td></tr></table></div>
+    </div>
+    <div class="tab-panel" id="dengue-ews-code-py">
+      <div class="code-header">
+        <span class="lang-badge lang-py">Python · XGBoost · LightGBM · SHAP · LIME · CAI</span>
+        <button class="copy-btn" onclick="copyCode('code-dengue-ews-py', this)">⎘ Copy</button>
+      </div>
+      <div class="code-box" id="code-dengue-ews-py"><span class="code-loading">Loading Python code…</span></div>
+    </div>
+    <div class="tab-panel" id="dengue-ews-code-r">
+      <div class="code-header">
+        <span class="lang-badge lang-r">R · Early Warning System</span>
+        <button class="copy-btn" onclick="copyCode('code-dengue-ews-r', this)">⎘ Copy</button>
+      </div>
+      <div class="code-box" id="code-dengue-ews-r"><span class="code-loading">Loading R code…</span></div>
+    </div>
+    <div class="tab-panel" id="dengue-ews-pubs">
+      <div class="pub-list">
+        <div class="pub-ref">Rahman, M.S. &amp; Shiddik, M.A.B. (2025). Explainable artificial intelligence for predicting dengue outbreaks in Bangladesh using eco-climatic triggers. <em>Global Epidemiology</em>, 10, 100210. <a href="https://doi.org/10.1016/j.gloepi.2025.100210" target="_blank">↗ DOI</a></div>
+        <div class="pub-ref">Rahman, S. &amp; Shiddik, A.B. (2025). Reflections on explainable artificial intelligence for predicting dengue outbreaks in Bangladesh. <em>Global Epidemiology</em>, p.100230. <a href="https://doi.org/10.1016/j.gloepi.2025.100230" target="_blank">↗ DOI</a></div>
+        <div class="pub-ref">Rahman, M.S., Amrin, M. &amp; Shiddik, M.A. (2025). Dengue Early Warning System using interpretable tree-based machine learning models. <em>Health Science Reports</em>, 8(5), e70726. <a href="https://doi.org/10.1002/hsr2.70726" target="_blank">↗ DOI</a></div>
+        <div class="pub-ref">Rahman, M.S. &amp; Shiddik, M.A.B. (2025). Data-driven dengue prevention strategies using explainable AI and causal inference. <em>International Journal of Statistical Sciences</em>, 25(2), 101–113. <a href="https://doi.org/10.3329/ijss.v25i2.85772" target="_blank">↗ DOI</a></div>
       </div>
     </div>
-
   </div>
 
-  <!-- PYTHON -->
-  <h3 style="margin-top:15px;">Python Code (EWS + AI)</h3>
-  <button class="btn" onclick="copyCode('pyCodeBox1')">Copy Python Code</button>
-  <textarea id="pyCodeBox1" readonly></textarea>
-
-  <!-- R -->
-  <h3 style="margin-top:15px;">R Code (EWS)</h3>
-  <button class="btn" onclick="copyCode('rCodeBox1')">Copy R Code</button>
-  <textarea id="rCodeBox1" readonly></textarea>
-
-  <!-- PUBLICATIONS -->
-  <h3 style="margin-top:15px;">Publications</h3>
-
-  <p>
-    Rahman, M.S. and Shiddik, M.A.B., 2025. Explainable artificial intelligence for predicting dengue outbreaks in Bangladesh using eco-climatic triggers. <em>Global Epidemiology</em>, 10, 100210.
-  </p>
-
-  <p>
-    Rahman, S. and Shiddik, A.B., 2025. Reflections on explainable artificial intelligence for predicting dengue outbreaks in Bangladesh. <em>Global Epidemiology</em>, p.100230.
-  </p>
-
-  <p>
-    Rahman, M.S., Amrin, M. and Shiddik, M.A., 2025. Dengue Early Warning System using interpretable tree-based machine learning models. <em>Health Science Reports</em>, 8(5), e70726.
-  </p>
-
-  <p>
-    Rahman, M.S. and Shiddik, M.A.B., 2025. Data-driven dengue prevention strategies using explainable AI and causal inference. <em>International Journal of Statistical Sciences</em>, 25(2), 101–113.
-  </p>
-
-</div>
-
-
- 
-<!-- ================= TB CARD ================= -->
-<div class="card">
-
-  <h2>Global TB Project</h2>
-
-  <button class="btn" onclick="downloadProject(0)">Download All</button>
-
-  <div class="flex">
-
-    <div class="box">
-      <h3>Dataset</h3>
-      <div class="scroll"><table id="dataTable"></table></div>
+  <!-- ═══════════════════════════════════════
+       PROJECT 3: GLOBAL TB
+  ═══════════════════════════════════════ -->
+  <div class="project-card tb" id="card-tb">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span class="project-badge badge-tb">🌍 Tuberculosis · Global · 194 Countries</span>
+        <h2 class="card-title">Global Tuberculosis Project</h2>
+        <p class="card-desc">Global TB incidence and mortality data across 194 countries (2000–2022), with socioeconomic, environmental, and healthcare indicators used in XGBoost + XAI analysis.</p>
+      </div>
+      <button class="download-btn" id="dl-tb" onclick="downloadProject('tb')">↓ Download All</button>
     </div>
 
-    <div class="box">
-      <h3>Variables</h3>
-      <div class="scroll"><table id="varTable"></table></div>
+    <div class="card-tabs">
+      <button class="tab-btn active" data-card="tb" data-tab="data"><span class="tab-icon">📊</span> Dataset</button>
+      <button class="tab-btn" data-card="tb" data-tab="vars"><span class="tab-icon">📋</span> Variables</button>
+      <button class="tab-btn" data-card="tb" data-tab="code-r"><span class="tab-icon">🔵</span> R Code</button>
+      <button class="tab-btn" data-card="tb" data-tab="pubs"><span class="tab-icon">📄</span> Publication</button>
     </div>
 
-  </div>
-
-  <h3 style="margin-top:15px;">R Code</h3>
-  <button class="btn" onclick="copyCode('rCodeBox')">Copy R Code</button>
-  <textarea id="rCodeBox" readonly></textarea>
-
-  <h3 style="margin-top:15px;">Publication</h3>
-  <p>
-    Rahman, M.S. & Shiddik, A.B. (2025). Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally. <em>Scientific Reports</em>.
-  </p>
-
-</div>
-
-
-
-<!-- ================= MALARIA CARD ================= -->
-<div class="card">
-
-  <h2>Global malaria project</h2>
-
-  <button class="btn" onclick="downloadProject(2)">Download All</button>
-
-  <div class="flex">
-    <div class="box">
-      <h3>Dataset</h3>
-      <div class="scroll"><table id="dataTable4"></table></div>
+    <div class="tab-panel active" id="tb-data">
+      <div class="table-meta"><span class="table-label">Global TB dataset</span><span class="row-count" id="rc-tb">Loading…</span></div>
+      <div class="table-scroll"><table id="tbl-tb"><tr><td class="table-loading">Loading data…</td></tr></table></div>
     </div>
-
-    <div class="box">
-      <h3>Variables</h3>
-      <div class="scroll"><table id="varTable4"></table></div>
+    <div class="tab-panel" id="tb-vars">
+      <div class="table-meta"><span class="table-label">Variable dictionary</span></div>
+      <div class="table-scroll"><table id="tbl-tb-vars"><tr><td class="table-loading">Loading…</td></tr></table></div>
+    </div>
+    <div class="tab-panel" id="tb-code-r">
+      <div class="code-header">
+        <span class="lang-badge lang-r">R · XGBoost · XAI · Spatial Analysis</span>
+        <button class="copy-btn" onclick="copyCode('code-tb-r', this)">⎘ Copy</button>
+      </div>
+      <div class="code-box" id="code-tb-r"><span class="code-loading">Loading R code…</span></div>
+    </div>
+    <div class="tab-panel" id="tb-pubs">
+      <div class="pub-list">
+        <div class="pub-ref">Rahman, M.S. &amp; Shiddik, A.B. (2025). Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally. <em>Scientific Reports</em>. <a href="https://doi.org/10.1038/s41598-025-96973-w" target="_blank">↗ DOI</a></div>
+      </div>
     </div>
   </div>
 
-  <h3 style="margin-top:15px;">R Code</h3>
-  <button class="btn" onclick="copyCode('rCodeBox3')">Copy R Code</button>
-  <textarea id="rCodeBox3" readonly></textarea>
+  <!-- ═══════════════════════════════════════
+       PROJECT 4: GLOBAL MALARIA
+  ═══════════════════════════════════════ -->
+  <div class="project-card malaria" id="card-malaria">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span class="project-badge badge-malaria">🌍 Malaria · Global · 106 Countries</span>
+        <h2 class="card-title">Global Malaria Project</h2>
+        <p class="card-desc">Malaria incidence and mortality data across 106 countries (2000–2022), incorporating sanitation, electricity, population, and health system variables for XGBoost and spatial hotspot analysis.</p>
+      </div>
+      <button class="download-btn" id="dl-malaria" onclick="downloadProject('malaria')">↓ Download All</button>
+    </div>
 
-  <h3 style="margin-top:15px;">Publication</h3>
-<p>
-  Rahman, M.S. and Shiddik, M.A.B., 2025.  
-  Unraveling global malaria incidence and mortality using machine learning and artificial intelligence–driven spatial analysis.  
-  <em>Scientific Reports</em>, 15(1), p.28334.
-</p>
+    <div class="card-tabs">
+      <button class="tab-btn active" data-card="malaria" data-tab="data"><span class="tab-icon">📊</span> Dataset</button>
+      <button class="tab-btn" data-card="malaria" data-tab="vars"><span class="tab-icon">📋</span> Variables</button>
+      <button class="tab-btn" data-card="malaria" data-tab="code-r"><span class="tab-icon">🔵</span> R Code</button>
+      <button class="tab-btn" data-card="malaria" data-tab="pubs"><span class="tab-icon">📄</span> Publication</button>
+    </div>
 
-</div>
+    <div class="tab-panel active" id="malaria-data">
+      <div class="table-meta"><span class="table-label">Global malaria dataset</span><span class="row-count" id="rc-malaria">Loading…</span></div>
+      <div class="table-scroll"><table id="tbl-malaria"><tr><td class="table-loading">Loading data…</td></tr></table></div>
+    </div>
+    <div class="tab-panel" id="malaria-vars">
+      <div class="table-meta"><span class="table-label">Variable dictionary</span></div>
+      <div class="table-scroll"><table id="tbl-malaria-vars"><tr><td class="table-loading">Loading…</td></tr></table></div>
+    </div>
+    <div class="tab-panel" id="malaria-code-r">
+      <div class="code-header">
+        <span class="lang-badge lang-r">R · XGBoost · Getis-Ord Gi* · Causal AI</span>
+        <button class="copy-btn" onclick="copyCode('code-malaria-r', this)">⎘ Copy</button>
+      </div>
+      <div class="code-box" id="code-malaria-r"><span class="code-loading">Loading R code…</span></div>
+    </div>
+    <div class="tab-panel" id="malaria-pubs">
+      <div class="pub-list">
+        <div class="pub-ref">Rahman, M.S. &amp; Shiddik, M.A.B. (2025). Unraveling global malaria incidence and mortality using machine learning and artificial intelligence–driven spatial analysis. <em>Scientific Reports</em>, 15(1), p.28334. <a href="https://doi.org/10.1038/s41598-025-12872-0" target="_blank">↗ DOI</a></div>
+      </div>
+    </div>
+  </div>
 
+</div><!-- /page-body -->
 
-</div>
-
-
-
-
-
-
-
-
-
-
-
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -715,7 +543,7 @@ textarea {
     <div>
       <div class="footer-col-title">Connect</div>
       <div class="footer-social-links">
-        <a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/" target="_blank">🌐 Portfolio</a>
+        <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">🌐 Portfolio</a>
         <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">in LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">🎓 Google Scholar</a>
         <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">✦ ORCID</a>
@@ -729,226 +557,269 @@ textarea {
   </div>
 </footer>
 
-
-
-
-
-
-
- 
 <script>
-/* ================= PROJECT CONFIG ================= */
-const projects = [
-  {
-    name: "Global TB Project",
-    data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTB.csv",
-    var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTBVariables.csv",
-    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/TBXAI.txt",
-    tableId: "dataTable",
-    varId: "varTable",
-    rId: "rCodeBox"
+/* ═══════════════════════════════
+   DATA SOURCES
+═══════════════════════════════ */
+var SOURCES = {
+  'dengue-dist': {
+    'tbl-dengue-dist-yearly':      'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Yearly_Data.csv',
+    'tbl-dengue-dist-vars-yearly': 'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Variable1_Yearly.csv',
+    'tbl-dengue-dist-monthly':     'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Monthly_Data.csv',
+    'tbl-dengue-dist-vars-monthly':'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Variable2_monthly.csv',
+    'code-dengue-dist-r':          'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/RCode_Dengue_BD%20(1).txt',
+    'code-dengue-dist-py':         'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/PythonCode_Dengue_BD.txt',
   },
-
-  {
-    name: "District Level Dengue Project",
-    data1: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Yearly_Data.csv",
-    var1: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Variable1_Yearly.csv",
-    data2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Monthly_Data.csv",
-    var2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Variable2_monthly.csv",
-    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/RCode_Dengue_BD%20(1).txt",
-    pycode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/PythonCode_Dengue_BD.txt",
-    tableId1: "dataTable2",
-    varId1: "varTable2",
-    tableId2: "dataTable3",
-    varId2: "varTable3",
-    rId: "rCodeBox2",
-    pyId: "pyCodeBox2"
+  'dengue-ews': {
+    'tbl-dengue-ews':      'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDData.csv',
+    'tbl-dengue-ews-vars': 'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDVariable.csv',
+    'code-dengue-ews-py':  'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/CAIPythonCodeDengue.txt',
+    'code-dengue-ews-r':   'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/EWS_DengueRcode.txt',
   },
-
-  {
-    name: "Global malaria project",
-    data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalMalariaDataset.csv",
-    var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalMalariaVariable.csv",
-    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/10325MalariaR.txt",
-    tableId: "dataTable4",
-    varId: "varTable4",
-    rId: "rCodeBox3"
+  'tb': {
+    'tbl-tb':      'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTB.csv',
+    'tbl-tb-vars': 'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTBVariables.csv',
+    'code-tb-r':   'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/TBXAI.txt',
   },
-
-  {
-    name: "Dengue AI and EWS",
-    data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDData.csv",
-    var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDVariable.csv",
-    pycode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/CAIPythonCodeDengue.txt",
-    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/EWS_DengueRcode.txt",
-    tableId: "dataTable1",
-    varId: "varTable1",
-    rId: "rCodeBox1",
-    pyId: "pyCodeBox1"
+  'malaria': {
+    'tbl-malaria':      'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalMalariaDataset.csv',
+    'tbl-malaria-vars': 'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalMalariaVariable.csv',
+    'code-malaria-r':   'https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/10325MalariaR.txt',
   }
-];
+};
 
-/* ================= SAFE FETCH ================= */
-async function safeFetch(url) {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("fetch error");
-    return await res.text();
-  } catch (err) {
-    console.log("Fetch failed:", url);
-    return null;
-  }
+/* download files per project */
+var DOWNLOAD_FILES = {
+  'dengue-dist': [
+    { name: 'Yearly_Dataset.csv',    url: SOURCES['dengue-dist']['tbl-dengue-dist-yearly'] },
+    { name: 'Yearly_Variables.csv',  url: SOURCES['dengue-dist']['tbl-dengue-dist-vars-yearly'] },
+    { name: 'Monthly_Dataset.csv',   url: SOURCES['dengue-dist']['tbl-dengue-dist-monthly'] },
+    { name: 'Monthly_Variables.csv', url: SOURCES['dengue-dist']['tbl-dengue-dist-vars-monthly'] },
+    { name: 'R_Code.txt',            url: SOURCES['dengue-dist']['code-dengue-dist-r'] },
+    { name: 'Python_Code.txt',       url: SOURCES['dengue-dist']['code-dengue-dist-py'] },
+  ],
+  'dengue-ews': [
+    { name: 'Dataset.csv',       url: SOURCES['dengue-ews']['tbl-dengue-ews'] },
+    { name: 'Variables.csv',     url: SOURCES['dengue-ews']['tbl-dengue-ews-vars'] },
+    { name: 'Python_Code.txt',   url: SOURCES['dengue-ews']['code-dengue-ews-py'] },
+    { name: 'R_EWS_Code.txt',    url: SOURCES['dengue-ews']['code-dengue-ews-r'] },
+  ],
+  'tb': [
+    { name: 'Dataset.csv',    url: SOURCES['tb']['tbl-tb'] },
+    { name: 'Variables.csv',  url: SOURCES['tb']['tbl-tb-vars'] },
+    { name: 'R_Code.txt',     url: SOURCES['tb']['code-tb-r'] },
+  ],
+  'malaria': [
+    { name: 'Dataset.csv',    url: SOURCES['malaria']['tbl-malaria'] },
+    { name: 'Variables.csv',  url: SOURCES['malaria']['tbl-malaria-vars'] },
+    { name: 'R_Code.txt',     url: SOURCES['malaria']['code-malaria-r'] },
+  ]
+};
+
+/* ═══════════════════════════════
+   FETCH HELPER
+═══════════════════════════════ */
+function safeFetch(url) {
+  return fetch(url)
+    .then(function(r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .catch(function() { return null; });
 }
 
-/* ================= LOAD TABLE ================= */
-async function loadTable(url, id, limit = 400) {
-  const el = document.getElementById(id);
+/* ═══════════════════════════════
+   LOAD CSV TABLE
+═══════════════════════════════ */
+function loadTable(url, tableId, rowCountId) {
+  var el = document.getElementById(tableId);
   if (!el) return;
-
-  const text = await safeFetch(url);
-
-  if (!text) {
-    el.innerHTML = "<tr><td>No data available</td></tr>";
-    return;
-  }
-
-  const rows = text.split("\n").slice(0, limit);
-  let html = "";
-
-  rows.forEach((row, i) => {
-    html += "<tr>";
-
-    row.split(",").forEach(cell => {
-      html += i === 0 
-        ? `<th>${cell}</th>` 
-        : `<td>${cell}</td>`;
+  safeFetch(url).then(function(text) {
+    if (!text) { el.innerHTML = '<tr><td style="padding:16px;color:#64748b;">Data unavailable</td></tr>'; return; }
+    var rows = text.trim().split('\n').slice(0, 400);
+    var html = '';
+    rows.forEach(function(row, i) {
+      var cells = parseCSVRow(row);
+      html += '<tr>';
+      cells.forEach(function(cell) {
+        html += i === 0 ? '<th>' + esc(cell) + '</th>' : '<td>' + esc(cell) + '</td>';
+      });
+      html += '</tr>';
     });
-
-    html += "</tr>";
-  });
-
-  el.innerHTML = html;
-}
-
-/* ================= LOAD CODE ================= */
-async function loadCode(url, id, limit = 800) {
-  const el = document.getElementById(id);
-  if (!el) return;
-
-  const text = await safeFetch(url);
-
-  if (!text) {
-    el.value = "No code available";
-    return;
-  }
-
-  el.value = text.split("\n").slice(0, limit).join("\n");
-}
-
-/* ================= COPY CODE ================= */
-function copyCode(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-
-  navigator.clipboard.writeText(el.value)
-    .then(() => alert("Copied successfully"))
-    .catch(() => alert("Copy failed"));
-}
-
-/* ================= DOWNLOAD PROJECT ================= */
-async function downloadProject(index) {
-
-  const p = projects[index];
-  if (!p) return;
-
-  const zip = new JSZip();
-
-  try {
-    if (p.data) zip.file("Dataset.csv", await safeFetch(p.data));
-    if (p.var) zip.file("Variables.csv", await safeFetch(p.var));
-    if (p.rcode) zip.file("R_Code.txt", await safeFetch(p.rcode));
-    if (p.pycode) zip.file("Python_Code.txt", await safeFetch(p.pycode));
-  } catch (err) {
-    alert("Download failed");
-    return;
-  }
-
-  zip.generateAsync({ type: "blob" }).then(content => {
-    saveAs(content, p.name.replace(/\s+/g, "_") + ".zip");
+    el.innerHTML = html;
+    if (rowCountId) {
+      var rc = document.getElementById(rowCountId);
+      if (rc) rc.textContent = (rows.length - 1) + ' rows · ' + (rows[0] ? parseCSVRow(rows[0]).length : 0) + ' columns';
+    }
   });
 }
 
-/* ================= INIT ALL ================= */
-projects.forEach(p => {
+function parseCSVRow(row) {
+  var result = [], current = '', inQ = false;
+  for (var i = 0; i < row.length; i++) {
+    var ch = row[i];
+    if (ch === '"') { inQ = !inQ; }
+    else if (ch === ',' && !inQ) { result.push(current.trim()); current = ''; }
+    else { current += ch; }
+  }
+  result.push(current.trim());
+  return result;
+}
 
-  /* DATA */
-  if (p.data) loadTable(p.data, p.tableId);
-  if (p.data1) loadTable(p.data1, p.tableId1);
-  if (p.data2) loadTable(p.data2, p.tableId2);
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
 
-  /* VARIABLES */
-  if (p.var) loadTable(p.var, p.varId);
-  if (p.var1) loadTable(p.var1, p.varId1);
-  if (p.var2) loadTable(p.var2, p.varId2);
+/* ═══════════════════════════════
+   LOAD CODE
+═══════════════════════════════ */
+function loadCode(url, codeId) {
+  var el = document.getElementById(codeId);
+  if (!el) return;
+  safeFetch(url).then(function(text) {
+    if (!text) { el.textContent = '# Code unavailable'; return; }
+    el.textContent = text.split('\n').slice(0, 800).join('\n');
+  });
+}
 
-  /* CODE */
-  if (p.rcode) loadCode(p.rcode, p.rId);
-  if (p.pycode) loadCode(p.pycode, p.pyId);
+/* ═══════════════════════════════
+   COPY CODE
+═══════════════════════════════ */
+var toast = document.getElementById('copy-toast');
+function showToast() {
+  toast.classList.add('show');
+  setTimeout(function() { toast.classList.remove('show'); }, 2000);
+}
+function copyCode(codeId, btn) {
+  var el = document.getElementById(codeId);
+  if (!el) return;
+  var text = el.textContent || '';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function() {
+      if (btn) { btn.textContent = '✓ Copied'; btn.classList.add('copied'); setTimeout(function() { btn.textContent = '⎘ Copy'; btn.classList.remove('copied'); }, 2000); }
+      showToast();
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    showToast();
+  }
+}
 
+/* ═══════════════════════════════
+   TAB SWITCHING
+═══════════════════════════════ */
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var card = btn.dataset.card;
+    var tab = btn.dataset.tab;
+    var panelId = card + '-' + tab;
+    /* deactivate all tabs in this card */
+    btn.closest('.project-card').querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    /* hide all panels in this card */
+    btn.closest('.project-card').querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+    var panel = document.getElementById(panelId);
+    if (panel) panel.classList.add('active');
+    /* lazy load on first activation */
+    lazyLoad(card, tab, panelId);
+  });
 });
 
- document.querySelectorAll(".dropbtn").forEach(btn => {
-  btn.addEventListener("click", function (e) {
+/* ═══════════════════════════════
+   LAZY LOADER
+═══════════════════════════════ */
+var loaded = {};
+function lazyLoad(card, tab, panelId) {
+  if (loaded[panelId]) return;
+  loaded[panelId] = true;
+  var src = SOURCES[card];
+  if (!src) return;
+  /* determine what to load based on tab */
+  if (tab.startsWith('data') || tab.startsWith('vars')) {
+    var tblMap = {
+      'dengue-dist': { 'data-yearly': ['tbl-dengue-dist-yearly','rc-dengue-dist-yearly'], 'vars-yearly': ['tbl-dengue-dist-vars-yearly',null], 'data-monthly': ['tbl-dengue-dist-monthly','rc-dengue-dist-monthly'], 'vars-monthly': ['tbl-dengue-dist-vars-monthly',null] },
+      'dengue-ews':  { 'data': ['tbl-dengue-ews','rc-dengue-ews'], 'vars': ['tbl-dengue-ews-vars',null] },
+      'tb':          { 'data': ['tbl-tb','rc-tb'], 'vars': ['tbl-tb-vars',null] },
+      'malaria':     { 'data': ['tbl-malaria','rc-malaria'], 'vars': ['tbl-malaria-vars',null] }
+    };
+    var m = tblMap[card] && tblMap[card][tab];
+    if (m) {
+      var tblId = m[0], rcId = m[1];
+      var url = src[tblId];
+      if (url) loadTable(url, tblId, rcId);
+    }
+  } else if (tab.startsWith('code')) {
+    var codeMap = {
+      'dengue-dist': { 'code-r': 'code-dengue-dist-r', 'code-py': 'code-dengue-dist-py' },
+      'dengue-ews':  { 'code-py': 'code-dengue-ews-py', 'code-r': 'code-dengue-ews-r' },
+      'tb':          { 'code-r': 'code-tb-r' },
+      'malaria':     { 'code-r': 'code-malaria-r' }
+    };
+    var c = codeMap[card] && codeMap[card][tab];
+    if (c) {
+      var url2 = src[c];
+      if (url2) loadCode(url2, c);
+    }
+  }
+}
+
+/* ═══════════════════════════════
+   DOWNLOAD ZIP
+═══════════════════════════════ */
+function downloadProject(projectKey) {
+  var btn = document.getElementById('dl-' + projectKey);
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Preparing…'; }
+  var files = DOWNLOAD_FILES[projectKey];
+  if (!files) return;
+  var zip = new JSZip();
+  var promises = files.map(function(f) {
+    return safeFetch(f.url).then(function(text) {
+      if (text) zip.file(f.name, text);
+    });
+  });
+  Promise.all(promises).then(function() {
+    zip.generateAsync({ type: 'blob' }).then(function(content) {
+      saveAs(content, projectKey.replace(/-/g, '_') + '_data_code.zip');
+      if (btn) { btn.disabled = false; btn.textContent = '↓ Download All'; }
+    });
+  }).catch(function() {
+    if (btn) { btn.disabled = false; btn.textContent = '↓ Download All'; }
+    alert('Download failed. Please try again.');
+  });
+}
+
+/* ═══════════════════════════════
+   INIT: LOAD DEFAULT VISIBLE TABS
+═══════════════════════════════ */
+document.addEventListener('DOMContentLoaded', function() {
+  /* pre-load the first active panel of each card */
+  [
+    ['dengue-dist', 'data-yearly', 'dengue-dist-data-yearly'],
+    ['dengue-ews',  'data',        'dengue-ews-data'],
+    ['tb',          'data',        'tb-data'],
+    ['malaria',     'data',        'malaria-data'],
+  ].forEach(function(item) { lazyLoad(item[0], item[1], item[2]); });
+});
+
+/* ═══════════════════════════════
+   NAVBAR
+═══════════════════════════════ */
+document.querySelectorAll('.dropbtn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
     e.stopPropagation();
-
-    const parent = this.parentElement;
-
-    // close other dropdowns
-    document.querySelectorAll(".dropdown").forEach(d => {
-      if (d !== parent) d.classList.remove("active");
-    });
-
-    parent.classList.toggle("active");
+    var dd = btn.closest('.dropdown');
+    var open = dd.classList.contains('active');
+    document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
+    if (!open) dd.classList.add('active');
   });
 });
-
-/* close when clicking outside */
-document.addEventListener("click", () => {
-  document.querySelectorAll(".dropdown").forEach(d => {
-    d.classList.remove("active");
-  });
+document.addEventListener('click', function() {
+  document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
 });
-
-
-
- document.querySelectorAll('.dropbtn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      const dd = btn.closest('.dropdown');
-      const open = dd.classList.contains('active');
-      document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-      if (!open) dd.classList.add('active');
-    });
-  });
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-  });
-
-  const ham = document.getElementById('hamburger');
-  const drawer = document.getElementById('nav-drawer');
-  ham.addEventListener('click', () => {
-    ham.classList.toggle('open');
-    drawer.classList.toggle('open');
-  });
-  drawer.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      ham.classList.remove('open');
-      drawer.classList.remove('open');
-    });
-  });
+var ham = document.getElementById('hamburger');
+var navDrawer = document.getElementById('nav-drawer');
+ham.addEventListener('click', function() { ham.classList.toggle('open'); navDrawer.classList.toggle('open'); });
+navDrawer.querySelectorAll('a').forEach(function(a) {
+  a.addEventListener('click', function() { ham.classList.remove('open'); navDrawer.classList.remove('open'); });
+});
 </script>
-
-
-
 </body>
 </html>
