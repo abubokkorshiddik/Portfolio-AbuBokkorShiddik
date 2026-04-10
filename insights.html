@@ -561,7 +561,151 @@ Health Data Analysis
   }
 
 }
-  
+
+
+  @media (max-width: 768px) {
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* navbar fix */
+  .navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+  }
+
+  .nav-bar-inner {
+    padding: 10px 12px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-size: 13px;
+  }
+
+  /* header */
+  .header {
+    padding: 18px 10px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+
+  /* main layout */
+  .main-wrapper {
+    display: block;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  /* post card */
+  .post {
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 8px;
+  }
+
+  .post-content {
+    padding: 12px;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .post-title {
+    font-size: 16px;
+  }
+
+  .author-line {
+    font-size: 12px;
+  }
+
+  .author-line img.author-pic {
+    width: 30px;
+    height: 30px;
+  }
+
+  .meta {
+    font-size: 12px;
+  }
+
+  /* image fix */
+  .post img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  /* table fix important */
+  .post-content {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .post-content table {
+    width: 100%;
+    min-width: unset;
+    font-size: 12px;
+  }
+
+  .post-content th,
+  .post-content td {
+    padding: 6px 6px;
+    font-size: 12px;
+    word-break: break-word;
+  }
+
+  /* sidebar fix */
+  .sidebar {
+    width: 100%;
+    position: relative;
+    margin-top: 12px;
+    max-height: none;
+  }
+
+  /* buttons */
+  .share-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .read-more {
+    font-size: 12px;
+  }
+
+  /* nav drawer fix */
+  .nav-drawer {
+    max-height: 0;
+    overflow-y: auto;
+  }
+
+  .nav-drawer.open {
+    max-height: 80vh;
+  }
+
+  .drawer-link {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
 </style>
 
 </head>
