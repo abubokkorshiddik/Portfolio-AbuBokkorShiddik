@@ -332,12 +332,12 @@
 <!-- TOC TABS -->
 <div class="toc-bar">
   <div class="toc-inner">
-    <button class="toc-tab active" onclick="scrollTo('art')">🎨 Art &amp; Drawing</button>
-    <button class="toc-tab" onclick="scrollTo('conference')">🏛 ICASDS 2025</button>
-    <button class="toc-tab" onclick="scrollTo('academic')">🎓 Academic Activities</button>
-    <button class="toc-tab" onclick="scrollTo('social')">🤝 Social &amp; Volunteering</button>
-    <button class="toc-tab" onclick="scrollTo('stat')">📊 Dept. of Statistics</button>
-    <button class="toc-tab" onclick="scrollTo('travel')">✈ Travel &amp; Visits</button>
+    <button class="toc-tab active" data-target="art">🎨 Art &amp; Drawing</button>
+    <button class="toc-tab" data-target="conference">🏛 ICASDS 2025</button>
+    <button class="toc-tab" data-target="academic">🎓 Academic Activities</button>
+    <button class="toc-tab" data-target="social">🤝 Social &amp; Volunteering</button>
+    <button class="toc-tab" data-target="stat">📊 Dept. of Statistics</button>
+    <button class="toc-tab" data-target="travel">✈ Travel &amp; Visits</button>
   </div>
 </div>
 
@@ -700,10 +700,33 @@ drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ha
 /* ── TOC SCROLL ── */
 function scrollTo(id) {
   const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  document.querySelectorAll('.toc-tab').forEach(t => t.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+  if (!el) return;
+  const offset = 56 + 44; /* navbar + toc bar height */
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
 }
+
+document.querySelectorAll('.toc-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.toc-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    scrollTo(tab.dataset.target);
+  });
+});
+
+/* Highlight active tab on scroll */
+const sectionIds = ['art','conference','academic','social','stat','travel'];
+window.addEventListener('scroll', () => {
+  const offset = 56 + 44 + 20;
+  let current = sectionIds[0];
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= offset) current = id;
+  });
+  document.querySelectorAll('.toc-tab').forEach((tab, i) => {
+    tab.classList.toggle('active', sectionIds[i] === current);
+  });
+}, { passive: true });
 
 /* ── INIT ALL GRIDS ── */
 document.addEventListener('DOMContentLoaded', () => {
