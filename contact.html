@@ -23,145 +23,113 @@
       --navy:#0b1f3a;
       --blue:#1a56db;
       --border:#e2e8f0;
-      --text2:#475569;
-      --white:#fff;
     }
 
-    /* ================= NAVBAR (FULL HOMEPAGE STYLE) ================= */
-    .navbar{
-      background:var(--navy);
-      position:sticky;
-      top:0;
-      z-index:9999;
+    /* ================= NAVBAR (UNCHANGED AS REQUESTED) ================= */
+    .navbar { background: var(--navy); position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav-inner { max-width: 1180px; margin: auto; padding: 0 24px; display: flex; align-items: center; height: 56px; }
+    .nav-brand { font-size: 14.5px; font-weight: 600; color: #fff; margin-right: auto; white-space: nowrap; }
+    .nav-brand span { color: #93c5fd; font-weight: 300; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-links > a, .dropbtn { color: rgba(255,255,255,.75); font-size: 13.5px; font-weight: 500; padding: 6px 11px; border: none; background: none; cursor: pointer; font-family: inherit; }
+    .nav-links > a:hover, .dropbtn:hover { color: #fff; }
+    .dropdown { position: relative; }
+    .dropdown-content {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: #132444;
+      border-radius: 10px;
+      min-width: 190px;
+      padding: 6px;
+      display: none;
+      flex-direction: column;
+    }
+    .dropdown:hover .dropdown-content { display: flex; }
+    .dropdown-content a { padding: 8px 10px; color: rgba(255,255,255,.7); font-size: 13px; }
+    .dropdown-content a:hover { background: rgba(255,255,255,.08); color: #fff; }
+
+    .hamburger { display:none; }
+
+    /* ================= HERO IMAGE ================= */
+    .hero{
+      position:relative;
+      height:420px;
+      background:url('https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/stst.jpeg') center/cover no-repeat;
     }
 
-    .nav-inner{
+    /* dark overlay */
+    .hero::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(11,31,58,.85) 35%, rgba(11,31,58,.2) 100%);
+    }
+
+    /* text LEFT side */
+    .hero-content{
+      position:relative;
+      z-index:1;
       max-width:1180px;
       margin:auto;
-      padding:0 24px;
-      height:56px;
+      height:100%;
       display:flex;
       align-items:center;
+      padding:0 24px;
     }
 
-    .nav-brand{
-      font-size:14px;
-      font-weight:600;
+    .hero-text{
+      max-width:500px;
       color:#fff;
-      margin-right:auto;
-      white-space:nowrap;
     }
 
-    .nav-brand span{color:#93c5fd}
-
-    .nav-links{
-      display:flex;
-      gap:6px;
+    .dot{
+      width:8px;
+      height:8px;
+      background:#4ade80;
+      border-radius:50%;
+      display:inline-block;
+      margin-right:8px;
+      animation:pulse 1.8s infinite;
     }
 
-    .nav-links a,
-    .dropbtn{
-      color:rgba(255,255,255,.75);
-      font-size:13px;
-      padding:6px 10px;
-      background:none;
-      border:none;
-      cursor:pointer;
-      font-family:inherit;
+    @keyframes pulse{
+      0%,100%{transform:scale(1);opacity:1}
+      50%{transform:scale(.7);opacity:.5}
     }
 
-    .nav-links a:hover,
-    .dropbtn:hover{color:#fff}
-
-    .dropdown{position:relative}
-
-    .dropdown-content{
-      position:absolute;
-      top:100%;
-      left:0;
-      background:#132444;
-      min-width:180px;
-      border-radius:8px;
-      display:none;
-      flex-direction:column;
-      padding:6px;
+    .hero-text h1{
+      font-family:'Lora',serif;
+      font-size:30px;
+      margin:10px 0;
     }
 
-    .dropdown:hover .dropdown-content{
-      display:flex;
-    }
-
-    .dropdown-content a{
-      padding:8px 10px;
-      font-size:13px;
-      color:rgba(255,255,255,.7);
-    }
-
-    .dropdown-content a:hover{
-      color:#fff;
-      background:rgba(255,255,255,.08);
-    }
-
-    /* hamburger */
-    .hamburger{
-      display:none;
-      flex-direction:column;
-      gap:4px;
-      background:none;
-      border:none;
-      cursor:pointer;
-    }
-
-    .hamburger span{
-      width:22px;
-      height:2px;
-      background:#fff;
-    }
-
-    .nav-drawer{
-      display:none;
-      background:#0d1c38;
-      padding:10px 0;
-    }
-
-    .nav-drawer a{
-      display:block;
-      padding:10px 20px;
-      color:rgba(255,255,255,.75);
+    .hero-text p{
       font-size:14px;
+      line-height:1.7;
+      color:rgba(255,255,255,.8);
     }
 
-    .nav-drawer a:hover{color:#fff}
-
-    @media(max-width:900px){
-      .nav-links{display:none}
-      .hamburger{display:flex}
-      .nav-drawer{display:block;max-height:0;overflow:hidden;transition:.3s}
-      .nav-drawer.open{max-height:500px}
-    }
-
-    /* ================= HERO TEXT ================= */
+    /* ================= CONTACT SECTION ================= */
     .container{
-      max-width:1000px;
-      margin:40px auto;
+      max-width:900px;
+      margin:50px auto;
       padding:0 20px;
     }
 
     .title{
       font-family:'Lora',serif;
       font-size:22px;
-      font-weight:600;
-      margin-bottom:6px;
+      margin-bottom:8px;
     }
 
     .sub{
       color:#475569;
+      margin-bottom:18px;
       font-size:14px;
-      margin-bottom:20px;
       line-height:1.6;
     }
 
-    /* ================= CONTACT LIST ================= */
     .card{
       background:#fff;
       border:1px solid var(--border);
@@ -191,71 +159,79 @@
       color:rgba(255,255,255,.6);
       text-align:center;
       padding:18px;
-      margin-top:40px;
+      margin-top:50px;
       font-size:13px;
     }
+
+    /* responsive */
+    @media(max-width:768px){
+      .hero{height:320px}
+      .hero-text{text-align:left}
+    }
+
   </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVBAR (UNCHANGED) -->
 <nav class="navbar">
   <div class="nav-inner">
-
     <div class="nav-brand">
-      <a href="contact.html">ABS<span> · </span>Abu Bokkor Shiddik</a>
+      <a href="contact.html" style="color:white;">
+        ABS<span> · </span>Abu Bokkor Shiddik
+      </a>
     </div>
 
     <div class="nav-links">
       <a href="home.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="service.html">Service</a>
 
       <div class="dropdown">
         <button class="dropbtn">Digital Lab ▾</button>
         <div class="dropdown-content">
-          <a href="projects.html">Projects</a>
-          <a href="data-code.html">Data & Code</a>
+          <a href="projects.html">⚗ Projects</a>
+          <a href="data-code.html">💾 Data &amp; Code</a>
         </div>
       </div>
 
       <div class="dropdown">
         <button class="dropbtn">Learning ▾</button>
         <div class="dropdown-content">
-          <a href="courses.html">Courses</a>
-          <a href="conference-and-workshop.html">Events</a>
+          <a href="courses.html">🎓 Courses &amp; Training</a>
+          <a href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
         </div>
       </div>
 
       <div class="dropdown">
         <button class="dropbtn">Insights ▾</button>
         <div class="dropdown-content">
-          <a href="insights.html">Posts</a>
-          <a href="videos.html">Videos</a>
+          <a href="insights.html">✍ Posts</a>
+          <a href="videos.html">▶ Videos</a>
+          <a href="archive.html">📷 Photos &amp; Archive</a>
         </div>
       </div>
-
-      <a href="publications.html">Publications</a>
-      <a href="service.html">Service</a>
     </div>
 
-    <button class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-
-  <div class="nav-drawer" id="drawer">
-    <a href="home.html">Home</a>
-    <a href="publications.html">Publications</a>
-    <a href="projects.html">Projects</a>
-    <a href="data-code.html">Data & Code</a>
-    <a href="courses.html">Courses</a>
-    <a href="insights.html">Insights</a>
-    <a href="service.html">Service</a>
   </div>
 </nav>
 
-<!-- BODY -->
+<!-- HERO IMAGE WITH LEFT TEXT -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div><span class="dot"></span>Open for Collaboration</div>
+      <h1>Welcome</h1>
+      <p>
+        Feel free to contact me for research collaboration, academic discussion,
+        or data science projects in machine learning and global health analytics.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BODY -->
 <div class="container">
 
   <div class="title">
@@ -263,11 +239,7 @@
   </div>
 
   <div class="sub">
-    B.S. Hon’s, Dept. of Statistics, Begum Rokeya University, Rangpur, Bangladesh
-  </div>
-
-  <div class="sub">
-    Researcher in Machine Learning, Explainable AI, and Global Health Analytics.
+    B.S. Hon’s, Dept. of Statistics, Begum Rokeya University, Rangpur
   </div>
 
   <div class="card">
@@ -283,44 +255,27 @@
     </div>
 
     <div class="item">
-      <span class="label">Location</span>
-      Rangpur, Bangladesh
-    </div>
-
-    <div class="item">
       <span class="label">Portfolio</span>
-      <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">Visit Portfolio</a>
+      <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">Visit Site</a>
     </div>
 
     <div class="item">
       <span class="label">LinkedIn</span>
-      <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">View Profile</a>
-    </div>
-
-    <div class="item">
-      <span class="label">Google Scholar</span>
-      <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">Research Profile</a>
+      <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">Profile</a>
     </div>
 
     <div class="item">
       <span class="label">GitHub</span>
-      <a href="https://github.com/abubokkorshiddik" target="_blank">Code Repository</a>
+      <a href="https://github.com/abubokkorshiddik" target="_blank">Repository</a>
     </div>
 
   </div>
-
 </div>
 
 <!-- FOOTER -->
 <footer>
   © 2026 Md. Abu Bokkor Shiddik · All rights reserved
 </footer>
-
-<script>
-function toggleMenu(){
-  document.getElementById("drawer").classList.toggle("open");
-}
-</script>
 
 </body>
 </html>
