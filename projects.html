@@ -118,7 +118,13 @@
     /* FEATURE LIST */
     .feature-list { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:20px; }
     .feature-item { display:flex; align-items:flex-start; gap:8px; font-size:13.5px; color:var(--text2); }
-    .feature-item::before { content:'&#10003;'; color:#059669; font-weight:700; flex-shrink:0; margin-top:1px; }
+    .feature-item::before {
+  content: '✓';
+  color: #059669;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
 
     /* ACTIONS */
     .proj-actions { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
