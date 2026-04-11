@@ -5,283 +5,245 @@
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Default page-level OG tags (updated per-post by JS when hash changes) -->
-  <meta name="description"        content="Research notes, methods, and learning posts by Md. Abu Bokkor Shiddik — machine learning, statistics, and public health." id="og-desc-plain">
-  <meta property="og:type"        content="article">
-  <meta property="og:site_name"   content="Md. Abu Bokkor Shiddik · Insights">
-  <meta property="og:title"       content="Insights | Md. Abu Bokkor Shiddik" id="og-title">
-  <meta property="og:description" content="Research notes, methods, and learning posts on machine learning, statistics, and public health." id="og-description">
-  <meta property="og:image"       content="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png" id="og-image">
-  <meta property="og:url"         content="" id="og-url">
-  <meta name="twitter:card"       content="summary_large_image">
-  <meta name="twitter:title"      content="Insights | Md. Abu Bokkor Shiddik" id="tw-title">
-  <meta name="twitter:description" content="Research notes on machine learning, statistics, and public health." id="tw-description">
-  <meta name="twitter:image"      content="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png" id="tw-image">
-
+  <meta name="description" content="Research notes, methods, and learning posts by Md. Abu Bokkor Shiddik on machine learning, statistics, and public health.">
   <meta name="keywords" content="ABS798, Abu Bokkor Shiddik, Insights, Machine Learning, Public Health, Research Notes, Statistics, BRUR">
   <title>Insights | Md. Abu Bokkor Shiddik</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    html { overflow-x: hidden; scroll-behavior: smooth; }
     :root {
-      --navy:       #0b1f3a;
-      --blue:       #1a56db;
-      --blue-hover: #1648c0;
-      --sky:        #e8f0fe;
-      --sky2:       #d2e3fc;
-      --green:      #166534;
-      --green-bg:   #f0fdf4;
-      --green-bd:   #bbf7d0;
-      --purple:     #5b21b6;
-      --purple-bg:  #f5f3ff;
-      --purple-bd:  #ddd6fe;
-      --amber:      #92400e;
-      --amber-bg:   #fffbeb;
-      --amber-bd:   #fde68a;
-      --text:       #0f172a;
-      --text2:      #334155;
-      --text3:      #64748b;
-      --border:     #e2e8f0;
-      --border2:    #cbd5e1;
-      --bg:         #f8fafc;
-      --white:      #ffffff;
-      --radius:     8px;
-      --radius-lg:  14px;
-      --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow:     0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+      --navy:#0b1f3a; --navy2:#122444;
+      --blue:#1a56db; --blue-hover:#1648c0; --sky:#e8f0fe; --sky2:#d2e3fc;
+      --green:#166534; --green-bg:#f0fdf4; --green-bd:#bbf7d0;
+      --purple:#5b21b6; --purple-bg:#f5f3ff; --purple-bd:#ddd6fe;
+      --amber:#92400e; --amber-bg:#fffbeb; --amber-bd:#fde68a;
+      --text:#0f172a; --text2:#334155; --text3:#64748b;
+      --border:#e2e8f0; --border2:#cbd5e1; --bg:#f8fafc; --white:#ffffff;
+      --radius:8px; --radius-lg:14px;
+      --shadow-sm:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
+      --shadow:0 4px 20px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04);
     }
+    body { overflow-x:hidden; font-family:'Inter',system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--text); font-size:15.5px; line-height:1.75; }
+    a { color:inherit; text-decoration:none; }
 
-    /* ── ROOT CONTAINMENT — prevents ANY child from breaking out ── */
-    html { overflow-x: hidden; }
-    body { overflow-x: hidden; font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 15.5px; line-height: 1.75; }
-    a { color: inherit; text-decoration: none; }
+    /* NAV */
+    .navbar { background:var(--navy); position:sticky; top:0; z-index:9999; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .nav-bar-inner { max-width:1180px; margin:auto; padding:0 24px; display:flex; align-items:center; height:56px; }
+    .nav-brand { font-size:14.5px; font-weight:600; color:#fff; letter-spacing:0.2px; margin-right:auto; white-space:nowrap; }
+    .nav-brand span { color:#93c5fd; font-weight:300; }
+    .nav-links { display:flex; align-items:center; gap:2px; }
+    .nav-links > a, .dropbtn { color:rgba(255,255,255,0.75); font-size:13.5px; font-weight:500; padding:6px 11px; border-radius:6px; border:none; background:none; cursor:pointer; font-family:inherit; transition:background 0.18s,color 0.18s; white-space:nowrap; display:flex; align-items:center; gap:4px; }
+    .nav-links > a:hover, .dropbtn:hover { color:#fff; background:rgba(255,255,255,0.09); }
+    .dropdown { position:relative; }
+    .dropdown-content { position:absolute; top:calc(100% + 6px); left:0; background:#132444; border:1px solid rgba(255,255,255,0.1); border-radius:10px; min-width:190px; padding:6px; box-shadow:0 12px 32px rgba(0,0,0,0.3); opacity:0; visibility:hidden; transform:translateY(6px); transition:opacity 0.2s,transform 0.2s,visibility 0.2s; pointer-events:none; z-index:9999; }
+    .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+    .dropdown-content a { display:flex; align-items:center; gap:8px; padding:8px 12px; color:rgba(255,255,255,0.72); font-size:13px; font-weight:500; border-radius:6px; transition:background 0.15s,color 0.15s; }
+    .dropdown-content a:hover { background:rgba(255,255,255,0.08); color:#fff; }
+    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:7px; border-radius:6px; margin-left:10px; }
+    .hamburger span { display:block; width:21px; height:2px; background:rgba(255,255,255,0.85); border-radius:2px; transition:transform 0.28s,opacity 0.28s; }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .nav-drawer { display:none; background:#0d1c38; border-top:1px solid rgba(255,255,255,0.07); overflow:hidden; max-height:0; transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1); }
+    .nav-drawer.open { max-height:700px; }
+    .drawer-inner { padding:8px 0 16px; }
+    .drawer-link { display:block; color:rgba(255,255,255,0.78); font-size:15px; font-weight:500; padding:11px 24px; transition:background 0.15s,color 0.15s; }
+    .drawer-link:hover { background:rgba(255,255,255,0.06); color:#fff; }
+    .drawer-section-label { font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:1.2px; color:rgba(255,255,255,0.3); padding:14px 24px 4px; }
+    .drawer-sub .drawer-link { padding-left:38px; font-size:14px; color:rgba(255,255,255,0.58); }
+    .drawer-divider { height:1px; background:rgba(255,255,255,0.06); margin:4px 0; }
+    @media (max-width:900px) { .nav-links{display:none;} .hamburger{display:flex;} .nav-drawer{display:block;} }
 
-    /* ── NAVBAR ── */
-    .navbar { background: var(--navy); position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .nav-bar-inner { max-width: 1180px; margin: auto; padding: 0 24px; display: flex; align-items: center; height: 56px; }
-    .nav-brand { font-size: 14.5px; font-weight: 600; color: #fff; letter-spacing: 0.2px; margin-right: auto; white-space: nowrap; }
-    .nav-brand span { color: #93c5fd; font-weight: 300; }
-    .nav-links { display: flex; align-items: center; gap: 2px; }
-    .nav-links > a, .dropbtn { color: rgba(255,255,255,0.75); font-size: 13.5px; font-weight: 500; padding: 6px 11px; border-radius: 6px; border: none; background: none; cursor: pointer; font-family: inherit; transition: background 0.18s, color 0.18s; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
-    .nav-links > a:hover, .dropbtn:hover { color: #fff; background: rgba(255,255,255,0.09); }
-    .dropdown { position: relative; }
-    .dropdown-content { position: absolute; top: calc(100% + 6px); left: 0; background: #132444; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; min-width: 190px; padding: 6px; box-shadow: 0 12px 32px rgba(0,0,0,0.3); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; pointer-events: none; z-index: 9999; }
-    .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
-    .dropdown-content a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; color: rgba(255,255,255,0.72); font-size: 13px; font-weight: 500; border-radius: 6px; transition: background 0.15s, color 0.15s; }
-    .dropdown-content a:hover { background: rgba(255,255,255,0.08); color: #fff; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 7px; border-radius: 6px; margin-left: 10px; transition: background 0.2s; }
-    .hamburger:hover { background: rgba(255,255,255,0.1); }
-    .hamburger span { display: block; width: 21px; height: 2px; background: rgba(255,255,255,0.85); border-radius: 2px; transition: transform 0.28s, opacity 0.28s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .nav-drawer { display: none; background: #0d1c38; border-top: 1px solid rgba(255,255,255,0.07); overflow: hidden; max-height: 0; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1); }
-    .nav-drawer.open { max-height: 700px; }
-    .drawer-inner { padding: 8px 0 16px; }
-    .drawer-link { display: block; color: rgba(255,255,255,0.78); font-size: 15px; font-weight: 500; padding: 11px 24px; transition: background 0.15s, color 0.15s; }
-    .drawer-link:hover { background: rgba(255,255,255,0.06); color: #fff; }
-    .drawer-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.3); padding: 14px 24px 4px; }
-    .drawer-sub .drawer-link { padding-left: 38px; font-size: 14px; color: rgba(255,255,255,0.58); }
-    .drawer-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 4px 0; }
-    @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: flex; } .nav-drawer { display: block; } }
+    /* HERO */
+    .page-hero { background:linear-gradient(140deg,#07152a 0%,#0d2247 50%,#0f2d5c 100%); color:white; padding:58px 24px 50px; position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 80% 25%,rgba(59,130,246,0.12) 0%,transparent 50%); pointer-events:none; }
+    .hero-inner { max-width:1200px; margin:auto; position:relative; }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:#93c5fd; margin-bottom:14px; }
+    .hero-eyebrow::before { content:''; width:6px; height:6px; background:#4ade80; border-radius:50%; }
+    .page-hero h1 { font-family:'Lora',serif; font-size:2.2rem; font-weight:600; line-height:1.18; margin-bottom:10px; }
+    .page-hero p { font-size:15px; color:rgba(255,255,255,0.6); max-width:560px; }
 
-    /* ── HERO ── */
-    .page-hero { background: linear-gradient(140deg, #07152a 0%, #0d2247 50%, #0f2d5c 100%); color: white; padding: 58px 24px 50px; position: relative; overflow: hidden; }
-    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 25%, rgba(59,130,246,0.12) 0%, transparent 50%); pointer-events: none; }
-    .hero-inner { max-width: 1200px; margin: auto; position: relative; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #93c5fd; margin-bottom: 14px; }
-    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: #4ade80; border-radius: 50%; }
-    .page-hero h1 { font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 600; line-height: 1.18; margin-bottom: 10px; }
-    .page-hero p { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 560px; }
+    /* FILTER BAR */
+    .filter-bar { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:56px; z-index:100; }
+    .filter-inner { max-width:1200px; margin:auto; padding:0 16px; display:flex; gap:0; overflow-x:auto; scrollbar-width:none; }
+    .filter-inner::-webkit-scrollbar { display:none; }
+    .filter-tab { display:inline-flex; align-items:center; gap:5px; padding:11px 14px; font-size:13px; font-weight:500; color:var(--text3); border-bottom:2.5px solid transparent; border-top:none; border-left:none; border-right:none; white-space:nowrap; cursor:pointer; transition:color 0.18s,border-color 0.18s; background:none; font-family:inherit; min-height:44px; }
+    .filter-tab:hover { color:var(--blue); }
+    .filter-tab.active { color:var(--blue); border-bottom-color:var(--blue); }
+    .ftag { font-size:10.5px; font-weight:700; background:var(--sky); color:var(--blue); border-radius:10px; padding:1px 7px; }
+    .filter-tab.active .ftag { background:var(--blue); color:#fff; }
 
-    /* ── FILTER BAR ── */
-    .filter-bar { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 56px; z-index: 100; }
-    .filter-inner { max-width: 1200px; margin: auto; padding: 0 16px; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-    .filter-inner::-webkit-scrollbar { display: none; }
-    .filter-tab { display: inline-flex; align-items: center; gap: 5px; padding: 11px 14px; font-size: 13px; font-weight: 500; color: var(--text3); border-bottom: 2.5px solid transparent; border-top: none; border-left: none; border-right: none; white-space: nowrap; cursor: pointer; transition: color 0.18s, border-color 0.18s; background: none; font-family: inherit; -webkit-tap-highlight-color: transparent; min-height: 44px; }
-    .filter-tab:hover { color: var(--blue); }
-    .filter-tab.active { color: var(--blue); border-bottom-color: var(--blue); }
-    .ftag { font-size: 10.5px; font-weight: 700; background: var(--sky); color: var(--blue); border-radius: 10px; padding: 1px 7px; }
-    .filter-tab.active .ftag { background: var(--blue); color: #fff; }
+    /* PAGE LAYOUT */
+    .page-outer { max-width:1200px; margin:0 auto; padding:28px 16px 80px; display:grid; grid-template-columns:minmax(0,1fr) 280px; gap:28px; align-items:start; }
 
-    /* ── PAGE LAYOUT ── */
-    .page-outer { max-width: 1200px; margin: 0 auto; padding: 28px 16px 80px; display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 28px; align-items: start; }
-    @media (max-width: 960px) { .page-outer { grid-template-columns: minmax(0,1fr); padding: 20px 12px 60px; } .sidebar { display: none; } }
+    /* SEARCH */
+    .search-wrap { position:relative; margin-bottom:20px; }
+    .search-input { width:100%; padding:11px 16px 11px 42px; font-size:14px; font-family:inherit; background:var(--white); border:1px solid var(--border2); border-radius:var(--radius-lg); color:var(--text); outline:none; transition:border-color 0.2s,box-shadow 0.2s; box-shadow:var(--shadow-sm); }
+    .search-input:focus { border-color:#93c5fd; box-shadow:0 0 0 3px rgba(147,197,253,0.2); }
+    .search-icon { position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--text3); font-size:15px; pointer-events:none; }
+    .no-results { text-align:center; padding:48px 0; color:var(--text3); font-size:15px; display:none; }
 
-    /* ── SEARCH ── */
-    .search-wrap { position: relative; margin-bottom: 20px; }
-    .search-input { width: 100%; padding: 11px 16px 11px 42px; font-size: 14px; font-family: inherit; background: var(--white); border: 1px solid var(--border2); border-radius: var(--radius-lg); color: var(--text); outline: none; transition: border-color 0.2s, box-shadow 0.2s; box-shadow: var(--shadow-sm); }
-    .search-input:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(147,197,253,0.2); }
-    .search-icon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: 15px; pointer-events: none; }
-    .no-results { text-align: center; padding: 48px 0; color: var(--text3); font-size: 15px; display: none; }
+    /* POST CARD */
+    .post-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; margin-bottom:20px; box-shadow:var(--shadow-sm); transition:box-shadow 0.25s,border-color 0.25s,transform 0.2s; width:100%; }
+    .post-card:hover { box-shadow:var(--shadow); border-color:#bfdbfe; transform:translateY(-1px); }
+    /* top accent bar per category */
+    .post-card::before { content:''; display:block; height:3px; }
+    .post-card.cat-Machine-Learning::before { background:linear-gradient(90deg,#1a56db,#6366f1); }
+    .post-card.cat-Public-Health::before { background:linear-gradient(90deg,#059669,#0d9488); }
+    .post-card.cat-Statistics::before { background:linear-gradient(90deg,#7c3aed,#a855f7); }
+    .post-card.cat-Methods::before { background:linear-gradient(90deg,#f59e0b,#ef4444); }
 
-    /* ── POST CARD ── */
-    .post-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: visible; margin-bottom: 20px; box-shadow: var(--shadow-sm); transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s; min-width: 0; width: 100%; max-width: 100%; box-sizing: border-box; }
-    .post-card:hover { box-shadow: var(--shadow); border-color: #bfdbfe; transform: translateY(-1px); }
-    .post-card * { box-sizing: border-box; max-width: 100%; word-break: break-word; }
-    .post-cover-wrap { overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) 0 0; border-bottom: 1px solid var(--border); line-height: 0; }
-    .post-cover { width: 100%; height: 200px; object-fit: cover; display: block; }
-    @media (max-width: 480px) { .post-cover { height: 160px; } }
+    .post-cover-wrap { overflow:hidden; border-bottom:1px solid var(--border); line-height:0; }
+    .post-cover { width:100%; height:200px; object-fit:cover; display:block; transition:transform 0.3s; }
+    .post-card:hover .post-cover { transform:scale(1.02); }
 
-    /* header */
-    .post-header { padding: 18px 20px 0; }
-    @media (min-width: 600px) { .post-header { padding: 22px 26px 0; } }
-    .post-meta-row { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin-bottom: 10px; }
-    .cat-badge { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 5px; }
-    .cat-ml      { background: var(--sky); color: #1e3a8a; border: 1px solid var(--sky2); }
-    .cat-ph      { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bd); }
-    .cat-stats   { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-bd); }
-    .cat-methods { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-bd); }
-    .post-date { font-size: 12px; color: var(--text3); }
-    .read-time { font-size: 12px; color: var(--text3); }
+    .post-header { padding:20px 22px 0; }
+    .post-meta-row { display:flex; align-items:center; flex-wrap:wrap; gap:7px; margin-bottom:10px; }
+    .cat-badge { display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; padding:3px 10px; border-radius:5px; }
+    .cat-ml      { background:var(--sky); color:#1e3a8a; border:1px solid var(--sky2); }
+    .cat-ph      { background:var(--green-bg); color:var(--green); border:1px solid var(--green-bd); }
+    .cat-stats   { background:var(--purple-bg); color:var(--purple); border:1px solid var(--purple-bd); }
+    .cat-methods { background:var(--amber-bg); color:var(--amber); border:1px solid var(--amber-bd); }
+    .post-date { font-size:12px; color:var(--text3); }
+    .read-time { font-size:12px; color:var(--text3); }
 
-    .post-title { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
-    @media (min-width: 600px) { .post-title { font-size: 1.25rem; } }
+    .post-title { font-family:'Lora',serif; font-size:1.2rem; font-weight:600; color:var(--text); line-height:1.4; margin-bottom:10px; }
+    .author-row { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    .author-avatar { width:32px; height:32px; border-radius:50%; object-fit:cover; border:2px solid var(--sky2); flex-shrink:0; }
+    .author-name { font-size:13px; font-weight:600; color:var(--text2); }
+    .author-role { font-size:11px; color:var(--text3); }
 
-    .author-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .author-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid var(--sky2); flex-shrink: 0; }
-    .author-info { font-size: 13px; }
-    .author-name { font-weight: 600; color: var(--text2); }
-    .author-role { font-size: 11px; color: var(--text3); }
+    /* POST BODY */
+    .post-body { padding:0 22px 18px; }
 
-    /* body */
-    .post-body { padding: 0 20px 18px; }
-    @media (min-width: 600px) { .post-body { padding: 0 26px 22px; } }
-    .post-excerpt { font-size: 14px; color: var(--text2); line-height: 1.75; }
-    .post-full { display: none; }
+    /* EXCERPT — shown by default */
+    .post-excerpt { font-size:14px; color:var(--text2); line-height:1.75; }
 
-    /* content inside expanded post */
-    .post-full h3 { font-family: 'Lora', serif; font-size: 1rem; font-weight: 600; color: var(--text); margin: 20px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
-    .post-full p  { margin-bottom: 12px; font-size: 14px; color: var(--text2); line-height: 1.8; }
-    .post-full ul, .post-full ol { padding-left: 20px; margin-bottom: 12px; font-size: 14px; color: var(--text2); }
-    .post-full li { margin-bottom: 5px; }
-    .post-full pre { background: #020617; color: #e2e8f0; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 12px; line-height: 1.65; margin: 14px 0; -webkit-overflow-scrolling: touch; max-width: 100%; white-space: pre; word-wrap: normal; }
-    .formula-block { background: #f8fafc; border: 1px solid var(--border); border-radius: 7px; padding: 12px 16px; font-family: 'Georgia', serif; font-size: 14px; color: var(--text); margin: 12px 0; overflow-x: auto; }
+    /* FULL CONTENT — hidden by default */
+    .post-full { display:none; margin-top:16px; }
+    .post-full.open { display:block; }
 
-    /* tables — scrollable on mobile */
-    .table-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); max-width: 100%; width: 100%; display: block; }
-    .post-full table { width: 100%; border-collapse: collapse; font-size: 12.5px; line-height: 1.6; }
-    .post-full th { text-align: left; padding: 9px 10px; background: var(--navy); color: rgba(255,255,255,0.9); font-weight: 600; font-size: 12px; white-space: normal; word-break: normal; }
-    .post-full td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text2); word-break: break-word; }
-    .post-full tr:last-child td { border-bottom: none; }
-    .post-full tr:hover td { background: rgba(26,86,219,0.03); }
+    .post-full h3 { font-family:'Lora',serif; font-size:1rem; font-weight:600; color:var(--text); margin:22px 0 8px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+    .post-full p  { margin-bottom:12px; font-size:14px; color:var(--text2); line-height:1.8; }
+    .post-full ul, .post-full ol { padding-left:20px; margin-bottom:12px; font-size:14px; color:var(--text2); }
+    .post-full li { margin-bottom:5px; }
+    .post-full strong { color:var(--text); }
+    .post-full pre { background:#020617; color:#e2e8f0; padding:14px 16px; border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.65; margin:14px 0; white-space:pre; }
+    .formula-block { background:#f8fafc; border:1px solid var(--border); border-radius:7px; padding:12px 16px; font-family:'Georgia',serif; font-size:14.5px; color:var(--text); margin:14px 0; }
 
-    /* card footer */
-    .post-footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-top: 1px solid var(--border); background: #fcfdfe; flex-wrap: wrap; gap: 10px; }
-    @media (min-width: 600px) { .post-footer { padding: 14px 26px; } }
-    .expand-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: var(--blue); background: none; border: none; cursor: pointer; font-family: inherit; padding: 0; transition: gap 0.15s; -webkit-tap-highlight-color: transparent; }
-    .expand-btn:hover { gap: 8px; }
+    /* tables */
+    .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:16px 0; border-radius:8px; border:1px solid var(--border); }
+    .post-full table { width:100%; border-collapse:collapse; font-size:13px; line-height:1.6; min-width:460px; }
+    .post-full th { text-align:left; padding:9px 12px; background:var(--navy); color:rgba(255,255,255,0.9); font-weight:600; font-size:12px; }
+    .post-full td { padding:8px 12px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--text2); }
+    .post-full tr:last-child td { border-bottom:none; }
+    .post-full tr:hover td { background:rgba(26,86,219,0.03); }
 
-    /* ── SHARE PANEL (replaces plain button) ── */
-    .share-wrap { position: relative; }
-    .share-trigger { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text3); background: var(--bg); border: 1px solid var(--border2); border-radius: 6px; padding: 6px 14px; cursor: pointer; font-family: inherit; transition: background 0.18s, color 0.18s, border-color 0.18s; -webkit-tap-highlight-color: transparent; }
-    .share-trigger:hover { background: var(--sky); color: var(--blue); border-color: #93c5fd; }
+    /* CARD FOOTER */
+    .post-footer { display:flex; align-items:center; justify-content:space-between; padding:12px 22px; border-top:1px solid var(--border); background:#fcfdfe; flex-wrap:wrap; gap:10px; }
 
-    /* share dropdown panel */
-    .share-panel { position: absolute; bottom: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.12); padding: 14px; width: 280px; max-width: calc(100vw - 32px); z-index: 500; display: none; }
-    .share-panel.open { display: block; }
-    .share-panel-title { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text3); margin-bottom: 10px; }
-
-    /* mini preview card inside the panel */
-    .share-preview-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
-    .share-preview-img { width: 100%; height: 100px; object-fit: cover; display: block; }
-    .share-preview-body { padding: 8px 10px 10px; }
-    .share-preview-site { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
-    .share-preview-title { font-size: 12.5px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 3px; }
-    .share-preview-desc { font-size: 11px; color: var(--text3); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-
-    /* share action buttons */
-    .share-actions { display: flex; flex-direction: column; gap: 7px; }
-    .share-action-btn { display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-radius: 7px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: var(--bg); color: var(--text2); font-family: inherit; transition: background 0.15s, border-color 0.15s; text-align: left; width: 100%; -webkit-tap-highlight-color: transparent; }
-    .share-action-btn:hover { background: var(--sky); border-color: #93c5fd; color: var(--blue); }
-    .share-action-icon { font-size: 16px; flex-shrink: 0; }
-    .share-action-label { flex: 1; }
-    .share-action-copied { background: var(--green-bg); border-color: var(--green-bd); color: var(--green); }
-
-    /* ── SIDEBAR ── */
-    .sidebar { position: sticky; top: calc(56px + 44px + 20px); }
-    .sidebar-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 16px; }
-    .sidebar-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text3); margin-bottom: 14px; }
-    .sidebar-link { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text2); padding: 7px 0; border-bottom: 1px solid var(--border); transition: color 0.15s; cursor: pointer; }
-    .sidebar-link:last-child { border-bottom: none; }
-    .sidebar-link:hover { color: var(--blue); }
-    .sidebar-link-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 6px; }
-    .sidebar-cat { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-size: 13px; color: var(--text2); border-bottom: 1px solid var(--border); }
-    .sidebar-cat:last-child { border-bottom: none; }
-    .sidebar-cat-count { font-size: 11px; font-weight: 700; color: var(--blue); background: var(--sky); border-radius: 8px; padding: 1px 7px; }
-    .sidebar-video-link { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: linear-gradient(135deg, #0f2d5c, #1a56db); color: white; border-radius: var(--radius); font-size: 13.5px; font-weight: 600; transition: opacity 0.2s; }
-    .sidebar-video-link:hover { opacity: 0.9; }
-
-    /* ── TOAST ── */
-    #share-toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: #0f172a; color: #fff; font-size: 13.5px; font-weight: 500; padding: 12px 22px; border-radius: 8px; opacity: 0; pointer-events: none; transition: opacity 0.25s, transform 0.25s; z-index: 9999; white-space: nowrap; }
-    #share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-    /* ── FOOTER ── */
-    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 44px 24px 32px; margin-top: 0; }
-    .footer-inner { max-width: 1180px; margin: auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .footer-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
-    .footer-name { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 8px; }
-    .footer-desc { font-size: 12.5px; line-height: 1.7; }
-    .footer-nav-links, .footer-social-links { display: flex; flex-direction: column; gap: 7px; }
-    .footer-nav-links a, .footer-social-links a { font-size: 13px; color: rgba(255,255,255,0.55); transition: color 0.15s; }
-    .footer-nav-links a:hover { color: rgba(255,255,255,0.9); }
-    .footer-social-links a:hover { color: #93c5fd; }
-    .footer-bottom { max-width: 1180px; margin: 22px auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-    .footer-bottom p { font-size: 12px; }
-    /* ── MOBILE SAFETY NET ── */
-    @media (max-width: 600px) {
-      .post-body, .post-header, .post-footer { overflow: visible; }
-      .post-full table { font-size: 11.5px; }
-      .post-full th, .post-full td { padding: 6px 8px; }
-      .post-full pre { font-size: 11px; padding: 10px 12px; }
-      .table-scroll-wrap { border-radius: 6px; }
+    /* EXPAND BUTTON — main CTA */
+    .expand-btn {
+      display:inline-flex; align-items:center; gap:7px;
+      font-size:13.5px; font-weight:700;
+      background:var(--blue); color:#fff;
+      border:none; border-radius:8px;
+      padding:9px 18px; cursor:pointer; font-family:inherit;
+      transition:background 0.18s,transform 0.15s;
     }
-    @media (max-width: 1024px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+    .expand-btn:hover { background:var(--blue-hover); transform:translateY(-1px); }
+    .expand-btn.open-state { background:var(--bg); color:var(--text2); border:1px solid var(--border2); }
+    .expand-btn.open-state:hover { background:var(--border); }
+
+    /* SHARE */
+    .share-wrap { position:relative; }
+    .share-trigger { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; color:var(--text3); background:var(--bg); border:1px solid var(--border2); border-radius:6px; padding:7px 14px; cursor:pointer; font-family:inherit; transition:background 0.18s,color 0.18s; }
+    .share-trigger:hover { background:var(--sky); color:var(--blue); border-color:#93c5fd; }
+    .share-panel { position:absolute; bottom:calc(100% + 8px); right:0; background:var(--white); border:1px solid var(--border); border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,0.12); padding:14px; width:280px; max-width:calc(100vw - 32px); z-index:500; display:none; }
+    .share-panel.open { display:block; }
+    .share-panel-title { font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.7px; color:var(--text3); margin-bottom:10px; }
+    .share-preview-card { border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:12px; }
+    .share-preview-img { width:100%; height:90px; object-fit:cover; display:block; }
+    .share-preview-body { padding:8px 10px 10px; }
+    .share-preview-site { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:3px; }
+    .share-preview-title { font-size:12.5px; font-weight:600; color:var(--text); line-height:1.4; margin-bottom:3px; }
+    .share-preview-desc { font-size:11px; color:var(--text3); line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .share-actions { display:flex; flex-direction:column; gap:7px; }
+    .share-action-btn { display:flex; align-items:center; gap:9px; padding:8px 12px; border-radius:7px; font-size:13px; font-weight:500; cursor:pointer; border:1px solid var(--border); background:var(--bg); color:var(--text2); font-family:inherit; transition:background 0.15s; text-align:left; width:100%; }
+    .share-action-btn:hover { background:var(--sky); border-color:#93c5fd; color:var(--blue); }
+    .share-action-icon { font-size:16px; flex-shrink:0; }
+    .share-action-copied { background:var(--green-bg); border-color:var(--green-bd); color:var(--green); }
+
+    /* SIDEBAR */
+    .sidebar { position:sticky; top:calc(56px + 44px + 20px); }
+    .sidebar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px; box-shadow:var(--shadow-sm); margin-bottom:16px; }
+    .sidebar-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin-bottom:14px; }
+    .sidebar-link { display:flex; align-items:flex-start; gap:8px; font-size:13px; color:var(--text2); padding:7px 0; border-bottom:1px solid var(--border); cursor:pointer; transition:color 0.15s; }
+    .sidebar-link:last-child { border-bottom:none; }
+    .sidebar-link:hover { color:var(--blue); }
+    .sidebar-link-dot { width:6px; height:6px; border-radius:50%; background:var(--blue); flex-shrink:0; margin-top:6px; }
+    .sidebar-cat { display:flex; align-items:center; justify-content:space-between; padding:6px 0; font-size:13px; color:var(--text2); border-bottom:1px solid var(--border); }
+    .sidebar-cat:last-child { border-bottom:none; }
+    .sidebar-cat-count { font-size:11px; font-weight:700; color:var(--blue); background:var(--sky); border-radius:8px; padding:1px 7px; }
+    .sidebar-video-link { display:flex; align-items:center; gap:10px; padding:10px 14px; background:linear-gradient(135deg,#0f2d5c,#1a56db); color:white; border-radius:var(--radius); font-size:13.5px; font-weight:600; transition:opacity 0.2s; }
+    .sidebar-video-link:hover { opacity:0.9; }
+
+    /* TOAST */
+    #share-toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px); background:#0f172a; color:#fff; font-size:13.5px; font-weight:500; padding:12px 22px; border-radius:8px; opacity:0; pointer-events:none; transition:opacity 0.25s,transform 0.25s; z-index:9999; white-space:nowrap; }
+    #share-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+    /* FOOTER */
+    footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:44px 24px 32px; }
+    .footer-inner { max-width:1180px; margin:auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:36px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .footer-col-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.35); margin-bottom:14px; }
+    .footer-name { font-family:'Lora',serif; font-size:16px; font-weight:600; color:rgba(255,255,255,0.9); margin-bottom:8px; }
+    .footer-desc { font-size:12.5px; line-height:1.7; }
+    .footer-nav-links, .footer-social-links { display:flex; flex-direction:column; gap:7px; }
+    .footer-nav-links a, .footer-social-links a { font-size:13px; color:rgba(255,255,255,0.55); transition:color 0.15s; }
+    .footer-nav-links a:hover { color:rgba(255,255,255,0.9); }
+    .footer-social-links a:hover { color:#93c5fd; }
+    .footer-bottom { max-width:1180px; margin:22px auto 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+    .footer-bottom p { font-size:12px; }
+
+    /* RESPONSIVE */
+    @media (max-width:960px) {
+      .page-outer { grid-template-columns:minmax(0,1fr); padding:20px 12px 60px; }
+      .sidebar { display:none; }
+    }
+    @media (max-width:600px) {
+      .page-hero { padding:40px 16px 36px; }
+      .page-hero h1 { font-size:1.65rem; }
+      .post-header { padding:16px 16px 0; }
+      .post-body { padding:0 16px 16px; }
+      .post-footer { padding:10px 16px; gap:8px; }
+      .post-cover { height:160px; }
+      .post-title { font-size:1.05rem; }
+      .post-full pre { font-size:11.5px; padding:10px 12px; }
+      .post-full th, .post-full td { padding:7px 9px; font-size:12px; }
+      .expand-btn { font-size:13px; padding:8px 14px; }
+      .footer-inner { grid-template-columns:1fr; }
+      .footer-bottom { flex-direction:column; text-align:center; }
+    }
+    @media (max-width:1024px) { .footer-inner { grid-template-columns:1fr 1fr; } }
   </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-bar-inner">
-    <div class="nav-brand">ABS<span> · </span>Abu Bokkor Shiddik</div>
+    <div class="nav-brand">ABS<span> &middot; </span>Abu Bokkor Shiddik</div>
     <div class="nav-links">
       <a href="home.html">Home</a>
       <a href="publications.html">Publications</a>
       <a href="service.html">Service</a>
-      <div class="dropdown">
-        <button class="dropbtn">Digital Lab ▾</button>
-        <div class="dropdown-content">
-          <a href="projects.html">⚗ Projects</a>
-          <a href="data-code.html">💾 Data &amp; Code</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Learning ▾</button>
-        <div class="dropdown-content">
-          <a href="courses.html">🎓 Courses &amp; Training</a>
-          <a href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Insights ▾</button>
-        <div class="dropdown-content">
-          <a href="insights.html">✍ Posts</a>
-          <a href="videos.html">▶ Videos</a>
-          <a href="archive.html">📷 Photos &amp; Archive</a>
-        </div>
-      </div>
+      <div class="dropdown"><button class="dropbtn">Digital Lab &#9660;</button><div class="dropdown-content"><a href="projects.html">&#9883; Projects</a><a href="data-code.html">&#128190; Data &amp; Code</a></div></div>
+      <div class="dropdown"><button class="dropbtn">Learning &#9660;</button><div class="dropdown-content"><a href="courses.html">&#127891; Courses &amp; Training</a><a href="conference-and-workshop.html">&#127963; Conferences &amp; Workshops</a></div></div>
+      <div class="dropdown"><button class="dropbtn">Insights &#9660;</button><div class="dropdown-content"><a href="insights.html">&#9997; Posts</a><a href="videos.html">&#9654; Videos</a><a href="archive.html">&#128247; Photos &amp; Archive</a></div></div>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-drawer" id="nav-drawer">
     <div class="drawer-inner">
@@ -290,28 +252,17 @@
       <a class="drawer-link" href="service.html">Service</a>
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Digital Lab</div>
-      <div class="drawer-sub">
-        <a class="drawer-link" href="projects.html">Projects</a>
-        <a class="drawer-link" href="data-code.html">Data &amp; Code</a>
-      </div>
+      <div class="drawer-sub"><a class="drawer-link" href="projects.html">Projects</a><a class="drawer-link" href="data-code.html">Data &amp; Code</a></div>
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Learning &amp; Events</div>
-      <div class="drawer-sub">
-        <a class="drawer-link" href="courses.html">Courses &amp; Training</a>
-        <a class="drawer-link" href="conference-and-workshop.html">Conferences &amp; Workshops</a>
-      </div>
+      <div class="drawer-sub"><a class="drawer-link" href="courses.html">Courses &amp; Training</a><a class="drawer-link" href="conference-and-workshop.html">Conferences &amp; Workshops</a></div>
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Insights</div>
-      <div class="drawer-sub">
-        <a class="drawer-link" href="insights.html">Posts</a>
-        <a class="drawer-link" href="videos.html">Videos</a>
-        <a class="drawer-link" href="archive.html">Photos &amp; Archive</a>
-      </div>
+      <div class="drawer-sub"><a class="drawer-link" href="insights.html">Posts</a><a class="drawer-link" href="videos.html">Videos</a><a class="drawer-link" href="archive.html">Photos &amp; Archive</a></div>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">Research Notes &amp; Learning</div>
@@ -320,7 +271,6 @@
   </div>
 </section>
 
-<!-- FILTER BAR -->
 <div class="filter-bar">
   <div class="filter-inner">
     <button class="filter-tab active" data-filter="all">All Posts <span class="ftag">3</span></button>
@@ -329,261 +279,215 @@
   </div>
 </div>
 
-<!-- TOAST -->
-<div id="share-toast">✓ Link copied to clipboard</div>
+<div id="share-toast">&#10003; Copied to clipboard</div>
 
-<!-- MAIN -->
 <div class="page-outer">
   <div>
     <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input class="search-input" id="search" type="text" placeholder="Search posts…" autocomplete="off">
+      <span class="search-icon">&#128269;</span>
+      <input class="search-input" id="search" type="text" placeholder="Search posts&#8230;" autocomplete="off">
     </div>
     <div class="no-results" id="no-results">No posts match your search.</div>
 
-    <!-- ══════════════════════════════════
-         POST 1 — Threshold Selection
-    ══════════════════════════════════ -->
-    <article class="post-card" id="post-threshold-selection-outbreak-03"
+    <!-- POST 1 -->
+    <article class="post-card cat-Machine-Learning" id="post-threshold"
       data-category="Machine Learning"
       data-title="Threshold selection in outbreak prediction models"
-      data-desc="Outbreak prediction models generate probability outputs that represent risk of disease occurrence. These probabilities cannot be directly used for decision making — they are converted into binary outcomes using a threshold. This step strongly affects early detection, false alarms, and overall reliability."
+      data-desc="Outbreak prediction models generate probability outputs that are converted into binary decisions using a threshold. This step strongly affects early detection, false alarms, and overall system reliability."
       data-img="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0">
-
       <div class="post-cover-wrap"><img class="post-cover" src="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0" alt="Threshold selection" loading="lazy"></div>
       <div class="post-header">
         <div class="post-meta-row">
           <span class="cat-badge cat-ml">Machine Learning</span>
-          <span class="post-date">📅 10 April 2026</span>
-          <span class="read-time">⏱ 6 min read</span>
+          <span class="post-date">&#128197; 10 April 2026</span>
+          <span class="read-time">&#9201; 6 min read</span>
         </div>
         <h2 class="post-title">Threshold selection in outbreak prediction models</h2>
         <div class="author-row">
           <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
-          <div class="author-info">
-            <div class="author-name">Md. Abu Bokkor Shiddik</div>
-            <div class="author-role">Researcher · Statistics, BRUR</div>
-          </div>
+          <div><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher &middot; Statistics, BRUR</div></div>
         </div>
       </div>
       <div class="post-body">
-        <div class="post-excerpt">
-          <p>Outbreak prediction models generate probability outputs that represent risk of disease occurrence. These probabilities cannot be directly used for decision making — they are converted into binary outcomes using a threshold. This step strongly affects how early we detect outbreaks, how many false alarms we get, and how reliable the system becomes in real public health use.</p>
-        </div>
+        <div class="post-excerpt"><p>Outbreak prediction models generate probability outputs representing risk of disease occurrence. These probabilities cannot be directly used for decision making &mdash; they must be converted into binary outcomes using a threshold. This step strongly affects how early we detect outbreaks, how many false alarms we get, and how reliable the system becomes in real public health use.</p></div>
         <div class="post-full">
           <h3>Table 1. Basic concept of threshold selection</h3>
-          <p style="font-size:13px;color:#64748b;margin-bottom:10px;">Threshold selection and its direct interpretation in real systems.</p>
-          <div class="table-scroll-wrap"><table>
+          <div class="tbl-wrap"><table>
             <tr><th>Concept</th><th>Simple explanation</th><th>Real discussion</th></tr>
             <tr><td>Threshold</td><td>Probability cutoff for outbreak decision</td><td>Controls sensitivity to detecting early disease signals and shapes decision stability</td></tr>
             <tr><td>Low threshold</td><td>More alerts generated</td><td>Better for early warning but increases false alarms in routine surveillance</td></tr>
             <tr><td>High threshold</td><td>Only strong signals detected</td><td>Reduces false alarms but may miss early outbreak signals in weak transmission periods</td></tr>
           </table></div>
           <p>Overall, threshold acts like a balance control between early detection and operational stability.</p>
-
           <h3>Table 2. Suitability levels of threshold methods</h3>
-          <div class="table-scroll-wrap"><table>
-            <tr><th>Suitability level</th><th>What it means</th><th>Discussion in real systems</th></tr>
+          <div class="tbl-wrap"><table>
+            <tr><th>Suitability level</th><th>What it means</th><th>Discussion</th></tr>
             <tr><td>Highly suitable</td><td>Reliable and widely used</td><td>Used in operational outbreak systems where stability is important</td></tr>
             <tr><td>Moderately suitable</td><td>Condition dependent</td><td>Requires tuning and validation before deployment</td></tr>
             <tr><td>Less suitable</td><td>Mainly theoretical</td><td>Used mostly in academic comparison rather than real surveillance systems</td></tr>
           </table></div>
-
           <h3>Table 3. Highly suitable threshold methods</h3>
-          <div class="table-scroll-wrap"><table>
+          <div class="tbl-wrap"><table>
             <tr><th>Method</th><th>Simple idea</th><th>Discussion</th><th>Usefulness</th></tr>
             <tr><td>Precision-recall based</td><td>Balances detection and precision</td><td>Best for imbalanced outbreak data where missing cases is critical</td><td>Very high</td></tr>
             <tr><td>Cost-sensitive thresholding</td><td>Minimizes real world loss</td><td>Useful when outbreak miss cost is higher than false alarm cost</td><td>Very high</td></tr>
             <tr><td>Percentile based</td><td>Flags top risk values</td><td>Simple and practical for early warning dashboards</td><td>High</td></tr>
-            <tr><td>Mean minus SD</td><td>Detects abnormal rise</td><td>Useful in noisy surveillance data with weak labeling</td><td>Moderate to high</td></tr>
             <tr><td>Seasonal adaptive</td><td>Changes with season</td><td>Very important for climate-sensitive diseases like dengue</td><td>Very high</td></tr>
             <tr><td>Spatial adaptive</td><td>Region-specific threshold</td><td>Improves accuracy in multi-region outbreak monitoring systems</td><td>Very high</td></tr>
           </table></div>
-
-          <h3>Table 4. Moderately suitable threshold methods</h3>
-          <div class="table-scroll-wrap"><table>
+          <h3>Table 4. Moderately suitable methods</h3>
+          <div class="tbl-wrap"><table>
             <tr><th>Method</th><th>What it does</th><th>Discussion</th></tr>
             <tr><td>ROC based (Youden Index)</td><td>Balances sensitivity and specificity</td><td>Does not handle imbalance well in outbreak datasets</td></tr>
             <tr><td>Maximum sensitivity</td><td>Detects most outbreaks</td><td>Leads to many false alarms in real systems</td></tr>
-            <tr><td>Maximum specificity</td><td>Reduces false alerts</td><td>May delay outbreak detection timing</td></tr>
             <tr><td>Z-score threshold</td><td>Detects statistical spikes</td><td>Better suited for anomaly detection than ML prediction</td></tr>
-            <tr><td>Rolling threshold</td><td>Updates over time</td><td>Can become unstable in small datasets</td></tr>
           </table></div>
-
           <h3>Table 5. Less suitable methods in operational systems</h3>
-          <div class="table-scroll-wrap"><table>
+          <div class="tbl-wrap"><table>
             <tr><th>Method</th><th>Why it is weak</th><th>Discussion</th></tr>
-            <tr><td>0.5 threshold</td><td>Assumes balanced data</td><td>Not realistic for rare outbreak events</td></tr>
+            <tr><td>0.5 default threshold</td><td>Assumes balanced data</td><td>Not realistic for rare outbreak events</td></tr>
             <tr><td>Mean probability</td><td>No epidemiological meaning</td><td>Depends heavily on model output distribution</td></tr>
-            <tr><td>Median threshold</td><td>Ignores risk structure</td><td>Only splits data without decision logic</td></tr>
             <tr><td>Bayesian threshold</td><td>Needs strong priors</td><td>Difficult in real surveillance settings</td></tr>
-            <tr><td>Expected utility</td><td>Hard to define costs</td><td>Theoretical but not operationally simple</td></tr>
           </table></div>
-
           <h3>Final insight</h3>
-          <p>In real outbreak prediction systems, threshold selection is not a fixed rule but a decision framework. The most effective systems combine precision-recall optimization, cost-sensitive learning, and adaptive strategies — seasonal and spatial thresholds — to ensure stable and reliable public health action.</p>
+          <p>In real outbreak prediction systems, threshold selection is not a fixed rule but a decision framework. The most effective systems combine precision-recall optimization, cost-sensitive learning, and adaptive strategies &mdash; seasonal and spatial thresholds &mdash; to ensure stable and reliable public health action.</p>
         </div>
       </div>
       <div class="post-footer">
-        <button class="expand-btn" onclick="togglePost(this, 'post-threshold-selection-outbreak-03')">Read full post →</button>
+        <button class="expand-btn" data-post="post-threshold">&#9654; Read full post</button>
         <div class="share-wrap">
-          <button class="share-trigger" onclick="openSharePanel(this, 'post-threshold-selection-outbreak-03')">⎘ Share</button>
-          <div class="share-panel" id="sp-post-threshold-selection-outbreak-03"></div>
+          <button class="share-trigger" data-post="post-threshold">&#9003; Share</button>
+          <div class="share-panel" id="sp-post-threshold"></div>
         </div>
       </div>
     </article>
 
-    <!-- ══════════════════════════════════
-         POST 2 — GATHER
-    ══════════════════════════════════ -->
-    <article class="post-card" id="post-gather-guidelines-02"
+    <!-- POST 2 -->
+    <article class="post-card cat-Public-Health" id="post-gather"
       data-category="Public Health"
       data-title="Understanding GATHER and making health estimates transparent"
-      data-desc="In health research, we often produce numbers that directly influence decisions — national rates, trends, and future projections. GATHER (Guidelines for Accurate and Transparent Health Estimates Reporting) provides a structured framework to report health estimates clearly and reproducibly."
+      data-desc="GATHER (Guidelines for Accurate and Transparent Health Estimates Reporting) provides a structured 18-item checklist to report health estimates clearly, reproducibly, and with uncertainty quantification."
       data-img="https://github.com/user-attachments/assets/bb76126f-aa6f-4c7f-ab7e-e03ef4f3afd0">
-
       <div class="post-cover-wrap"><img class="post-cover" src="https://github.com/user-attachments/assets/bb76126f-aa6f-4c7f-ab7e-e03ef4f3afd0" alt="GATHER guidelines" loading="lazy"></div>
       <div class="post-header">
         <div class="post-meta-row">
           <span class="cat-badge cat-ph">Public Health</span>
-          <span class="post-date">📅 6 April 2026</span>
-          <span class="read-time">⏱ 5 min read</span>
+          <span class="post-date">&#128197; 6 April 2026</span>
+          <span class="read-time">&#9201; 5 min read</span>
         </div>
         <h2 class="post-title">Understanding GATHER and making health estimates transparent</h2>
         <div class="author-row">
           <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
-          <div class="author-info">
-            <div class="author-name">Md. Abu Bokkor Shiddik</div>
-            <div class="author-role">Researcher · Statistics, BRUR</div>
-          </div>
+          <div><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher &middot; Statistics, BRUR</div></div>
         </div>
       </div>
       <div class="post-body">
-        <div class="post-excerpt">
-          <p>In health research, we often produce numbers that directly influence decisions — national rates, trends, and future projections. These estimates guide policies, funding, and intervention strategies. But how transparent are these results? GATHER (Guidelines for Accurate and Transparent Health Estimates Reporting) provides a structured framework to report health estimates clearly and reproducibly.</p>
-        </div>
+        <div class="post-excerpt"><p>In health research, we often produce numbers that directly influence decisions &mdash; national rates, trends, and future projections. GATHER (Guidelines for Accurate and Transparent Health Estimates Reporting) introduced in 2016 provides a structured framework to report health estimates clearly and reproducibly. It is not a method, but a reporting standard that ensures transparency.</p></div>
         <div class="post-full">
           <h3>Why GATHER matters</h3>
           <p>Health estimates often rely on multiple datasets, statistical or machine learning models, assumptions and adjustments, and uncertainty calculations. Without proper reporting, results may be difficult to interpret and trust.</p>
-
           <h3>GATHER reporting domains</h3>
-          <div class="table-scroll-wrap"><table>
+          <div class="tbl-wrap"><table>
             <tr><th>Category</th><th>Focus area</th><th>Purpose</th></tr>
             <tr><td>Study definition</td><td>Population, time, geography</td><td>Defines scope</td></tr>
             <tr><td>Data inputs</td><td>Sources and characteristics</td><td>Ensures traceability</td></tr>
             <tr><td>Data processing</td><td>Cleaning and adjustment</td><td>Improves reproducibility</td></tr>
-            <tr><td>Modeling</td><td>Methods and assumptions</td><td>Explains estimation</td></tr>
+            <tr><td>Modeling</td><td>Methods and assumptions</td><td>Explains estimation approach</td></tr>
             <tr><td>Validation</td><td>Model checking</td><td>Ensures reliability</td></tr>
             <tr><td>Outputs</td><td>Results and uncertainty</td><td>Improves interpretation</td></tr>
             <tr><td>Transparency</td><td>Data and code sharing</td><td>Supports replication</td></tr>
           </table></div>
-
           <h3>GATHER checklist (18 items)</h3>
-          <div class="table-scroll-wrap"><table>
+          <div class="tbl-wrap"><table>
             <tr><th>No</th><th>Item</th><th>Description</th></tr>
-            <tr><td>1</td><td>Population</td><td>Define scope and time</td></tr>
-            <tr><td>2</td><td>Outcomes</td><td>Specify estimates</td></tr>
-            <tr><td>3</td><td>Funding</td><td>Disclose funding</td></tr>
-            <tr><td>4</td><td>Data sources</td><td>List datasets used</td></tr>
-            <tr><td>5</td><td>Data access</td><td>Explain how retrieved</td></tr>
-            <tr><td>6</td><td>Criteria</td><td>Inclusion / exclusion</td></tr>
-            <tr><td>7</td><td>Characteristics</td><td>Describe the data</td></tr>
-            <tr><td>8</td><td>Processing</td><td>Cleaning steps taken</td></tr>
-            <tr><td>9</td><td>Availability</td><td>Share or restrict</td></tr>
-            <tr><td>10</td><td>Overview</td><td>Conceptual framework</td></tr>
+            <tr><td>1</td><td>Population</td><td>Define scope and time period</td></tr>
+            <tr><td>2</td><td>Outcomes</td><td>Specify what is being estimated</td></tr>
+            <tr><td>3</td><td>Funding</td><td>Disclose all funding sources</td></tr>
+            <tr><td>4</td><td>Data sources</td><td>List all datasets used</td></tr>
+            <tr><td>5</td><td>Data access</td><td>Explain how data was retrieved</td></tr>
+            <tr><td>6</td><td>Criteria</td><td>Inclusion and exclusion criteria</td></tr>
+            <tr><td>7</td><td>Characteristics</td><td>Describe the data used</td></tr>
+            <tr><td>8</td><td>Processing</td><td>Data cleaning steps taken</td></tr>
+            <tr><td>9</td><td>Availability</td><td>State what data is shared or restricted</td></tr>
+            <tr><td>10</td><td>Overview</td><td>Conceptual modeling framework</td></tr>
             <tr><td>11</td><td>Models</td><td>Statistical methods used</td></tr>
-            <tr><td>12</td><td>Justification</td><td>Why this model was used</td></tr>
-            <tr><td>13</td><td>Assumptions</td><td>State assumptions clearly</td></tr>
-            <tr><td>14</td><td>Uncertainty</td><td>Explain how calculated</td></tr>
+            <tr><td>12</td><td>Justification</td><td>Why this model was chosen</td></tr>
+            <tr><td>13</td><td>Assumptions</td><td>State all assumptions clearly</td></tr>
+            <tr><td>14</td><td>Uncertainty</td><td>Explain how uncertainty is calculated</td></tr>
             <tr><td>15</td><td>Validation</td><td>Model evaluation approach</td></tr>
             <tr><td>16</td><td>Results</td><td>Include confidence intervals</td></tr>
-            <tr><td>17</td><td>Code</td><td>Share if possible</td></tr>
+            <tr><td>17</td><td>Code</td><td>Share code if possible</td></tr>
             <tr><td>18</td><td>Replication</td><td>Ensure reproducibility</td></tr>
           </table></div>
-
           <h3>Example of reporting estimates</h3>
-          <div class="table-scroll-wrap"><table>
+          <div class="tbl-wrap"><table>
             <tr><th>Indicator</th><th>Estimate</th><th>Uncertainty interval</th></tr>
-            <tr><td>Disease prevalence</td><td>12.5%</td><td>(10.2% – 14.8%)</td></tr>
-            <tr><td>Mortality rate</td><td>145 per 100,000</td><td>(120 – 170)</td></tr>
-            <tr><td>Projection (2030)</td><td>18.3%</td><td>(15.0% – 21.6%)</td></tr>
+            <tr><td>Disease prevalence</td><td>12.5%</td><td>(10.2% &ndash; 14.8%)</td></tr>
+            <tr><td>Mortality rate</td><td>145 per 100,000</td><td>(120 &ndash; 170)</td></tr>
+            <tr><td>Projection 2030</td><td>18.3%</td><td>(15.0% &ndash; 21.6%)</td></tr>
           </table></div>
-
           <h3>Practical tips</h3>
           <ul>
             <li>Always report uncertainty alongside point estimates</li>
             <li>Explain model choice clearly with justification</li>
-            <li>State assumptions explicitly — never hide them</li>
+            <li>State assumptions explicitly &mdash; never hide them</li>
             <li>Document missing data handling procedures</li>
             <li>Include validation results for all models</li>
           </ul>
-          <p>GATHER promotes transparent and trustworthy science — from government resource allocation to global intervention planning.</p>
+          <p>GATHER promotes transparent and trustworthy science &mdash; from government resource allocation to global intervention planning.</p>
         </div>
       </div>
       <div class="post-footer">
-        <button class="expand-btn" onclick="togglePost(this, 'post-gather-guidelines-02')">Read full post →</button>
+        <button class="expand-btn" data-post="post-gather">&#9654; Read full post</button>
         <div class="share-wrap">
-          <button class="share-trigger" onclick="openSharePanel(this, 'post-gather-guidelines-02')">⎘ Share</button>
-          <div class="share-panel" id="sp-post-gather-guidelines-02"></div>
+          <button class="share-trigger" data-post="post-gather">&#9003; Share</button>
+          <div class="share-panel" id="sp-post-gather"></div>
         </div>
       </div>
     </article>
 
-    <!-- ══════════════════════════════════
-         POST 3 — Normalization
-    ══════════════════════════════════ -->
-    <article class="post-card" id="post-normalization-standardization-01"
+    <!-- POST 3 -->
+    <article class="post-card cat-Machine-Learning" id="post-scaling"
       data-category="Machine Learning"
       data-title="Normalization vs. Standardization in data preprocessing"
-      data-desc="When preparing data for machine learning models, features often have very different ranges and units. Without scaling, models that rely on distances or gradient-based optimization can perform poorly. Normalization and standardization are two core feature scaling techniques — but they work differently."
+      data-desc="Normalization scales data to a fixed range [0,1] while standardization transforms it to mean=0, std=1. Knowing when to use each is essential for model performance in machine learning."
       data-img="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5">
-
       <div class="post-cover-wrap"><img class="post-cover" src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5" alt="Normalization vs Standardization" loading="lazy"></div>
       <div class="post-header">
         <div class="post-meta-row">
           <span class="cat-badge cat-ml">Machine Learning</span>
-          <span class="post-date">📅 6 April 2026</span>
-          <span class="read-time">⏱ 4 min read</span>
+          <span class="post-date">&#128197; 6 April 2026</span>
+          <span class="read-time">&#9201; 4 min read</span>
         </div>
         <h2 class="post-title">Normalization vs. Standardization in data preprocessing</h2>
         <div class="author-row">
           <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
-          <div class="author-info">
-            <div class="author-name">Md. Abu Bokkor Shiddik</div>
-            <div class="author-role">Researcher · Statistics, BRUR</div>
-          </div>
+          <div><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher &middot; Statistics, BRUR</div></div>
         </div>
       </div>
       <div class="post-body">
-        <div class="post-excerpt">
-          <p>When preparing data for machine learning models, features often have very different ranges and units. Without scaling, models that rely on distances or gradient-based optimization can perform poorly. Normalization and standardization are two core feature scaling techniques used to address this — but they work differently and suit different scenarios.</p>
-        </div>
+        <div class="post-excerpt"><p>When preparing data for machine learning models, features often have very different ranges and units. Without scaling, models relying on distances or gradient-based optimization can perform poorly because features with larger numeric ranges dominate learning. Normalization and standardization are two core feature scaling techniques to address this &mdash; but they work differently and suit different scenarios.</p></div>
         <div class="post-full">
           <h3>What is normalization?</h3>
-          <p>Normalization scales data to a fixed range, usually 0 to 1. The most common form is min-max normalization, where each value is rescaled relative to the minimum and maximum values of the feature.</p>
-          <div class="formula-block">X<sub>norm</sub> = (X − X<sub>min</sub>) / (X<sub>max</sub> − X<sub>min</sub>)</div>
-          <p>After this transformation, all values fall in [0, 1]. Works well with distance-based algorithms like k-NN and K-Means.</p>
-
+          <p>Normalization (min-max scaling) rescales features to a fixed range, usually [0, 1].</p>
+          <div class="formula-block">X<sub>norm</sub> = (X &minus; X<sub>min</sub>) / (X<sub>max</sub> &minus; X<sub>min</sub>)</div>
+          <p>After this transformation all values fall in [0, 1]. Works best with distance-based algorithms like k-NN and K-Means. <strong>Sensitive to outliers</strong> &mdash; handle them first.</p>
           <h3>What is standardization?</h3>
-          <p>Standardization (z-score scaling) transforms features so they have mean = 0 and standard deviation = 1.</p>
-          <div class="formula-block">X<sub>std</sub> = (X − μ) / σ</div>
-          <p>Especially helpful for gradient-based models — SVM, Logistic Regression, Neural Networks — and for PCA.</p>
-
+          <p>Standardization (z-score scaling) transforms features to mean = 0 and standard deviation = 1.</p>
+          <div class="formula-block">X<sub>std</sub> = (X &minus; &mu;) / &sigma;</div>
+          <p>Especially helpful for gradient-based models (SVM, Logistic Regression, Neural Networks) and for PCA which is sensitive to feature variance.</p>
           <h3>Key differences</h3>
-          <div class="table-scroll-wrap"><table>
+          <div class="tbl-wrap"><table>
             <tr><th>Feature</th><th>Normalization</th><th>Standardization</th></tr>
             <tr><td>Scaling goal</td><td>Fixed range (0 to 1)</td><td>Mean = 0, Std = 1</td></tr>
-            <tr><td>Typical range</td><td>[0, 1] or [−1, 1]</td><td>Unbounded</td></tr>
-            <tr><td>Formula</td><td>(X − Xmin) / (Xmax − Xmin)</td><td>(X − μ) / σ</td></tr>
+            <tr><td>Typical range</td><td>[0, 1] or [&minus;1, 1]</td><td>Unbounded</td></tr>
             <tr><td>Best for</td><td>Distance-based models</td><td>Statistical &amp; ML models</td></tr>
             <tr><td>Outlier sensitivity</td><td>High</td><td>Lower</td></tr>
           </table></div>
-
           <h3>When to use which</h3>
-          <p><strong>Use normalization when:</strong> data does not follow normal distribution, using distance-based algorithms, or bounded values are required.</p>
-          <p><strong>Use standardization when:</strong> data is approximately Gaussian, using regression, SVM, or PCA, or the model depends on variance.</p>
-
-          <h3>Example in Python</h3>
+          <p><strong>Use normalization when:</strong> data does not follow a normal distribution, you are using distance-based algorithms, or bounded values are required.</p>
+          <p><strong>Use standardization when:</strong> data is approximately Gaussian, you are using regression, SVM, or PCA, or the model depends on variance structure.</p>
+          <h3>Python example</h3>
           <pre>from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 # Normalization
@@ -592,29 +496,32 @@ X_norm = norm_scaler.fit_transform(X_train)
 
 # Standardization
 std_scaler = StandardScaler()
-X_std = std_scaler.fit_transform(X_train)</pre>
+X_std = std_scaler.fit_transform(X_train)
 
+# Apply same transform to test data (never fit on test!)
+X_test_norm = norm_scaler.transform(X_test)
+X_test_std  = std_scaler.transform(X_test)</pre>
           <h3>Practical tips</h3>
           <ul>
-            <li>Normalization is sensitive to outliers — handle them first</li>
+            <li>Normalization is sensitive to outliers &mdash; handle them first</li>
             <li>Standardization is more stable when outliers are present</li>
-            <li>Always fit the scaler on training data only</li>
-            <li>Apply the same transformation to test and validation data</li>
+            <li>Always fit the scaler on <strong>training data only</strong></li>
+            <li>Apply the same fitted transformation to test and validation data</li>
+            <li>In sklearn pipelines, use <code>Pipeline</code> to avoid data leakage automatically</li>
           </ul>
         </div>
       </div>
       <div class="post-footer">
-        <button class="expand-btn" onclick="togglePost(this, 'post-normalization-standardization-01')">Read full post →</button>
+        <button class="expand-btn" data-post="post-scaling">&#9654; Read full post</button>
         <div class="share-wrap">
-          <button class="share-trigger" onclick="openSharePanel(this, 'post-normalization-standardization-01')">⎘ Share</button>
-          <div class="share-panel" id="sp-post-normalization-standardization-01"></div>
+          <button class="share-trigger" data-post="post-scaling">&#9003; Share</button>
+          <div class="share-panel" id="sp-post-scaling"></div>
         </div>
       </div>
     </article>
 
-  </div><!-- /posts col -->
+  </div>
 
-  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-card">
       <div class="sidebar-title">Posts in this series</div>
@@ -625,11 +532,10 @@ X_std = std_scaler.fit_transform(X_train)</pre>
       <div class="sidebar-cat"><span>Machine Learning</span><span class="sidebar-cat-count">2</span></div>
       <div class="sidebar-cat"><span>Public Health</span><span class="sidebar-cat-count">1</span></div>
     </div>
-    <a class="sidebar-video-link" href="videos.html">▶ Watch Research Videos →</a>
+    <a class="sidebar-video-link" href="videos.html">&#9654; Watch Research Videos &rarr;</a>
   </aside>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -639,244 +545,172 @@ X_std = std_scaler.fit_transform(X_train)</pre>
     <div>
       <div class="footer-col-title">Navigation</div>
       <div class="footer-nav-links">
-        <a href="home.html">Home</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html">Projects</a>
-        <a href="courses.html">Courses &amp; Training</a>
-        <a href="service.html">Service</a>
-        <a href="conference-and-workshop.html">Conferences</a>
+        <a href="home.html">Home</a><a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a><a href="courses.html">Courses &amp; Training</a>
+        <a href="service.html">Service</a><a href="conference-and-workshop.html">Conferences</a>
       </div>
     </div>
     <div>
       <div class="footer-col-title">Connect</div>
       <div class="footer-social-links">
-        <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">🌐 Portfolio</a>
+        <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">&#127760; Portfolio</a>
         <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">in LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">🎓 Google Scholar</a>
-        <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">✦ ORCID</a>
+        <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">&#127891; Google Scholar</a>
+        <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">&#10022; ORCID</a>
         <a href="https://github.com/abubokkorshiddik" target="_blank">&#123;&#125; GitHub</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Md. Abu Bokkor Shiddik · All rights reserved</p>
-    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5c4c7d0c7cacececad78bc7d7d0d79395e5c2c8c4ccc98bc6cac8">[email&#160;protected]</a> · +880 1874 001360</p>
+    <p>&copy; 2026 Md. Abu Bokkor Shiddik &middot; All rights reserved</p>
+    <p>abubokkor.brur60@gmail.com &middot; +880 1874 001360</p>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ═══════════════════════════════
-   POST DATA — used for OG + share panels
-═══════════════════════════════ */
+<script>
+/* ─── NAV ─── */
+document.querySelectorAll('.dropbtn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var dd=btn.closest('.dropdown');var open=dd.classList.contains('active');document.querySelectorAll('.dropdown.active').forEach(function(d){d.classList.remove('active')});if(!open)dd.classList.add('active')})});
+document.addEventListener('click',function(){document.querySelectorAll('.dropdown.active').forEach(function(d){d.classList.remove('active')})});
+var ham=document.getElementById('hamburger'),drawer=document.getElementById('nav-drawer');
+ham.addEventListener('click',function(){ham.classList.toggle('open');drawer.classList.toggle('open')});
+drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ham.classList.remove('open');drawer.classList.remove('open')})});
+
+/* ─── POST DATA ─── */
 var POST_DATA = {};
-document.querySelectorAll('.post-card').forEach(function(card) {
-  var id = card.id;
-  POST_DATA[id] = {
-    title: card.dataset.title || '',
-    desc:  card.dataset.desc  || '',
-    img:   card.dataset.img   || '',
-    url:   window.location.origin + window.location.pathname + '#' + id
-  };
+document.querySelectorAll('.post-card').forEach(function(card){
+  POST_DATA[card.id]={title:card.dataset.title,desc:card.dataset.desc,img:card.dataset.img,url:window.location.origin+window.location.pathname+'#'+card.id};
 });
 
-/* ═══════════════════════════════
-   OG META — update dynamically on hash
-═══════════════════════════════ */
-function updateOGMeta(postId) {
-  var d = postId ? POST_DATA[postId] : null;
-  var title = d ? d.title + ' | Md. Abu Bokkor Shiddik' : 'Insights | Md. Abu Bokkor Shiddik';
-  var desc  = d ? d.desc  : 'Research notes, methods, and learning posts on machine learning, statistics, and public health.';
-  var img   = d ? d.img   : 'https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png';
-  var url   = d ? d.url   : window.location.href;
-
-  document.title = title;
-  setMeta('og-title',       title);
-  setMeta('og-description', desc);
-  setMeta('og-image',       img);
-  setMeta('og-url',         url);
-  setMeta('tw-title',       title);
-  setMeta('tw-description', desc);
-  setMeta('tw-image',       img);
-  setMeta('og-desc-plain',  desc, 'content');
-}
-function setMeta(id, val, attr) {
-  var el = document.getElementById(id);
-  if (!el) return;
-  el.setAttribute(attr || 'content', val);
-}
-
-/* run on load and hash change */
-function checkHash() {
-  var hash = window.location.hash.replace('#', '');
-  updateOGMeta(hash && POST_DATA[hash] ? hash : null);
-}
-checkHash();
-window.addEventListener('hashchange', checkHash);
-
-/* ═══════════════════════════════
-   SHARE PANEL
-═══════════════════════════════ */
-function buildSharePanel(panelEl, postId) {
-  var d = POST_DATA[postId];
-  if (!d) return;
-  panelEl.innerHTML =
-    '<div class="share-panel-title">Share this post</div>' +
-    '<div class="share-preview-card">' +
-      '<img class="share-preview-img" src="' + d.img + '" alt="Post image" loading="lazy">' +
-      '<div class="share-preview-body">' +
-        '<div class="share-preview-site">abubokkorshiddik · Insights</div>' +
-        '<div class="share-preview-title">' + d.title + '</div>' +
-        '<div class="share-preview-desc">' + d.desc + '</div>' +
-      '</div>' +
-    '</div>' +
-    '<div class="share-actions">' +
-      '<button class="share-action-btn" onclick="copyPostLink(\'' + postId + '\', this)">' +
-        '<span class="share-action-icon">🔗</span>' +
-        '<span class="share-action-label">Copy link</span>' +
-      '</button>' +
-      '<a class="share-action-btn" href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(d.title) + '&url=' + encodeURIComponent(d.url) + '" target="_blank">' +
-        '<span class="share-action-icon">𝕏</span>' +
-        '<span class="share-action-label">Share on X / Twitter</span>' +
-      '</a>' +
-      '<a class="share-action-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(d.url) + '" target="_blank">' +
-        '<span class="share-action-icon">in</span>' +
-        '<span class="share-action-label">Share on LinkedIn</span>' +
-      '</a>' +
-      '<a class="share-action-btn" href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(d.url) + '" target="_blank">' +
-        '<span class="share-action-icon">f</span>' +
-        '<span class="share-action-label">Share on Facebook</span>' +
-      '</a>' +
-    '</div>';
-}
-
-function openSharePanel(triggerBtn, postId) {
-  /* close any other open panels */
-  document.querySelectorAll('.share-panel.open').forEach(function(p) {
-    if (p.id !== 'sp-' + postId) p.classList.remove('open');
+/* ─── EXPAND / COLLAPSE ─── */
+document.querySelectorAll('.expand-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var postId = btn.dataset.post;
+    var card = document.getElementById(postId);
+    if(!card) return;
+    var full = card.querySelector('.post-full');
+    var excerpt = card.querySelector('.post-excerpt');
+    var isOpen = full.classList.contains('open');
+    if(isOpen){
+      full.classList.remove('open');
+      full.style.display='none';
+      excerpt.style.display='block';
+      btn.innerHTML='&#9654; Read full post';
+      btn.classList.remove('open-state');
+    } else {
+      full.classList.add('open');
+      full.style.display='block';
+      excerpt.style.display='none';
+      btn.innerHTML='&#8593; Show less';
+      btn.classList.add('open-state');
+      /* smooth scroll to card */
+      setTimeout(function(){
+        var nb=document.querySelector('.navbar');
+        var fb=document.querySelector('.filter-bar');
+        var offset=(nb?nb.offsetHeight:56)+(fb?fb.offsetHeight:44)+12;
+        var top=card.getBoundingClientRect().top+window.pageYOffset-offset;
+        window.scrollTo({top:top,behavior:'smooth'});
+      },50);
+    }
   });
-  var panel = document.getElementById('sp-' + postId);
-  if (!panel) return;
-
-  /* build content once */
-  if (!panel.dataset.built) {
-    buildSharePanel(panel, postId);
-    panel.dataset.built = '1';
-  }
-
-  /* update OG tags for this post */
-  updateOGMeta(postId);
-
-  panel.classList.toggle('open');
-}
-
-/* close panels when clicking outside */
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.share-wrap')) {
-    document.querySelectorAll('.share-panel.open').forEach(function(p) { p.classList.remove('open'); });
-  }
 });
 
-function copyPostLink(postId, btn) {
-  var d = POST_DATA[postId];
-  if (!d) return;
-  var text = d.title + '\n\n' + d.desc + '\n\n' + d.url;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text).then(function() {
-      if (btn) { btn.querySelector('.share-action-label').textContent = '✓ Copied!'; btn.classList.add('share-action-copied'); setTimeout(function() { btn.querySelector('.share-action-label').textContent = 'Copy link'; btn.classList.remove('share-action-copied'); }, 2200); }
+/* ─── SHARE PANEL ─── */
+document.querySelectorAll('.share-trigger').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var postId=btn.dataset.post;
+    var panel=document.getElementById('sp-'+postId);
+    if(!panel) return;
+    // close others
+    document.querySelectorAll('.share-panel.open').forEach(function(p){if(p!==panel)p.classList.remove('open')});
+    // build once
+    if(!panel.dataset.built){
+      var d=POST_DATA[postId];
+      panel.innerHTML=
+        '<div class="share-panel-title">Share this post</div>'+
+        '<div class="share-preview-card">'+
+          '<img class="share-preview-img" src="'+d.img+'" alt="" loading="lazy">'+
+          '<div class="share-preview-body">'+
+            '<div class="share-preview-site">ABS &middot; Insights</div>'+
+            '<div class="share-preview-title">'+d.title+'</div>'+
+            '<div class="share-preview-desc">'+d.desc+'</div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="share-actions">'+
+          '<button class="share-action-btn" onclick="copyLink(\''+postId+'\',this)"><span class="share-action-icon">&#128279;</span><span>Copy link</span></button>'+
+          '<a class="share-action-btn" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(d.title)+'&url='+encodeURIComponent(d.url)+'" target="_blank"><span class="share-action-icon">&#120143;</span><span>Share on X / Twitter</span></a>'+
+          '<a class="share-action-btn" href="https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(d.url)+'" target="_blank"><span class="share-action-icon">in</span><span>Share on LinkedIn</span></a>'+
+        '</div>';
+      panel.dataset.built='1';
+    }
+    panel.classList.toggle('open');
+  });
+});
+document.addEventListener('click',function(e){if(!e.target.closest('.share-wrap'))document.querySelectorAll('.share-panel.open').forEach(function(p){p.classList.remove('open')})});
+
+function copyLink(postId,btn){
+  var d=POST_DATA[postId];
+  var text=d.title+'\n\n'+d.url;
+  var toast=document.getElementById('share-toast');
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(function(){
+      var lbl=btn.querySelector('span:last-child');
+      var orig=lbl.textContent;
+      lbl.textContent='Copied!';
+      btn.classList.add('share-action-copied');
+      setTimeout(function(){lbl.textContent=orig;btn.classList.remove('share-action-copied')},2200);
     });
-  } else {
-    var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
   }
-  var t = document.getElementById('share-toast');
-  t.classList.add('show'); setTimeout(function() { t.classList.remove('show'); }, 2200);
+  toast.classList.add('show');
+  setTimeout(function(){toast.classList.remove('show')},2200);
 }
 
-/* ═══════════════════════════════
-   EXPAND / COLLAPSE
-═══════════════════════════════ */
-function togglePost(btn, postId) {
-  var card = document.getElementById(postId);
-  var excerpt = card.querySelector('.post-excerpt');
-  var full    = card.querySelector('.post-full');
-  var open = full.style.display === 'block';
-  full.style.display    = open ? 'none'  : 'block';
-  excerpt.style.display = open ? 'block' : 'none';
-  btn.textContent = open ? 'Read full post →' : 'Show less ↑';
-}
-
-/* ═══════════════════════════════
-   FILTER TABS
-═══════════════════════════════ */
-document.querySelectorAll('.filter-tab').forEach(function(tab) {
-  tab.addEventListener('click', function() {
-    document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+/* ─── FILTER TABS ─── */
+document.querySelectorAll('.filter-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.filter-tab').forEach(function(t){t.classList.remove('active')});
     tab.classList.add('active');
-    tab.scrollIntoView({ inline: 'nearest', block: 'nearest' });
-    var f = tab.dataset.filter;
-    var count = 0;
-    document.querySelectorAll('.post-card').forEach(function(card) {
-      var show = f === 'all' || (card.dataset.category || '') === f;
-      card.style.display = show ? '' : 'none';
-      if (show) count++;
+    var f=tab.dataset.filter;
+    var count=0;
+    document.querySelectorAll('.post-card').forEach(function(card){
+      var show=f==='all'||card.dataset.category===f;
+      card.style.display=show?'':'none';
+      if(show)count++;
     });
-    document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
+    document.getElementById('no-results').style.display=count===0?'block':'none';
   });
 });
 
-/* ═══════════════════════════════
-   LIVE SEARCH
-═══════════════════════════════ */
-document.getElementById('search').addEventListener('input', function() {
-  var q = this.value.toLowerCase().trim();
-  var count = 0;
-  document.querySelectorAll('.post-card').forEach(function(card) {
-    var text = (card.dataset.title + ' ' + card.dataset.desc + ' ' + card.dataset.category).toLowerCase();
-    var show = !q || text.indexOf(q) !== -1;
-    card.style.display = show ? '' : 'none';
-    if (show) count++;
+/* ─── SEARCH ─── */
+document.getElementById('search').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var count=0;
+  document.querySelectorAll('.post-card').forEach(function(card){
+    var text=(card.dataset.title+' '+card.dataset.desc+' '+card.dataset.category).toLowerCase();
+    var show=!q||text.indexOf(q)!==-1;
+    card.style.display=show?'':'none';
+    if(show)count++;
   });
-  document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
-  if (q) document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.getElementById('no-results').style.display=count===0?'block':'none';
+  if(q)document.querySelectorAll('.filter-tab').forEach(function(t){t.classList.remove('active')});
 });
 
-/* ═══════════════════════════════
-   SIDEBAR TOC
-═══════════════════════════════ */
-document.addEventListener('DOMContentLoaded', function() {
-  var toc = document.getElementById('sidebar-toc');
-  document.querySelectorAll('.post-card').forEach(function(card) {
-    var id = card.id;
-    var title = card.dataset.title || '';
-    var link = document.createElement('div');
-    link.className = 'sidebar-link';
-    link.innerHTML = '<span class="sidebar-link-dot"></span><span>' + title + '</span>';
-    link.addEventListener('click', function() {
-      var el = document.getElementById(id);
-      if (!el) return;
-      var nb = document.querySelector('.navbar');
-      var fb = document.querySelector('.filter-bar');
-      var offset = (nb ? nb.offsetHeight : 56) + (fb ? fb.offsetHeight : 44) + 12;
-      window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+/* ─── SIDEBAR TOC ─── */
+document.addEventListener('DOMContentLoaded',function(){
+  var toc=document.getElementById('sidebar-toc');
+  document.querySelectorAll('.post-card').forEach(function(card){
+    var link=document.createElement('div');
+    link.className='sidebar-link';
+    link.innerHTML='<span class="sidebar-link-dot"></span><span>'+card.dataset.title+'</span>';
+    link.addEventListener('click',function(){
+      var nb=document.querySelector('.navbar');
+      var fb=document.querySelector('.filter-bar');
+      var offset=(nb?nb.offsetHeight:56)+(fb?fb.offsetHeight:44)+12;
+      window.scrollTo({top:card.getBoundingClientRect().top+window.pageYOffset-offset,behavior:'smooth'});
     });
     toc.appendChild(link);
   });
 });
-
-/* ═══════════════════════════════
-   NAVBAR
-═══════════════════════════════ */
-document.querySelectorAll('.dropbtn').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var dd = btn.closest('.dropdown');
-    var open = dd.classList.contains('active');
-    document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
-    if (!open) dd.classList.add('active');
-  });
-});
-document.addEventListener('click', function() {
-  document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
-});
-var ham = document.getElementById('hamburger');
-var navDrawer = document.getElementById('nav-drawer');
-ham.addEventListener('click', function() { ham.classList.toggle('open');
+</script>
+</body>
+</html>
