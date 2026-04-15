@@ -258,14 +258,10 @@
 </head>
 <body>
 
-<!-- ═══ NAVBAR ═══ -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-bar-inner">
-      <div class="nav-brand">
-      <a href="contact.html" style="color:white;">
-        ABS<span> · </span>Abu Bokkor Shiddik
-      </a>
-    </div>
+    <div class="nav-brand">ABS<span> · </span>Abu Bokkor Shiddik</div>
     <div class="nav-links">
       <a href="home.html">Home</a>
       <a href="publications.html">Publications</a>
@@ -275,7 +271,6 @@
         <div class="dropdown-content">
           <a href="projects.html">⚗ Projects</a>
           <a href="data-code.html">💾 Data &amp; Code</a>
-          <a href="game.html">🎮 Games</a>
         </div>
       </div>
       <div class="dropdown">
@@ -303,22 +298,20 @@
       <a class="drawer-link" href="home.html">Home</a>
       <a class="drawer-link" href="publications.html">Publications</a>
       <a class="drawer-link" href="service.html">Service</a>
-      <div class="drawer-div"></div>
-      <div class="drawer-sec">Digital Lab</div>
+      <div class="drawer-divider"></div>
+      <div class="drawer-section-label">Digital Lab</div>
       <div class="drawer-sub">
         <a class="drawer-link" href="projects.html">Projects</a>
         <a class="drawer-link" href="data-code.html">Data &amp; Code</a>
-<a class="drawer-link" href="game.html">🎮 Games</a>
-        
       </div>
-      <div class="drawer-div"></div>
-      <div class="drawer-sec">Learning &amp; Events</div>
+      <div class="drawer-divider"></div>
+      <div class="drawer-section-label">Learning &amp; Events</div>
       <div class="drawer-sub">
         <a class="drawer-link" href="courses.html">Courses &amp; Training</a>
         <a class="drawer-link" href="conference-and-workshop.html">Conferences &amp; Workshops</a>
       </div>
-      <div class="drawer-div"></div>
-      <div class="drawer-sec">Insights</div>
+      <div class="drawer-divider"></div>
+      <div class="drawer-section-label">Insights</div>
       <div class="drawer-sub">
         <a class="drawer-link" href="insights.html">Posts</a>
         <a class="drawer-link" href="videos.html">Videos</a>
@@ -327,7 +320,6 @@
     </div>
   </div>
 </nav>
-
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -537,7 +529,7 @@
     <div>
       <div class="footer-col-title">Connect</div>
       <div class="footer-social-links">
-        <a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/home" target="_blank">🌐 Portfolio</a>
+        <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">🌐 Portfolio</a>
         <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">in LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">🎓 Google Scholar</a>
         <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">✦ ORCID</a>
@@ -691,25 +683,24 @@ document.querySelectorAll('.photo-grid').forEach(grid => {
 });
 
 /* ── NAVBAR ── */
-document.querySelectorAll('.dropbtn').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
+document.querySelectorAll('.dropbtn').forEach(btn => {
+  btn.addEventListener('click', e => {
     e.stopPropagation();
-    var dd = btn.closest('.dropdown');
-    var open = dd.classList.contains('active');
-    document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
+    const dd = btn.closest('.dropdown');
+    const open = dd.classList.contains('active');
+    document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
     if (!open) dd.classList.add('active');
   });
 });
-document.addEventListener('click', function() {
-  document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
-});
-var ham = document.getElementById('hamburger');
-var drawer = document.getElementById('nav-drawer');
-ham.addEventListener('click', function() { ham.classList.toggle('open'); drawer.classList.toggle('open'); });
-drawer.querySelectorAll('a').forEach(function(a) {
-  a.addEventListener('click', function() { ham.classList.remove('open'); drawer.classList.remove('open'); });
-});
+document.addEventListener('click', () => document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active')));
+const ham = document.getElementById('hamburger');
+const drawer = document.getElementById('nav-drawer');
+ham.addEventListener('click', () => { ham.classList.toggle('open'); drawer.classList.toggle('open'); });
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); drawer.classList.remove('open'); }));
 
+/* ── TOC SCROLL ── */
+/* IMPORTANT: never name this "scrollTo" — it shadows window.scrollTo causing a crash */
+function jumpToSection(id) {
   var el = document.getElementById(id);
   if (!el) return;
   var navbar = document.querySelector('.navbar');
